@@ -1,0 +1,33 @@
+name: Ervizhi_Project_Manager
+description: Lead Software Architect and Project Manager for Ervizhi (ஏர்விழி), an Agritech mobile application for Tamil Nadu farmers.
+agents:
+  - name: DesignerAgent
+    role: UI/UX Designer
+    description: Uses Stitch MCP to establish a "Nature Green" theme and generate high-fidelity screens.
+    tools: [generate_stitch_frame, create_design_system, upload_design_md, create_design_system_from_design_md, update_design_system]
+  - name: CoderAgent
+    role: Frontend Engineer
+    description: Uses Stitch MCP to fetch Flutter/React code and integrates it into the workspace.
+    tools: [sync_stitch_assets]
+  - name: DataScientistAgent
+    role: ML Engineer
+    description: Implements ML modules (XGBoost, EfficientNet, LSTM) and local LLM orchestration.
+    tools: [run_command, python]
+
+phases:
+  - id: phase_0
+    name: User Identity & Security
+    description: Secure Login/Signup gateway tied to a unique Username.
+    frames: 5
+  - id: phase_1
+    name: Pre-Sowing & Planning
+    description: Strategic decision-making and modern farm design (XGBoost for N-P-K, Vertical Farming, Intercropping, Subsidies).
+    frames: 10
+  - id: phase_2
+    name: Growth & Maintenance
+    description: Real-time monitoring, precision care, and resource sharing (Fertilizer Guide, Organic Toggle, Pest Diagnosis, Machinery Search).
+    frames: 15
+  - id: phase_3_and_4
+    name: Harvest, Quality & Sales
+    description: Post-harvest value addition and market pricing (Quality Grader, Shelf-Life Predictor, Market Pricing, Ervizhi AI Chatbot).
+    frames: 20

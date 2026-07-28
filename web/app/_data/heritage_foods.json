@@ -1,0 +1,1664 @@
+[
+  {
+    "id": "f14",
+    "englishName": "Seeraga Samba Rice",
+    "tamilName": "சீரகச் சம்பா",
+    "modernAlternative": "Basmati Rice",
+    "siddhaWisdom": "உணவே மருந்து: Aromatic, easy to digest, boosts immune system.",
+    "nutrientScore": 85,
+    "waterSavings": 2,
+    "profitMargin": "+65%",
+    "marketDemand": "Very High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 56,
+        "modern": 69
+      },
+      "fiber": {
+        "ancient": 4.5,
+        "modern": 1
+      },
+      "healthImpact": "Contains selenium which helps prevent cancer of the colon.",
+      "healthImpactEnglish": "Contains selenium which helps prevent cancer of the colon.",
+      "healthImpactTamil": "பெருங்குடல் புற்றுநோயைத் தடுக்கும் செலினியம் உள்ளது."
+    },
+    "healthBenefitTags": [
+      "Digestion",
+      "Aromatic",
+      "Immunity"
+    ],
+    "siddhaWisdomEnglish": "Aromatic, easy to digest, boosts immune system.",
+    "siddhaWisdomTamil": "உணவே மருந்து: நறுமணம், ஜீரணிக்க எளிதானது, நோய் எதிர்ப்பு சக்தியை அதிகரிக்கிறது.",
+    "modernAlternativeEnglish": "Basmati Rice",
+    "modernAlternativeTamil": "பாஸ்மதி அரிசி"
+  },
+  {
+    "id": "f15",
+    "englishName": "Vazhai (Banana)",
+    "tamilName": "வாழை",
+    "modernAlternative": "Processed Snacks",
+    "siddhaWisdom": "உணவே மருந்து: Every part is medicine. Stem removes kidney stones, flower cures ulcer.",
+    "nutrientScore": 88,
+    "waterSavings": 3,
+    "profitMargin": "+75%",
+    "marketDemand": "Very High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 51,
+        "modern": 75
+      },
+      "fiber": {
+        "ancient": 3.1,
+        "modern": 1
+      },
+      "healthImpact": "Rich in potassium, great for heart health and digestion.",
+      "healthImpactEnglish": "Rich in potassium, great for heart health and digestion.",
+      "healthImpactTamil": "பொட்டாசியம் நிறைந்தது, இதய ஆரோக்கியத்திற்கும் செரிமானத்திற்கும் சிறந்தது."
+    },
+    "healthBenefitTags": [
+      "Kidney Stones",
+      "Heart",
+      "Ulcer"
+    ],
+    "siddhaWisdomEnglish": "Every part is medicine. Stem removes kidney stones, flower cures ulcer.",
+    "siddhaWisdomTamil": "உணவே மருந்து: ஒவ்வொரு பாகமும் மருந்து. தண்டு சிறுநீரக கற்களை நீக்குகிறது, பூ புண்ணை குணப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Processed Snacks",
+    "modernAlternativeTamil": "பதப்படுத்தப்பட்ட தின்பண்டங்கள்"
+  },
+  {
+    "id": "f13",
+    "englishName": "Moongil Arisi (Bamboo Rice)",
+    "tamilName": "மூங்கில் அரிசி",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Extremely rare, clears toxic blocks, highly nutritious.",
+    "nutrientScore": 97,
+    "waterSavings": 5,
+    "profitMargin": "+80%",
+    "marketDemand": "High",
+    "riskLevel": "High",
+    "seasonalSuitability": {
+      "Jan-Mar": "Rare",
+      "Apr-Jun": "Rare",
+      "Jul-Sep": "Rare",
+      "Oct-Dec": "Rare"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 38,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 12,
+        "modern": 0.5
+      },
+      "healthImpact": "Cures joint pain, lowers cholesterol completely.",
+      "healthImpactEnglish": "Cures joint pain, lowers cholesterol completely.",
+      "healthImpactTamil": "மூட்டு வலியை குணப்படுத்துகிறது, கொலஸ்ட்ராலை முற்றிலும் குறைக்கிறது."
+    },
+    "healthBenefitTags": [
+      "Rare",
+      "Cholesterol",
+      "Joint Pain"
+    ],
+    "siddhaWisdomEnglish": "Extremely rare, clears toxic blocks, highly nutritious.",
+    "siddhaWisdomTamil": "உணவே மருந்து: மிகவும் அரிதானது, நச்சுத் தொகுதிகளை அழிக்கிறது, அதிக சத்தானது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f2",
+    "englishName": "Thinai (Foxtail Millet)",
+    "tamilName": "தினை",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Low GI, strengthens heart, improves vision, rich in iron.",
+    "nutrientScore": 85,
+    "waterSavings": 5,
+    "profitMargin": "+40%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Recommended",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 54,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 8,
+        "modern": 0.5
+      },
+      "healthImpact": "Prevents sudden sugar spikes, suitable for diabetics.",
+      "healthImpactEnglish": "Prevents sudden sugar spikes, suitable for diabetics.",
+      "healthImpactTamil": "நீரிழிவு நோயாளிகளுக்கு ஏற்றது, திடீர் சர்க்கரை கூர்மைகளைத் தடுக்கிறது."
+    },
+    "healthBenefitTags": [
+      "Diabetes",
+      "Heart",
+      "Iron"
+    ],
+    "siddhaWisdomEnglish": "Low GI, strengthens heart, improves vision, rich in iron.",
+    "siddhaWisdomTamil": "உணவே மருந்து: குறைந்த ஜி.ஐ., இதயத்தை பலப்படுத்துகிறது, பார்வையை மேம்படுத்துகிறது, இரும்புச்சத்து நிறைந்துள்ளது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f3",
+    "englishName": "Kambu (Pearl Millet)",
+    "tamilName": "கம்பு",
+    "modernAlternative": "Wheat/White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Body cooling, builds muscle, excellent for stamina.",
+    "nutrientScore": 90,
+    "waterSavings": 4,
+    "profitMargin": "+30%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 55,
+        "modern": 70
+      },
+      "fiber": {
+        "ancient": 11,
+        "modern": 1.2
+      },
+      "healthImpact": "Keeps body hydrated and cool during summer.",
+      "healthImpactEnglish": "Keeps body hydrated and cool during summer.",
+      "healthImpactTamil": "கோடையில் உடலை நீரேற்றமாகவும் குளிர்ச்சியாகவும் வைத்திருக்கும்."
+    },
+    "healthBenefitTags": [
+      "Cooling",
+      "Stamina",
+      "Protein"
+    ],
+    "siddhaWisdomEnglish": "Body cooling, builds muscle, excellent for stamina.",
+    "siddhaWisdomTamil": "உணவே மருந்து: உடல் குளிர்ச்சி, தசையை வளர்க்கிறது, சகிப்புத்தன்மைக்கு சிறந்தது.",
+    "modernAlternativeEnglish": "Wheat/White Rice",
+    "modernAlternativeTamil": "கோதுமை/வெள்ளை அரிசி"
+  },
+  {
+    "id": "f5",
+    "englishName": "Kuthiraivali (Barnyard Millet)",
+    "tamilName": "குதிரைவாலி",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Six times more nutritious than wheat, excellent for diabetics.",
+    "nutrientScore": 88,
+    "waterSavings": 5,
+    "profitMargin": "+45%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 50,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 10,
+        "modern": 0.5
+      },
+      "healthImpact": "Lowest carbohydrate content, acts as an antioxidant.",
+      "healthImpactEnglish": "Lowest carbohydrate content, acts as an antioxidant.",
+      "healthImpactTamil": "குறைந்த கார்போஹைட்ரேட் உள்ளடக்கம், ஆக்ஸிஜனேற்றியாக செயல்படுகிறது."
+    },
+    "healthBenefitTags": [
+      "Diabetes",
+      "Antioxidants",
+      "Low Carb"
+    ],
+    "siddhaWisdomEnglish": "Six times more nutritious than wheat, excellent for diabetics.",
+    "siddhaWisdomTamil": "உணவே மருந்து: கோதுமையை விட ஆறு மடங்கு சத்து, சர்க்கரை நோயாளிகளுக்கு சிறந்தது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f6",
+    "englishName": "Kezhvaragu (Finger Millet / Ragi)",
+    "tamilName": "கேழ்வரகு",
+    "modernAlternative": "Wheat/White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Extremely high in calcium, builds strong bones, traditional weaning food.",
+    "nutrientScore": 96,
+    "waterSavings": 4,
+    "profitMargin": "+25%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 59,
+        "modern": 70
+      },
+      "fiber": {
+        "ancient": 11.5,
+        "modern": 1.2
+      },
+      "healthImpact": "Highest calcium content among all grains. Best for bone health.",
+      "healthImpactEnglish": "Highest calcium content among all grains. Best for bone health.",
+      "healthImpactTamil": "அனைத்து தானியங்களிலும் அதிக கால்சியம் உள்ளடக்கம். எலும்பு ஆரோக்கியத்திற்கு சிறந்தது."
+    },
+    "healthBenefitTags": [
+      "Calcium",
+      "Bone Health",
+      "Iron"
+    ],
+    "siddhaWisdomEnglish": "Extremely high in calcium, builds strong bones, traditional weaning food.",
+    "siddhaWisdomTamil": "உணவே மருந்து: கால்சியம் மிகவும் அதிகமாக உள்ளது, வலுவான எலும்புகளை உருவாக்குகிறது, பாரம்பரிய பாலூட்டும் உணவு.",
+    "modernAlternativeEnglish": "Wheat/White Rice",
+    "modernAlternativeTamil": "கோதுமை/வெள்ளை அரிசி"
+  },
+  {
+    "id": "f7",
+    "englishName": "Cholam (Sorghum)",
+    "tamilName": "சோளம்",
+    "modernAlternative": "Corn/Wheat",
+    "siddhaWisdom": "உணவே மருந்து: Improves digestion, boosts energy levels, gluten-free.",
+    "nutrientScore": 86,
+    "waterSavings": 4,
+    "profitMargin": "+20%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Recommended",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 62,
+        "modern": 70
+      },
+      "fiber": {
+        "ancient": 6,
+        "modern": 2
+      },
+      "healthImpact": "Packed with B-vitamins, provides sustained energy.",
+      "healthImpactEnglish": "Packed with B-vitamins, provides sustained energy.",
+      "healthImpactTamil": "பி-வைட்டமின்களால் நிரம்பியுள்ளது, நீடித்த ஆற்றலை வழங்குகிறது."
+    },
+    "healthBenefitTags": [
+      "Energy",
+      "Digestion",
+      "Gluten-Free"
+    ],
+    "siddhaWisdomEnglish": "Improves digestion, boosts energy levels, gluten-free.",
+    "siddhaWisdomTamil": "உணவே மருந்து: செரிமானத்தை மேம்படுத்துகிறது, ஆற்றல் மட்டங்களை அதிகரிக்கிறது, பசையம் இல்லாதது.",
+    "modernAlternativeEnglish": "Corn/Wheat",
+    "modernAlternativeTamil": "சோளம்/கோதுமை"
+  },
+  {
+    "id": "f9",
+    "englishName": "Mappillai Samba Rice",
+    "tamilName": "மாப்பிள்ளை சம்பா",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Enhances stamina and male fertility, rich in iron and zinc.",
+    "nutrientScore": 92,
+    "waterSavings": 2,
+    "profitMargin": "+50%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 50,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 6.8,
+        "modern": 0.5
+      },
+      "healthImpact": "Improves immunity and hemoglobin levels rapidly.",
+      "healthImpactEnglish": "Improves immunity and hemoglobin levels rapidly.",
+      "healthImpactTamil": "நோய் எதிர்ப்பு சக்தி மற்றும் ஹீமோகுளோபின் அளவை விரைவாக மேம்படுத்துகிறது."
+    },
+    "healthBenefitTags": [
+      "Stamina",
+      "Immunity",
+      "Hemoglobin"
+    ],
+    "siddhaWisdomEnglish": "Enhances stamina and male fertility, rich in iron and zinc.",
+    "siddhaWisdomTamil": "உணவே மருந்து: இரும்பு மற்றும் துத்தநாகம் நிறைந்த ஆண்களின் கருவுறுதலையும் வலிமையையும் அதிகரிக்கிறது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f11",
+    "englishName": "Poongar Rice",
+    "tamilName": "பூங்கார்",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Highly beneficial for pregnant women, resolves hormonal issues.",
+    "nutrientScore": 90,
+    "waterSavings": 4,
+    "profitMargin": "+45%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Moderate",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 50,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 5,
+        "modern": 0.5
+      },
+      "healthImpact": "Increases hemoglobin, ensures normal delivery.",
+      "healthImpactEnglish": "Increases hemoglobin, ensures normal delivery.",
+      "healthImpactTamil": "ஹீமோகுளோபின் அதிகரிக்கிறது, சாதாரண பிரசவத்தை உறுதி செய்கிறது."
+    },
+    "healthBenefitTags": [
+      "Pregnancy",
+      "Hormones",
+      "Hemoglobin"
+    ],
+    "siddhaWisdomEnglish": "Highly beneficial for pregnant women, resolves hormonal issues.",
+    "siddhaWisdomTamil": "உணவே மருந்து: கர்ப்பிணிப் பெண்களுக்கு மிகவும் நன்மை பயக்கும், ஹார்மோன் பிரச்சினைகளை தீர்க்கிறது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f12",
+    "englishName": "Kattuyanam Rice",
+    "tamilName": "காட்டுயானம்",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Controls diabetes completely, gives strength like a wild elephant.",
+    "nutrientScore": 93,
+    "waterSavings": 3,
+    "profitMargin": "+55%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 40,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 8,
+        "modern": 0.5
+      },
+      "healthImpact": "Best for controlling blood sugar and fighting arthritis.",
+      "healthImpactEnglish": "Best for controlling blood sugar and fighting arthritis.",
+      "healthImpactTamil": "இரத்த சர்க்கரையை கட்டுப்படுத்தவும், கீல்வாதத்தை எதிர்த்துப் போராடவும் சிறந்தது."
+    },
+    "healthBenefitTags": [
+      "Diabetes",
+      "Arthritis",
+      "Strength"
+    ],
+    "siddhaWisdomEnglish": "Controls diabetes completely, gives strength like a wild elephant.",
+    "siddhaWisdomTamil": "உணவே மருந்து: நீரிழிவை முற்றிலும் கட்டுப்படுத்தும், காட்டு யானை போல் வலிமை தரும்.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f16",
+    "englishName": "Murungai (Moringa)",
+    "tamilName": "முருங்கை",
+    "modernAlternative": "Synthetic Multivitamins",
+    "siddhaWisdom": "உணவே மருந்து: Miracle tree. Cures 300 diseases, boosts immunity, purifies blood.",
+    "nutrientScore": 99,
+    "waterSavings": 5,
+    "profitMargin": "+85%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Moderate"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 30,
+        "modern": 80
+      },
+      "fiber": {
+        "ancient": 9,
+        "modern": 0
+      },
+      "healthImpact": "Incredible source of iron, calcium, and vitamin C.",
+      "healthImpactEnglish": "Incredible source of iron, calcium, and vitamin C.",
+      "healthImpactTamil": "இரும்பு, கால்சியம் மற்றும் வைட்டமின் சி ஆகியவற்றின் நம்பமுடியாத ஆதாரம்."
+    },
+    "healthBenefitTags": [
+      "Immunity",
+      "Iron",
+      "Vitamins"
+    ],
+    "siddhaWisdomEnglish": "Miracle tree. Cures 300 diseases, boosts immunity, purifies blood.",
+    "siddhaWisdomTamil": "உணவே மருந்து: அதிசய மரம். 300 நோய்களை குணப்படுத்துகிறது, நோய் எதிர்ப்பு சக்தியை அதிகரிக்கிறது, இரத்தத்தை சுத்தப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Synthetic Multivitamins",
+    "modernAlternativeTamil": "செயற்கை மல்டிவைட்டமின்கள்"
+  },
+  {
+    "id": "f17",
+    "englishName": "Nelli (Amla)",
+    "tamilName": "நெல்லி",
+    "modernAlternative": "Vitamin C Tablets",
+    "siddhaWisdom": "உணவே மருந்து: Divine fruit. Slows aging, highly rich in Vitamin C, balances tridoshas.",
+    "nutrientScore": 95,
+    "waterSavings": 4,
+    "profitMargin": "+65%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 15,
+        "modern": 65
+      },
+      "fiber": {
+        "ancient": 4.3,
+        "modern": 0
+      },
+      "healthImpact": "Boosts immunity, excellent for hair and skin health.",
+      "healthImpactEnglish": "Boosts immunity, excellent for hair and skin health.",
+      "healthImpactTamil": "நோய் எதிர்ப்பு சக்தியை அதிகரிக்கிறது, முடி மற்றும் தோல் ஆரோக்கியத்திற்கு சிறந்தது."
+    },
+    "healthBenefitTags": [
+      "Anti-aging",
+      "Vitamin C",
+      "Hair Health"
+    ],
+    "siddhaWisdomEnglish": "Divine fruit. Slows aging, highly rich in Vitamin C, balances tridoshas.",
+    "siddhaWisdomTamil": "உணவே மருந்து: தெய்வீக பழம். முதுமையை குறைக்கிறது, வைட்டமின் சி அதிகம் நிறைந்துள்ளது, திரிதோஷங்களை சமன் செய்கிறது.",
+    "modernAlternativeEnglish": "Vitamin C Tablets",
+    "modernAlternativeTamil": "வைட்டமின் சி மாத்திரைகள்"
+  },
+  {
+    "id": "f19",
+    "englishName": "Kullakar Rice",
+    "tamilName": "குள்ளக்கார்",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Highly resistant to pests, builds immunity.",
+    "nutrientScore": 88,
+    "waterSavings": 4,
+    "profitMargin": "+45%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Moderate",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 45,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 6,
+        "modern": 0.5
+      },
+      "healthImpact": "Highly resistant to pests, builds immunity.",
+      "healthImpactEnglish": "Highly resistant to pests, builds immunity.",
+      "healthImpactTamil": "பூச்சிகளை மிகவும் எதிர்க்கும், நோய் எதிர்ப்பு சக்தியை உருவாக்குகிறது."
+    },
+    "healthBenefitTags": [
+      "Immunity",
+      "Pest Resistant"
+    ],
+    "siddhaWisdomEnglish": "Highly resistant to pests, builds immunity.",
+    "siddhaWisdomTamil": "உணவே மருந்து: பூச்சிகளை மிகவும் எதிர்க்கும், நோய் எதிர்ப்பு சக்தியை உருவாக்குகிறது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f20",
+    "englishName": "Kuzhiyadichan Rice",
+    "tamilName": "குழியடிச்சான்",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Ideal for lactating mothers, thrives in dry lands.",
+    "nutrientScore": 89,
+    "waterSavings": 5,
+    "profitMargin": "+50%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 48,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 5.5,
+        "modern": 0.5
+      },
+      "healthImpact": "Ideal for lactating mothers, thrives in dry lands.",
+      "healthImpactEnglish": "Ideal for lactating mothers, thrives in dry lands.",
+      "healthImpactTamil": "பாலூட்டும் தாய்மார்களுக்கு ஏற்றது, வறண்ட நிலங்களில் செழித்து வளரும்."
+    },
+    "healthBenefitTags": [
+      "Lactation",
+      "Drought Resistant"
+    ],
+    "siddhaWisdomEnglish": "Ideal for lactating mothers, thrives in dry lands.",
+    "siddhaWisdomTamil": "உணவே மருந்து: பாலூட்டும் தாய்மார்களுக்கு ஏற்றது, வறண்ட நிலங்களில் செழித்து வளரும்.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f21",
+    "englishName": "Thooyamalli Rice",
+    "tamilName": "தூயமல்லி",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Pure white like jasmine, strengthens internal organs.",
+    "nutrientScore": 90,
+    "waterSavings": 3,
+    "profitMargin": "+60%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 52,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 5,
+        "modern": 0.5
+      },
+      "healthImpact": "Strengthens internal organs and nerve systems.",
+      "healthImpactEnglish": "Strengthens internal organs and nerve systems.",
+      "healthImpactTamil": "உள் உறுப்புகள் மற்றும் நரம்பு மண்டலங்களை பலப்படுத்துகிறது."
+    },
+    "healthBenefitTags": [
+      "Internal Organs",
+      "Nerve Strength"
+    ],
+    "siddhaWisdomEnglish": "Pure white like jasmine, strengthens internal organs.",
+    "siddhaWisdomTamil": "உணவே மருந்து: மல்லிகைப்பூ போன்ற தூய வெள்ளை, உள்ளுறுப்புகளை பலப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f23",
+    "englishName": "Ottadam Rice",
+    "tamilName": "ஒட்டடம்",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Very tall variety, excellent management tool for diabetes.",
+    "nutrientScore": 91,
+    "waterSavings": 3,
+    "profitMargin": "+55%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 44,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 6.5,
+        "modern": 0.5
+      },
+      "healthImpact": "Excellent management tool for diabetes.",
+      "healthImpactEnglish": "Excellent management tool for diabetes.",
+      "healthImpactTamil": "நீரிழிவு நோய்க்கான சிறந்த மேலாண்மை கருவி."
+    },
+    "healthBenefitTags": [
+      "Diabetes",
+      "Tall Variety"
+    ],
+    "siddhaWisdomEnglish": "Very tall variety, excellent management tool for diabetes.",
+    "siddhaWisdomTamil": "உணவே மருந்து: மிக உயரமான வகை, நீரிழிவு நோய்க்கான சிறந்த மேலாண்மை கருவி.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f24",
+    "englishName": "Sivappu Kavuni Rice",
+    "tamilName": "சிவப்பு கவுனி",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Rich in iron and vitamin B12.",
+    "nutrientScore": 94,
+    "waterSavings": 3,
+    "profitMargin": "+70%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Moderate",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 46,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 6,
+        "modern": 0.5
+      },
+      "healthImpact": "Provides abundant iron and B12 for red blood cells.",
+      "healthImpactEnglish": "Provides abundant iron and B12 for red blood cells.",
+      "healthImpactTamil": "இரத்த சிவப்பணுக்களுக்கு ஏராளமான இரும்புச்சத்து மற்றும் பி12 ஐ வழங்குகிறது."
+    },
+    "healthBenefitTags": [
+      "Iron",
+      "Vitamin B12"
+    ],
+    "siddhaWisdomEnglish": "Rich in iron and vitamin B12.",
+    "siddhaWisdomTamil": "உணவே மருந்து: இரும்புச்சத்து மற்றும் வைட்டமின் பி12 நிறைந்தது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f25",
+    "englishName": "Browntop Millet (Thinaipul)",
+    "tamilName": "தினைப்புல்",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Ultimate source of dietary fiber for gut detox.",
+    "nutrientScore": 93,
+    "waterSavings": 5,
+    "profitMargin": "+60%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 45,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 12.5,
+        "modern": 0.5
+      },
+      "healthImpact": "Excellent for gut detox and digestion.",
+      "healthImpactEnglish": "Excellent for gut detox and digestion.",
+      "healthImpactTamil": "குடல் நச்சு மற்றும் செரிமானத்திற்கு சிறந்தது."
+    },
+    "healthBenefitTags": [
+      "Dietary Fiber",
+      "Gut Detox"
+    ],
+    "siddhaWisdomEnglish": "Ultimate source of dietary fiber for gut detox.",
+    "siddhaWisdomTamil": "உணவே மருந்து: குடல் நச்சுக்கான உணவு நார்ச்சத்தின் இறுதி ஆதாரம்.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f27",
+    "englishName": "Green Gram (Paasi Payaru)",
+    "tamilName": "பாசிப் பயறு",
+    "modernAlternative": "Processed Protein",
+    "siddhaWisdom": "உணவே மருந்து: High quality vegetable protein, easily digestible.",
+    "nutrientScore": 88,
+    "waterSavings": 3,
+    "profitMargin": "+35%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Moderate"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 38,
+        "modern": 65
+      },
+      "fiber": {
+        "ancient": 7.6,
+        "modern": 2
+      },
+      "healthImpact": "Highly digestible protein for muscle building.",
+      "healthImpactEnglish": "Highly digestible protein for muscle building.",
+      "healthImpactTamil": "தசைகளை உருவாக்குவதற்கு அதிக செரிமான புரதம்."
+    },
+    "healthBenefitTags": [
+      "Protein",
+      "Digestion"
+    ],
+    "siddhaWisdomEnglish": "High quality vegetable protein, easily digestible.",
+    "siddhaWisdomTamil": "உணவே மருந்து: உயர்தர காய்கறி புரதம், எளிதில் ஜீரணிக்கக்கூடியது.",
+    "modernAlternativeEnglish": "Processed Protein",
+    "modernAlternativeTamil": "பதப்படுத்தப்பட்ட புரதம்"
+  },
+  {
+    "id": "f28",
+    "englishName": "Black Gram (Uzhundhu)",
+    "tamilName": "உளுந்து",
+    "modernAlternative": "Refined Flour",
+    "siddhaWisdom": "உணவே மருந்து: Strengthens hip bones, base of traditional reproductive care.",
+    "nutrientScore": 92,
+    "waterSavings": 3,
+    "profitMargin": "+45%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 43,
+        "modern": 70
+      },
+      "fiber": {
+        "ancient": 10,
+        "modern": 1
+      },
+      "healthImpact": "Excellent for bone strength and reproductive health.",
+      "healthImpactEnglish": "Excellent for bone strength and reproductive health.",
+      "healthImpactTamil": "எலும்பு வலிமை மற்றும் இனப்பெருக்க ஆரோக்கியத்திற்கு சிறந்தது."
+    },
+    "healthBenefitTags": [
+      "Bone Strength",
+      "Reproductive Care"
+    ],
+    "siddhaWisdomEnglish": "Strengthens hip bones, base of traditional reproductive care.",
+    "siddhaWisdomTamil": "உணவே மருந்து: இடுப்பு எலும்புகளை பலப்படுத்துகிறது, பாரம்பரிய இனப்பெருக்க கவனிப்பின் அடிப்படை.",
+    "modernAlternativeEnglish": "Refined Flour",
+    "modernAlternativeTamil": "சுத்திகரிக்கப்பட்ட மாவு"
+  },
+  {
+    "id": "f31",
+    "englishName": "Chickpeas (Kondakadalai)",
+    "tamilName": "கொண்டக்கடலை",
+    "modernAlternative": "Processed Meats",
+    "siddhaWisdom": "உணவே மருந்து: Lean muscle building blocks, sustains fullness.",
+    "nutrientScore": 91,
+    "waterSavings": 4,
+    "profitMargin": "+50%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 28,
+        "modern": 75
+      },
+      "fiber": {
+        "ancient": 12,
+        "modern": 1
+      },
+      "healthImpact": "Great for lean muscle and sustained energy.",
+      "healthImpactEnglish": "Great for lean muscle and sustained energy.",
+      "healthImpactTamil": "மெலிந்த தசை மற்றும் நீடித்த ஆற்றலுக்கு சிறந்தது."
+    },
+    "healthBenefitTags": [
+      "Lean Muscle",
+      "Sustained Energy"
+    ],
+    "siddhaWisdomEnglish": "Lean muscle building blocks, sustains fullness.",
+    "siddhaWisdomTamil": "உணவே மருந்து: மெலிந்த தசையை கட்டமைக்கும் தொகுதிகள், முழுமையை நிலைநிறுத்துகிறது.",
+    "modernAlternativeEnglish": "Processed Meats",
+    "modernAlternativeTamil": "பதப்படுத்தப்பட்ட இறைச்சிகள்"
+  },
+  {
+    "id": "f32",
+    "englishName": "Pigeon Pea (Thovarai)",
+    "tamilName": "துவரை",
+    "modernAlternative": "Processed Proteins",
+    "siddhaWisdom": "உணவே மருந்து: Base amino acid source for daily energy balance.",
+    "nutrientScore": 90,
+    "waterSavings": 3,
+    "profitMargin": "+45%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Moderate"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 35,
+        "modern": 65
+      },
+      "fiber": {
+        "ancient": 9,
+        "modern": 2
+      },
+      "healthImpact": "Base amino acid source for daily energy.",
+      "healthImpactEnglish": "Base amino acid source for daily energy.",
+      "healthImpactTamil": "தினசரி ஆற்றலுக்கான அடிப்படை அமினோ அமிலம்."
+    },
+    "healthBenefitTags": [
+      "Amino Acids",
+      "Energy Balance"
+    ],
+    "siddhaWisdomEnglish": "Base amino acid source for daily energy balance.",
+    "siddhaWisdomTamil": "உணவே மருந்து: தினசரி ஆற்றல் சமநிலைக்கான அடிப்படை அமினோ அமிலம்.",
+    "modernAlternativeEnglish": "Processed Proteins",
+    "modernAlternativeTamil": "பதப்படுத்தப்பட்ட புரதங்கள்"
+  },
+  {
+    "id": "f33",
+    "englishName": "Sesame Seeds (Ellu)",
+    "tamilName": "எள்ளு",
+    "modernAlternative": "Refined Oils",
+    "siddhaWisdom": "உணவே மருந்து: Calcium powerhouse, improves hair health and skin tone.",
+    "nutrientScore": 95,
+    "waterSavings": 5,
+    "profitMargin": "+70%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Moderate",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 25,
+        "modern": 80
+      },
+      "fiber": {
+        "ancient": 11,
+        "modern": 0
+      },
+      "healthImpact": "Rich in calcium, promotes hair and skin health.",
+      "healthImpactEnglish": "Rich in calcium, promotes hair and skin health.",
+      "healthImpactTamil": "கால்சியம் நிறைந்தது, முடி மற்றும் தோல் ஆரோக்கியத்தை மேம்படுத்துகிறது."
+    },
+    "healthBenefitTags": [
+      "Calcium",
+      "Hair Health",
+      "Skin Tone"
+    ],
+    "siddhaWisdomEnglish": "Calcium powerhouse, improves hair health and skin tone.",
+    "siddhaWisdomTamil": "உணவே மருந்து: கால்சியம் பவர்ஹவுஸ், முடி ஆரோக்கியம் மற்றும் தோல் நிறத்தை மேம்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Refined Oils",
+    "modernAlternativeTamil": "சுத்திகரிக்கப்பட்ட எண்ணெய்கள்"
+  },
+  {
+    "id": "f34",
+    "englishName": "Peanut / Groundnut (Verkadalai)",
+    "tamilName": "வேர்க்கடலை",
+    "modernAlternative": "Unhealthy Snacks",
+    "siddhaWisdom": "உணவே மருந்து: Resveratrol source for long-term cardiovascular health.",
+    "nutrientScore": 93,
+    "waterSavings": 4,
+    "profitMargin": "+60%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Moderate"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 14,
+        "modern": 70
+      },
+      "fiber": {
+        "ancient": 8.5,
+        "modern": 1
+      },
+      "healthImpact": "Supports long-term cardiovascular health.",
+      "healthImpactEnglish": "Supports long-term cardiovascular health.",
+      "healthImpactTamil": "நீண்ட கால இருதய ஆரோக்கியத்தை ஆதரிக்கிறது."
+    },
+    "healthBenefitTags": [
+      "Cardiovascular",
+      "Resveratrol"
+    ],
+    "siddhaWisdomEnglish": "Resveratrol source for long-term cardiovascular health.",
+    "siddhaWisdomTamil": "உணவே மருந்து: நீண்ட கால இருதய ஆரோக்கியத்திற்கான ரெஸ்வெராட்ரோல் மூலமாகும்.",
+    "modernAlternativeEnglish": "Unhealthy Snacks",
+    "modernAlternativeTamil": "ஆரோக்கியமற்ற தின்பண்டங்கள்"
+  },
+  {
+    "id": "f_new_1",
+    "englishName": "Mudakathan Keerai (Balloon Vine)",
+    "tamilName": "முடக்கத்தான் கீரை",
+    "modernAlternative": "Painkillers / Supplements",
+    "siddhaWisdom": "உணவே மருந்து: Removes uric acid from joints, cures severe arthritis and joint pains.",
+    "nutrientScore": 92,
+    "waterSavings": 5,
+    "profitMargin": "+60%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 30,
+        "modern": 0
+      },
+      "fiber": {
+        "ancient": 8,
+        "modern": 0
+      },
+      "healthImpact": "Significantly improves joint mobility and reduces inflammation.",
+      "healthImpactEnglish": "Significantly improves joint mobility and reduces inflammation.",
+      "healthImpactTamil": "மூட்டு இயக்கத்தை கணிசமாக மேம்படுத்துகிறது மற்றும் வீக்கத்தைக் குறைக்கிறது."
+    },
+    "healthBenefitTags": [
+      "Joint Pain",
+      "Arthritis",
+      "Anti-inflammatory"
+    ],
+    "siddhaWisdomEnglish": "Removes uric acid from joints, cures severe arthritis and joint pains.",
+    "siddhaWisdomTamil": "உணவே மருந்து: மூட்டுகளில் உள்ள யூரிக் அமிலத்தை நீக்குகிறது, கடுமையான மூட்டுவலி மற்றும் மூட்டு வலிகளை குணப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Painkillers / Supplements",
+    "modernAlternativeTamil": "வலி நிவாரணிகள் / சப்ளிமெண்ட்ஸ்"
+  },
+  {
+    "id": "f_new_6",
+    "englishName": "Kichili Samba Rice",
+    "tamilName": "கிச்சிலி சம்பா",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Gives a unique shine to the skin, builds immunity and muscle strength.",
+    "nutrientScore": 88,
+    "waterSavings": 3,
+    "profitMargin": "+40%",
+    "marketDemand": "High",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 50,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 5,
+        "modern": 0.5
+      },
+      "healthImpact": "Easily digestible, strengthens body, good for glowing skin.",
+      "healthImpactEnglish": "Easily digestible, strengthens body, good for glowing skin.",
+      "healthImpactTamil": "எளிதில் ஜீரணமாகும், உடலை பலப்படுத்துகிறது, பளபளப்பான சருமத்திற்கு நல்லது."
+    },
+    "healthBenefitTags": [
+      "Skin Health",
+      "Immunity"
+    ],
+    "siddhaWisdomEnglish": "Gives a unique shine to the skin, builds immunity and muscle strength.",
+    "siddhaWisdomTamil": "உணவே மருந்து: சருமத்திற்கு தனித்துவமான பிரகாசத்தை அளிக்கிறது, நோய் எதிர்ப்பு சக்தி மற்றும் தசை வலிமையை உருவாக்குகிறது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f10",
+    "englishName": "Karuppu Kavuni Rice",
+    "tamilName": "கருப்பு கவுனி",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Emperor's rice, rich in antioxidants, anti-aging, cures chronic ailments.",
+    "nutrientScore": 95,
+    "waterSavings": 3,
+    "profitMargin": "+60%",
+    "marketDemand": "High",
+    "riskLevel": "Medium",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 42,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 4.9,
+        "modern": 0.5
+      },
+      "healthImpact": "Prevents cancer cell growth, reverses diabetes.",
+      "healthImpactEnglish": "Prevents cancer cell growth, reverses diabetes.",
+      "healthImpactTamil": "புற்றுநோய் செல் வளர்ச்சியைத் தடுக்கிறது, நீரிழிவு நோயை மாற்றுகிறது."
+    },
+    "healthBenefitTags": [
+      "Anti-aging",
+      "Diabetes",
+      "Antioxidants"
+    ],
+    "siddhaWisdomEnglish": "Emperor's rice, rich in antioxidants, anti-aging, cures chronic ailments.",
+    "siddhaWisdomTamil": "உணவே மருந்து: பேரரசர் அரிசி, ஆன்டிஆக்ஸிடன்ட்கள் நிறைந்த, வயதான எதிர்ப்பு, நாள்பட்ட நோய்களை குணப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f18",
+    "englishName": "Pappali (Papaya)",
+    "tamilName": "பப்பாளி",
+    "modernAlternative": "Processed Sugary Fruits",
+    "siddhaWisdom": "உணவே மருந்து: Cleanses stomach, improves vision, leaf extract cures dengue.",
+    "nutrientScore": 89,
+    "waterSavings": 4,
+    "profitMargin": "+70%",
+    "marketDemand": "High",
+    "riskLevel": "Medium",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 60,
+        "modern": 75
+      },
+      "fiber": {
+        "ancient": 2.2,
+        "modern": 1
+      },
+      "healthImpact": "Aids digestion and significantly boosts blood platelet count.",
+      "healthImpactEnglish": "Aids digestion and significantly boosts blood platelet count.",
+      "healthImpactTamil": "செரிமானத்திற்கு உதவுகிறது மற்றும் இரத்த பிளேட்லெட் எண்ணிக்கையை கணிசமாக அதிகரிக்கிறது."
+    },
+    "healthBenefitTags": [
+      "Digestion",
+      "Vision",
+      "Platelets"
+    ],
+    "siddhaWisdomEnglish": "Cleanses stomach, improves vision, leaf extract cures dengue.",
+    "siddhaWisdomTamil": "உணவே மருந்து: வயிற்றை சுத்தப்படுத்துகிறது, பார்வை அதிகரிக்கிறது, இலைச்சாறு டெங்குவை குணப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Processed Sugary Fruits",
+    "modernAlternativeTamil": "பதப்படுத்தப்பட்ட சர்க்கரை பழங்கள்"
+  },
+  {
+    "id": "f1",
+    "englishName": "Varagu (Kodo Millet)",
+    "tamilName": "வரகு",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Highly drought resistant, purifies blood, reduces joint pains.",
+    "nutrientScore": 82,
+    "waterSavings": 5,
+    "profitMargin": "+35%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Recommended"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 52,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 9,
+        "modern": 0.5
+      },
+      "healthImpact": "Aids in weight management and blood purification.",
+      "healthImpactEnglish": "Aids in weight management and blood purification.",
+      "healthImpactTamil": "எடை மேலாண்மை மற்றும் இரத்த சுத்திகரிப்புக்கு உதவுகிறது."
+    },
+    "healthBenefitTags": [
+      "Weight Loss",
+      "Blood Purification",
+      "Joint Pain"
+    ],
+    "siddhaWisdomEnglish": "Highly drought resistant, purifies blood, reduces joint pains.",
+    "siddhaWisdomTamil": "உணவே மருந்து: அதிக வறட்சியை எதிர்க்கும், இரத்தத்தை சுத்திகரிக்கும், மூட்டு வலிகளை குறைக்கிறது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f4",
+    "englishName": "Samai (Little Millet)",
+    "tamilName": "சாமை",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Rich in fiber and iron, cures anemia and stomach disorders.",
+    "nutrientScore": 84,
+    "waterSavings": 5,
+    "profitMargin": "+35%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Moderate"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 52,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 7.6,
+        "modern": 0.5
+      },
+      "healthImpact": "Excellent for women's health and curing reproductive issues.",
+      "healthImpactEnglish": "Excellent for women's health and curing reproductive issues.",
+      "healthImpactTamil": "பெண்களின் ஆரோக்கியத்திற்கும், இனப்பெருக்க பிரச்சனைகளை குணப்படுத்துவதற்கும் சிறந்தது."
+    },
+    "healthBenefitTags": [
+      "Anemia",
+      "Digestion",
+      "Women's Health"
+    ],
+    "siddhaWisdomEnglish": "Rich in fiber and iron, cures anemia and stomach disorders.",
+    "siddhaWisdomTamil": "உணவே மருந்து: நார்ச்சத்து மற்றும் இரும்புச்சத்து நிறைந்தது, இரத்த சோகை மற்றும் வயிற்று கோளாறுகளை குணப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f8",
+    "englishName": "Panivaragu (Proso Millet)",
+    "tamilName": "பனிவரகு",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Strengthens nervous system, beneficial for pellagra.",
+    "nutrientScore": 83,
+    "waterSavings": 5,
+    "profitMargin": "+30%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Moderate"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 55,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 8,
+        "modern": 0.5
+      },
+      "healthImpact": "Rich in lecithin, which supports the neural health.",
+      "healthImpactEnglish": "Rich in lecithin, which supports the neural health.",
+      "healthImpactTamil": "லெசித்தின் நிறைந்தது, இது நரம்பு மண்டலத்தின் ஆரோக்கியத்தை ஆதரிக்கிறது."
+    },
+    "healthBenefitTags": [
+      "Nerves",
+      "Pellagra",
+      "Lecithin"
+    ],
+    "siddhaWisdomEnglish": "Strengthens nervous system, beneficial for pellagra.",
+    "siddhaWisdomTamil": "உணவே மருந்து: நரம்பு மண்டலத்தை பலப்படுத்துகிறது, பெல்லாக்ராவுக்கு நன்மை பயக்கும்.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f22",
+    "englishName": "Karunkuruvai Rice",
+    "tamilName": "கருங்குறுவை",
+    "modernAlternative": "Polished White Rice",
+    "siddhaWisdom": "உணவே மருந்து: Traditional antidote used to treat skin ailments.",
+    "nutrientScore": 92,
+    "waterSavings": 4,
+    "profitMargin": "+65%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Moderate",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 42,
+        "modern": 73
+      },
+      "fiber": {
+        "ancient": 7,
+        "modern": 0.5
+      },
+      "healthImpact": "Treats skin ailments and acts as a traditional antidote.",
+      "healthImpactEnglish": "Treats skin ailments and acts as a traditional antidote.",
+      "healthImpactTamil": "தோல் நோய்களுக்கு சிகிச்சையளிக்கிறது மற்றும் பாரம்பரிய மாற்று மருந்தாக செயல்படுகிறது."
+    },
+    "healthBenefitTags": [
+      "Skin Ailments",
+      "Antidote"
+    ],
+    "siddhaWisdomEnglish": "Traditional antidote used to treat skin ailments.",
+    "siddhaWisdomTamil": "உணவே மருந்து: தோல் நோய்களுக்கு சிகிச்சையளிக்கப் பயன்படுத்தப்படும் பாரம்பரிய மாற்று மருந்து.",
+    "modernAlternativeEnglish": "Polished White Rice",
+    "modernAlternativeTamil": "பாலிஷ் செய்யப்பட்ட வெள்ளை அரிசி"
+  },
+  {
+    "id": "f26",
+    "englishName": "Horse Gram (Kollu)",
+    "tamilName": "கொள்ளு",
+    "modernAlternative": "Processed Snacks",
+    "siddhaWisdom": "உணவே மருந்து: Burns excess fat, relieves respiratory issues like asthma.",
+    "nutrientScore": 90,
+    "waterSavings": 5,
+    "profitMargin": "+40%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 32,
+        "modern": 75
+      },
+      "fiber": {
+        "ancient": 8,
+        "modern": 1
+      },
+      "healthImpact": "Reduces excess fat and helps with asthma.",
+      "healthImpactEnglish": "Reduces excess fat and helps with asthma.",
+      "healthImpactTamil": "அதிகப்படியான கொழுப்பைக் குறைக்கிறது மற்றும் ஆஸ்துமாவுக்கு உதவுகிறது."
+    },
+    "healthBenefitTags": [
+      "Weight Loss",
+      "Asthma"
+    ],
+    "siddhaWisdomEnglish": "Burns excess fat, relieves respiratory issues like asthma.",
+    "siddhaWisdomTamil": "உணவே மருந்து: அதிகப்படியான கொழுப்பை எரிக்கிறது, ஆஸ்துமா போன்ற சுவாச பிரச்சனைகளை நீக்குகிறது.",
+    "modernAlternativeEnglish": "Processed Snacks",
+    "modernAlternativeTamil": "பதப்படுத்தப்பட்ட தின்பண்டங்கள்"
+  },
+  {
+    "id": "f29",
+    "englishName": "Cowpea (Thattapayaru)",
+    "tamilName": "தட்டப்பயறு",
+    "modernAlternative": "Processed Foods",
+    "siddhaWisdom": "உணவே மருந்து: Rich in plant protein and dietary fibers.",
+    "nutrientScore": 87,
+    "waterSavings": 4,
+    "profitMargin": "+40%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 40,
+        "modern": 65
+      },
+      "fiber": {
+        "ancient": 8,
+        "modern": 1
+      },
+      "healthImpact": "Provides essential plant protein and fiber.",
+      "healthImpactEnglish": "Provides essential plant protein and fiber.",
+      "healthImpactTamil": "அத்தியாவசிய தாவர புரதம் மற்றும் நார்ச்சத்து வழங்குகிறது."
+    },
+    "healthBenefitTags": [
+      "Plant Protein",
+      "Dietary Fiber"
+    ],
+    "siddhaWisdomEnglish": "Rich in plant protein and dietary fibers.",
+    "siddhaWisdomTamil": "உணவே மருந்து: தாவர புரதம் மற்றும் உணவு நார்ச்சத்து நிறைந்தது.",
+    "modernAlternativeEnglish": "Processed Foods",
+    "modernAlternativeTamil": "பதப்படுத்தப்பட்ட உணவுகள்"
+  },
+  {
+    "id": "f30",
+    "englishName": "Field Beans (Mochai Kottai)",
+    "tamilName": "மொச்சைக்கொட்டை",
+    "modernAlternative": "Canned Beans",
+    "siddhaWisdom": "உணவே மருந்து: High zinc content, improves metabolic immunity.",
+    "nutrientScore": 89,
+    "waterSavings": 3,
+    "profitMargin": "+35%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Moderate"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 42,
+        "modern": 60
+      },
+      "fiber": {
+        "ancient": 7,
+        "modern": 2
+      },
+      "healthImpact": "Improves metabolic immunity with high zinc.",
+      "healthImpactEnglish": "Improves metabolic immunity with high zinc.",
+      "healthImpactTamil": "அதிக துத்தநாகத்துடன் வளர்சிதை மாற்ற நோய் எதிர்ப்பு சக்தியை மேம்படுத்துகிறது."
+    },
+    "healthBenefitTags": [
+      "Zinc",
+      "Metabolic Immunity"
+    ],
+    "siddhaWisdomEnglish": "High zinc content, improves metabolic immunity.",
+    "siddhaWisdomTamil": "உணவே மருந்து: அதிக துத்தநாக உள்ளடக்கம், வளர்சிதை மாற்ற நோய் எதிர்ப்பு சக்தியை மேம்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Canned Beans",
+    "modernAlternativeTamil": "பதிவு செய்யப்பட்ட பீன்ஸ்"
+  },
+  {
+    "id": "f36",
+    "englishName": "Wood Apple Seeds (Vilvedhai)",
+    "tamilName": "விளவெதை",
+    "modernAlternative": "Antacids",
+    "siddhaWisdom": "உணவே மருந்து: Ancient digestive stabilizer and gut cooling agent.",
+    "nutrientScore": 88,
+    "waterSavings": 4,
+    "profitMargin": "+40%",
+    "marketDemand": "Low",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Moderate",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 30,
+        "modern": 65
+      },
+      "fiber": {
+        "ancient": 9,
+        "modern": 0
+      },
+      "healthImpact": "Stabilizes digestion and cools the gut.",
+      "healthImpactEnglish": "Stabilizes digestion and cools the gut.",
+      "healthImpactTamil": "செரிமானத்தை உறுதிப்படுத்துகிறது மற்றும் குடலை குளிர்விக்கிறது."
+    },
+    "healthBenefitTags": [
+      "Digestive Stabilizer",
+      "Gut Cooling"
+    ],
+    "siddhaWisdomEnglish": "Ancient digestive stabilizer and gut cooling agent.",
+    "siddhaWisdomTamil": "உணவே மருந்து: பண்டைய செரிமான நிலைப்படுத்தி மற்றும் குடல் குளிர்விக்கும் முகவர்.",
+    "modernAlternativeEnglish": "Antacids",
+    "modernAlternativeTamil": "ஆன்டாசிட்கள்"
+  },
+  {
+    "id": "f_new_2",
+    "englishName": "Thoothuvalai (Purple Fruited Pea Eggplant)",
+    "tamilName": "தூதுவளை",
+    "modernAlternative": "Cough Syrups",
+    "siddhaWisdom": "உணவே மருந்து: Powerful remedy for chronic cold, asthma, and respiratory blockages.",
+    "nutrientScore": 94,
+    "waterSavings": 4,
+    "profitMargin": "+55%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Good",
+      "Jul-Sep": "Moderate",
+      "Oct-Dec": "Best"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 25,
+        "modern": 0
+      },
+      "fiber": {
+        "ancient": 7,
+        "modern": 0
+      },
+      "healthImpact": "Clears lungs and enhances respiratory function.",
+      "healthImpactEnglish": "Clears lungs and enhances respiratory function.",
+      "healthImpactTamil": "நுரையீரலை சுத்தம் செய்து சுவாச செயல்பாட்டை மேம்படுத்துகிறது."
+    },
+    "healthBenefitTags": [
+      "Asthma",
+      "Cold",
+      "Respiratory"
+    ],
+    "siddhaWisdomEnglish": "Powerful remedy for chronic cold, asthma, and respiratory blockages.",
+    "siddhaWisdomTamil": "உணவே மருந்து: நாள்பட்ட ஜலதோஷம், ஆஸ்துமா மற்றும் சுவாச அடைப்புகளுக்கு சக்திவாய்ந்த தீர்வு.",
+    "modernAlternativeEnglish": "Cough Syrups",
+    "modernAlternativeTamil": "இருமல் சிரப்ஸ்"
+  },
+  {
+    "id": "f_new_4",
+    "englishName": "Pirandai (Adam's Wrapper / Veldt Grape)",
+    "tamilName": "பிரண்டை",
+    "modernAlternative": "Calcium Supplements",
+    "siddhaWisdom": "உணவே மருந்து: Connects broken bones, cures indigestion and piles.",
+    "nutrientScore": 95,
+    "waterSavings": 5,
+    "profitMargin": "+50%",
+    "marketDemand": "Medium",
+    "riskLevel": "Low",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Best",
+      "Jul-Sep": "Good",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 20,
+        "modern": 0
+      },
+      "fiber": {
+        "ancient": 6,
+        "modern": 0
+      },
+      "healthImpact": "Rich in natural calcium and bone-healing compounds.",
+      "healthImpactEnglish": "Rich in natural calcium and bone-healing compounds.",
+      "healthImpactTamil": "இயற்கையான கால்சியம் மற்றும் எலும்புகளை குணப்படுத்தும் சேர்மங்கள் நிறைந்தது."
+    },
+    "healthBenefitTags": [
+      "Bone Healing",
+      "Calcium",
+      "Digestion"
+    ],
+    "siddhaWisdomEnglish": "Connects broken bones, cures indigestion and piles.",
+    "siddhaWisdomTamil": "உணவே மருந்து: உடைந்த எலும்புகளை இணைக்கிறது, அஜீரணம் மற்றும் பைல்ஸை குணப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Calcium Supplements",
+    "modernAlternativeTamil": "கால்சியம் சப்ளிமெண்ட்ஸ்"
+  },
+  {
+    "id": "f35",
+    "englishName": "Castor Seeds (Aamanakku)",
+    "tamilName": "ஆமணக்கு",
+    "modernAlternative": "Chemical Laxatives",
+    "siddhaWisdom": "உணவே மருந்து: Traditional intense cooling purgative and skin lubricant.",
+    "nutrientScore": 85,
+    "waterSavings": 5,
+    "profitMargin": "+50%",
+    "marketDemand": "Medium",
+    "riskLevel": "Medium",
+    "seasonalSuitability": {
+      "Jan-Mar": "Good",
+      "Apr-Jun": "Moderate",
+      "Jul-Sep": "Best",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 10,
+        "modern": 60
+      },
+      "fiber": {
+        "ancient": 10,
+        "modern": 0
+      },
+      "healthImpact": "Intense cooling purgative and skin lubricant.",
+      "healthImpactEnglish": "Intense cooling purgative and skin lubricant.",
+      "healthImpactTamil": "தீவிர குளிர்ச்சி சுத்திகரிப்பு மற்றும் தோல் மசகு எண்ணெய்."
+    },
+    "healthBenefitTags": [
+      "Cooling",
+      "Purgative",
+      "Skin"
+    ],
+    "siddhaWisdomEnglish": "Traditional intense cooling purgative and skin lubricant.",
+    "siddhaWisdomTamil": "உணவே மருந்து: பாரம்பரிய தீவிர குளிரூட்டும் சுத்திகரிப்பு மற்றும் தோல் மசகு எண்ணெய்.",
+    "modernAlternativeEnglish": "Chemical Laxatives",
+    "modernAlternativeTamil": "இரசாயன மலமிளக்கிகள்"
+  },
+  {
+    "id": "f_new_3",
+    "englishName": "Panam Kizhangu (Palmyra Sprout)",
+    "tamilName": "பனங்கிழங்கு",
+    "modernAlternative": "Processed Fiber Foods",
+    "siddhaWisdom": "உணவே மருந்து: Extremely high in fiber, cools the body, strengthens uterus.",
+    "nutrientScore": 90,
+    "waterSavings": 5,
+    "profitMargin": "+70%",
+    "marketDemand": "Rare",
+    "riskLevel": "High",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Rare",
+      "Jul-Sep": "Rare",
+      "Oct-Dec": "Rare"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 45,
+        "modern": 80
+      },
+      "fiber": {
+        "ancient": 15,
+        "modern": 2
+      },
+      "healthImpact": "Relieves constipation instantly, provides long-lasting energy.",
+      "healthImpactEnglish": "Relieves constipation instantly, provides long-lasting energy.",
+      "healthImpactTamil": "மலச்சிக்கலை உடனடியாக நீக்கி, நீண்ட நாள் ஆற்றலை அளிக்கிறது."
+    },
+    "healthBenefitTags": [
+      "Fiber",
+      "Cooling",
+      "Uterus Strength"
+    ],
+    "siddhaWisdomEnglish": "Extremely high in fiber, cools the body, strengthens uterus.",
+    "siddhaWisdomTamil": "உணவே மருந்து: நார்ச்சத்து மிக அதிகமாக உள்ளது, உடலை குளிர்விக்கிறது, கருப்பையை பலப்படுத்துகிறது.",
+    "modernAlternativeEnglish": "Processed Fiber Foods",
+    "modernAlternativeTamil": "பதப்படுத்தப்பட்ட ஃபைபர் உணவுகள்"
+  },
+  {
+    "id": "f_new_5",
+    "englishName": "Siru Kizhangu (Chinese Potato)",
+    "tamilName": "சிறுகிழங்கு",
+    "modernAlternative": "Regular Potatoes",
+    "siddhaWisdom": "உணவே மருந்து: Superior traditional tuber, does not increase blood sugar like regular potatoes.",
+    "nutrientScore": 86,
+    "waterSavings": 4,
+    "profitMargin": "+45%",
+    "marketDemand": "Rare",
+    "riskLevel": "Medium",
+    "seasonalSuitability": {
+      "Jan-Mar": "Best",
+      "Apr-Jun": "Rare",
+      "Jul-Sep": "Rare",
+      "Oct-Dec": "Good"
+    },
+    "comparison": {
+      "giIndex": {
+        "ancient": 55,
+        "modern": 85
+      },
+      "fiber": {
+        "ancient": 4.5,
+        "modern": 1.5
+      },
+      "healthImpact": "Better glycemic control compared to modern tubers.",
+      "healthImpactEnglish": "Better glycemic control compared to modern tubers.",
+      "healthImpactTamil": "நவீன கிழங்குகளுடன் ஒப்பிடும்போது சிறந்த கிளைசெமிக் கட்டுப்பாடு."
+    },
+    "healthBenefitTags": [
+      "Tuber",
+      "Low Sugar Spike"
+    ],
+    "siddhaWisdomEnglish": "Superior traditional tuber, does not increase blood sugar like regular potatoes.",
+    "siddhaWisdomTamil": "உணவே மருந்து: உயர்ந்த பாரம்பரிய கிழங்கு, வழக்கமான உருளைக்கிழங்கு போல் இரத்த சர்க்கரையை அதிகரிக்காது.",
+    "modernAlternativeEnglish": "Regular Potatoes",
+    "modernAlternativeTamil": "வழக்கமான உருளைக்கிழங்கு"
+  }
+]

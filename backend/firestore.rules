@@ -1,0 +1,37 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Users ──────────────────────────────────────────────────────
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      // Writes go through Admin SDK only (server-side)
+      allow write: if false;
+    }
+
+
+    // ── Crop Scans ─────────────────────────────────────────────────
+    match /crop_scans/{scanId} {
+      allow read: if request.auth != null && resource.data.user_id == request.auth.uid;
+      allow write: if false;
+    }
+
+    // ── Farms ──────────────────────────────────────────────────────
+    match /farms/{farmId} {
+      allow read: if request.auth != null && resource.data.user_id == request.auth.uid;
+      allow write: if false;
+    }
+
+    // ── Rentals (public read, admin-only write) ────────────────────
+    match /rentals/{rentalId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+
+    // ── Notifications ──────────────────────────────────────────────
+    match /notifications/{notifId} {
+      allow read: if request.auth != null && resource.data.user_id == request.auth.uid;
+      allow write: if false;
+    }
+  }
+}

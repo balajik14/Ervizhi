@@ -1,0 +1,45 @@
+# ── Environment & Secrets ────────────────────────────────────────
+.env
+.env.*
+!.env.example
+firebase-service-account.json
+
+# ── Python ───────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+*.whl
+.venv/
+venv/
+env/
+
+# ── Databases ────────────────────────────────────────────────────
+*.db
+*.sqlite3
+
+# ── IDE ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ───────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Node (frontend) ─────────────────────────────────────────────
+node_modules/
+
+# ── ML model artifacts (large files — track via Git LFS or exclude)
+# Uncomment if not using Git LFS:
+# *.json model files
+# *.pkl
+# *.pth
+# *.pt

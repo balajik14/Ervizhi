@@ -1,0 +1,4367 @@
+[
+  {
+    "crop": "Paddy",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "UAE",
+    "driver": "Consistent demand from South Asian expats for raw rice varieties.",
+    "classification": "General",
+    "tamil_name": "\u0ba8\u0bc6\u0bb2\u0bcd (Nel)"
+  },
+  {
+    "crop": "Carrot",
+    "seasonality": "Winter/Spring",
+    "demand": "High",
+    "country": "UK",
+    "driver": "Organic and sustainable farming trend driving high vegetable imports.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bc7\u0bb0\u0b9f\u0bcd (Carrot)"
+  },
+  {
+    "crop": "Beetroot",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Growing health consciousness and demand for natural food coloring agents.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bc0\u0b9f\u0bcd\u0bb0\u0bc2\u0b9f\u0bcd (Beetroot)"
+  },
+  {
+    "crop": "Wheat",
+    "seasonality": "Winter/Spring",
+    "demand": "High",
+    "country": "Indonesia",
+    "driver": "Large purchases from Argentina to offset reduced Ukraine trade.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Godhumai)"
+  },
+  {
+    "crop": "Rice (Non-Basmati)",
+    "seasonality": "Kharif/Annual",
+    "demand": "Very High",
+    "country": "Philippines",
+    "driver": "Filling domestic production shortfalls; record global utilization.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Spring/Summer",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "Trade diversion and inventory buildup amid US-China policy shifts.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Palm Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "Reached mid-2022 price highs; biodiesel mandates in other regions.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Ennai)"
+  },
+  {
+    "crop": "Corn (Maize)",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Turkey",
+    "driver": "Livestock feed demand rising; supply surplus weighing on prices.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sugar",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Brazil (Internal)",
+    "driver": "Increased diversion to ethanol due to high crude oil prices.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bb0\u0bc8 (Sarkarai)"
+  },
+  {
+    "crop": "Coffee (Arabica)",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "Germany",
+    "driver": "Shift toward certified/traceable beans; prices softening from 2025.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Lentils (Pulses)",
+    "seasonality": "Rabi/Spring",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Essential protein staple; domestic crop shortfall in early 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Barley",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Saudi Arabia",
+    "driver": "Traditional feed source demand; reaction to rising fertilizer costs.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0bb0\u0bcd\u0bb2\u0bbf (Barley)"
+  },
+  {
+    "crop": "Cashews",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "European plant-based milk and healthy snack sector expansion.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf (Mundiri)"
+  },
+  {
+    "crop": "Tomato",
+    "seasonality": "Off-season",
+    "demand": "Moderate",
+    "country": "UK",
+    "driver": "Dependence on Moroccan/Spanish imports due to energy-cost glasshouse cuts.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0b95\u0bcd\u0b95\u0bbe\u0bb3\u0bbf (Thakkali)"
+  },
+  {
+    "crop": "Cotton",
+    "seasonality": "Summer/Fall",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "Higher mill use forecast for 2026; textile sector recovery.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf (Paruthi)"
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Black Sea",
+    "driver": "Continued supply tightness; high demand for raw energy-related materials.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Basmati Rice",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Saudi Arabia",
+    "driver": "Strong preference for premium long-grain varieties in Middle East.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0b9a\u0bc1\u0bae\u0ba4\u0bbf \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Basumathi Arisi)"
+  },
+  {
+    "crop": "Mangoes (Alphonso)",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "USA",
+    "driver": "Improved cold-chain infrastructure allowing more Indian exports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi",
+    "demand": "Stable",
+    "country": "UAE",
+    "driver": "Critical food security staple; reliance on Nashik (India) production.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Tea (Darjeeling)",
+    "seasonality": "Spring/Summer",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Growing trend for \"swicy\" (sweet/spicy) and functional beverages.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Alternative feed grain used to bypass specific corn tariffs.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Rapeseed Oil",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "EU",
+    "driver": "Significant rise in global energy prices boosting biofuel interest.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bb2\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Kadala Ennay)"
+  },
+  {
+    "crop": "Joha Rice",
+    "seasonality": "Kharif",
+    "demand": "Emerging",
+    "country": "UK",
+    "driver": "First GI-tagged exports from Assam; niche specialty market.",
+    "classification": "General",
+    "tamil_name": "\u0b9c\u0bcb\u0bb9\u0bbe \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Joha Arisi)"
+  },
+  {
+    "crop": "Grapes",
+    "seasonality": "Spring",
+    "demand": "Increasing",
+    "country": "Netherlands",
+    "driver": "Thompson Seedless demand for the European snack market.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bbf\u0bb0\u0bbe\u0b9f\u0bcd\u0b9a\u0bc8 (Thiratchai)"
+  },
+  {
+    "crop": "Wheat (SRW)",
+    "seasonality": "Winter",
+    "demand": "High",
+    "country": "Egypt",
+    "driver": "Shift toward Black Sea origins (Russia/Kazakhstan) due to competitive pricing.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA (Internal)",
+    "driver": "Massive domestic crush demand driven by supportive biofuel policy mandates.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Soya Ennai)"
+  },
+  {
+    "crop": "Cotton",
+    "seasonality": "Summer/Fall",
+    "demand": "High",
+    "country": "Pakistan",
+    "driver": "Mill use recovery following 2025 production shortfalls; stock rebuilding.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf (Paruthi)"
+  },
+  {
+    "crop": "Rapeseed Oil",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "Canada (Export)",
+    "driver": "Global feedstock demand surging amid elevated fossil fuel energy prices.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bb2\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Kadala Ennay)"
+  },
+  {
+    "crop": "Chickpeas",
+    "seasonality": "Rabi/Spring",
+    "demand": "High",
+    "country": "Pakistan",
+    "driver": "Rising popularity of plant-based proteins; domestic crop yield concerns.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0b9f\u0bb2\u0bc8 (Kondai Kadalai)"
+  },
+  {
+    "crop": "Oranges",
+    "seasonality": "Winter/Spring",
+    "demand": "Stable",
+    "country": "EU",
+    "driver": "Steady demand despite high logistics costs; Moroccan supply dominance.",
+    "classification": "General",
+    "tamil_name": "\u0b86\u0bb0\u0b9e\u0bcd\u0b9a\u0bc1 (Arainju)"
+  },
+  {
+    "crop": "Rubber",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Rebound in automotive manufacturing and tire replacement cycles.",
+    "classification": "General",
+    "tamil_name": "\u0bb0\u0baa\u0bcd\u0baa\u0bb0\u0bcd (Rabbar)"
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Continued wellness trend; demand for natural immunity boosters/extracts.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Used as a key corn substitute to mitigate US-China trade tension tariffs.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Bananas",
+    "seasonality": "Year-round",
+    "demand": "Stable",
+    "country": "Russia",
+    "driver": "Strategic food import agreements with Ecuador and India.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bbe\u0bb4\u0bc8 (Vazhai)"
+  },
+  {
+    "crop": "Sesame Seeds",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "South Korea",
+    "driver": "High industrial use for oils and culinary applications in East Asia.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd (Ellu)"
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi",
+    "demand": "Very High",
+    "country": "UAE",
+    "driver": "Middle East food security focus; dependence on Indian export clusters.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Joha Rice",
+    "seasonality": "Kharif",
+    "demand": "Emerging",
+    "country": "UK",
+    "driver": "Growth in \"GI-tagged\" specialty grains for the gourmet retail sector.",
+    "classification": "General",
+    "tamil_name": "\u0b9c\u0bcb\u0bb9\u0bbe \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Joha Arisi)"
+  },
+  {
+    "crop": "Mustard Seeds",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Food processing demand; shift toward non-GMO oilseed sources.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bc1\u0b95\u0bc1 (Kadugu)"
+  },
+  {
+    "crop": "Millets",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "Global",
+    "driver": "Expansion of \"Smart Food\" sector; demand for gluten-free ancient grains.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bbf\u0bb1\u0bc1 \u0ba4\u0bbe\u0ba9\u0bbf\u0baf\u0b99\u0bcd\u0b95\u0bb3\u0bcd (Siru Thaniyangal)"
+  },
+  {
+    "crop": "Apples",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "India (Import)",
+    "driver": "Rising middle-class demand for premium Washington and Polish varieties.",
+    "classification": "General",
+    "tamil_name": "\u0b86\u0baa\u0bcd\u0baa\u0bbf\u0bb3\u0bcd (Apple)"
+  },
+  {
+    "crop": "Oats",
+    "seasonality": "Spring",
+    "demand": "Stable",
+    "country": "USA",
+    "driver": "Popularity of oat-based milk alternatives remains a steady driver.",
+    "classification": "General",
+    "tamil_name": "\u0b93\u0b9f\u0bcd\u0bb8\u0bcd (Oats)"
+  },
+  {
+    "crop": "Chilli (Dry)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "China",
+    "driver": "Massive demand for Guntur varieties for industrial spice processing.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cocoa",
+    "seasonality": "Year-round",
+    "demand": "Moderate",
+    "country": "Switzerland",
+    "driver": "Prices normalizing after 2025 highs; supply chain sustainability focus.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0b95\u0bcb (Koko)"
+  },
+  {
+    "crop": "Grapes",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Netherlands",
+    "driver": "Major European hub for re-exporting off-season Southern Hemisphere fruit.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bbf\u0bb0\u0bbe\u0b9f\u0bcd\u0b9a\u0bc8 (Thiratchai)"
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "Black Sea supply tightness forcing diversification to Argentine sunflower oil.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Wheat (HRW)",
+    "seasonality": "Spring",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "Record 120 MMT domestic output expected, but high state procurement to bolster reserves.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sugar",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "Global",
+    "driver": "Brazil diverting massive sugarcane volumes to Ethanol due to high crude oil prices.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bb0\u0bc8 (Sarkarai)"
+  },
+  {
+    "crop": "Cocoa",
+    "seasonality": "Year-round",
+    "demand": "Moderate",
+    "country": "European Union",
+    "driver": "Grindings down 7.8% as record-high 2025 prices finally cool consumer demand.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0b95\u0bcb (Koko)"
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "Shifting reliance toward Brazil (178 MMT crop) to bypass potential US trade hurdles.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Corn (Maize)",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "Japan",
+    "driver": "Consistent livestock feed demand, though US corn is facing heavy price pressure.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Avocados",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Netherlands",
+    "driver": "EU hub for \"near-zero residue\" fruit; demand for biological pest-control produce.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0bb5\u0bcb\u0b95\u0bbe\u0b9f\u0bcb (Avocado)"
+  },
+  {
+    "crop": "Rubber (Natural)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Automotive sector rebound and tire replacement cycles driving Southeast Asian imports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Chickpeas",
+    "seasonality": "Rabi",
+    "demand": "Very High",
+    "country": "Pakistan",
+    "driver": "Shift to affordable plant protein; domestic yield concerns supporting import spikes.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0b9f\u0bb2\u0bc8 (Kondai Kadalai)"
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "Black Sea supply uncertainty forcing a shift to Argentine and domestic alternatives.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Millets",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "Global",
+    "driver": "\"Smart Food\" trend; Gluten-free ancient grains gaining shelf space in Western retail.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bbf\u0bb1\u0bc1 \u0ba4\u0bbe\u0ba9\u0bbf\u0baf\u0b99\u0bcd\u0b95\u0bb3\u0bcd (Siru Thaniyangal)"
+  },
+  {
+    "crop": "Cotton",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "Pakistan",
+    "driver": "Rebuilding textile inventories after 2025 production shortfalls; mill use rising.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf (Paruthi)"
+  },
+  {
+    "crop": "Oranges",
+    "seasonality": "Winter/Spring",
+    "demand": "Stable",
+    "country": "EU",
+    "driver": "Reliance on Moroccan supply as energy costs impact Spanish greenhouse production.",
+    "classification": "General",
+    "tamil_name": "\u0b86\u0bb0\u0b9e\u0bcd\u0b9a\u0bc1 (Arainju)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Primary substitute for corn in animal feed to manage trade tariff exposure.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi",
+    "demand": "Very High",
+    "country": "UAE",
+    "driver": "Focus on food security; critical reliance on Maharashtra (India) export clusters.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Potatoes",
+    "seasonality": "Autumn",
+    "demand": "Increasing",
+    "country": "Mexico",
+    "driver": "Industrial processing growth; demand for specific US/EU seed potato varieties.",
+    "classification": "General",
+    "tamil_name": "\u0b89\u0bb0\u0bc1\u0bb3\u0bc8\u0b95\u0bcd\u0b95\u0bbf\u0bb4\u0b99\u0bcd\u0b95\u0bc1 (Urulaik Kilangu)"
+  },
+  {
+    "crop": "Rapeseed Oil",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "Canada (Exp)",
+    "driver": "Surge in biodiesel demand across North America as a fossil fuel alternative.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bb2\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Kadala Ennay)"
+  },
+  {
+    "crop": "Apples",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "India",
+    "driver": "Growing middle-class preference for premium Washington and Polish varieties.",
+    "classification": "General",
+    "tamil_name": "\u0b86\u0baa\u0bcd\u0baa\u0bbf\u0bb3\u0bcd (Apple)"
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Functional food trend; massive growth in turmeric-based wellness beverages.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Tea (Specialty)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Demand for \"swicy\" (sweet-spicy) blends and traceable Darjeeling/Assam tea.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sesame Seeds",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "South Korea",
+    "driver": "East Asian culinary demand remains high; supply focused from African exporters.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd (Ellu)"
+  },
+  {
+    "crop": "Lentils",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Essential protein staple; domestic crop under-performing in Q2 2026.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1 (Paruppu)"
+  },
+  {
+    "crop": "Rice (Broken)",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "West Africa",
+    "driver": "Demand for affordable calories; filling gaps from higher-priced whole grain rice.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Wheat (Milling)",
+    "seasonality": "Winter/Spring",
+    "demand": "High",
+    "country": "Egypt",
+    "driver": "Shift toward Russian/Kazakh origins to manage 1.5M ton supply rise.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Corn (Yellow)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Indonesia",
+    "driver": "Domestic production forecast raised; shift toward local feed for poultry.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Meal",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Algeria",
+    "driver": "Expanding domestic crush and poultry sector demand in North Africa.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0bae\u0bc0\u0bb2\u0bcd (Soya Meal)"
+  },
+  {
+    "crop": "Basmati Rice",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Saudi Arabia",
+    "driver": "Middle East demand remains robust despite a 3% dip in general rice prices.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0b9a\u0bc1\u0bae\u0ba4\u0bbf \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Basumathi Arisi)"
+  },
+  {
+    "crop": "Sugar (Raw)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Indonesia",
+    "driver": "Multi-year low prices driving massive industrial food processing expansion.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rubber (TSR20)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Automotive rebound in East Asia driving Thai and Vietnamese exports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Durum Wheat",
+    "seasonality": "Spring/Summer",
+    "demand": "Stable",
+    "country": "Italy",
+    "driver": "Tightening margins; shift toward fertilizer-intensive crop alternatives.",
+    "classification": "General",
+    "tamil_name": "\u0b9f\u0bc2\u0bb0\u0bae\u0bcd \u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Duram Godhumai)"
+  },
+  {
+    "crop": "Rapeseed",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "EU",
+    "driver": "Feedstock demand for biofuels surging with high European gas prices.",
+    "classification": "General",
+    "tamil_name": "\u0bb0\u0bc7\u0baa\u0bcd\u0b9a\u0bc0\u0b9f\u0bcd (Rapeseed)"
+  },
+  {
+    "crop": "Cotton (Long Staple)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Vietnam",
+    "driver": "Mill use recovery; rebuilding inventories for apparel export growth.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi/Spring",
+    "demand": "Critical",
+    "country": "UAE",
+    "driver": "Food security priority; heavy reliance on Indian \"Nashik\" crop clusters.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Utilizing sorghum to bypass US-specific corn tariffs in animal feed.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Apples (Gala)",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "India",
+    "driver": "Increasing middle-class demand for premium Washington varieties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potatoes (Seed)",
+    "seasonality": "Spring/Autumn",
+    "demand": "High",
+    "country": "Mexico",
+    "driver": "Expansion of potato chip manufacturing and high-yield seed demand.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "Increasing",
+    "country": "USA",
+    "driver": "Wellness/extract sector growth; focus on GI-tagged Nizamabad sources.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Grapes (Seedless)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Netherlands",
+    "driver": "EU redistribution hub for Southern Hemisphere (Chile/SA) fruit.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "India",
+    "driver": "Diversifying to Argentine oil due to Black Sea supply chain instability.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Millets (Pearl)",
+    "seasonality": "Kharif",
+    "demand": "Emerging",
+    "country": "Global",
+    "driver": "Rise of \"Smart Food\" and gluten-free snack demand in Western retail.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Tea (Black)",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "UK",
+    "driver": "Demand for sustainable/certified Kenyan tea amid supply fluctuations.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sesame Seeds",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "South Korea",
+    "driver": "Industrial demand for high-grade oilseeds from African exporters.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd (Ellu)"
+  },
+  {
+    "crop": "Barley (Feed)",
+    "seasonality": "Winter",
+    "demand": "Stable",
+    "country": "Saudi Arabia",
+    "driver": "Continued use as traditional livestock feed; reacting to rising fertilizer costs.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cashews",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "Surge in European plant-based milk and healthy snack manufacturing.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf (Mundiri)"
+  },
+  {
+    "crop": "Wheat (Milling)",
+    "seasonality": "Winter/Spring",
+    "demand": "High",
+    "country": "Egypt",
+    "driver": "Shift toward Russian/Kazakh origins to manage 1.5M ton supply rise.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Corn (Yellow)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Indonesia",
+    "driver": "Domestic production forecast raised; shift toward local feed for poultry.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Meal",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Algeria",
+    "driver": "Expanding domestic crush and poultry sector demand in North Africa.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0bae\u0bc0\u0bb2\u0bcd (Soya Meal)"
+  },
+  {
+    "crop": "Basmati Rice",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Saudi Arabia",
+    "driver": "Middle East demand remains robust despite a 3% dip in general rice prices.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0b9a\u0bc1\u0bae\u0ba4\u0bbf \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Basumathi Arisi)"
+  },
+  {
+    "crop": "Sugar (Raw)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Indonesia",
+    "driver": "Multi-year low prices driving massive industrial food processing expansion.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rubber (TSR20)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Automotive rebound in East Asia driving Thai and Vietnamese exports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Durum Wheat",
+    "seasonality": "Spring/Summer",
+    "demand": "Stable",
+    "country": "Italy",
+    "driver": "Tightening margins; shift toward fertilizer-intensive crop alternatives.",
+    "classification": "General",
+    "tamil_name": "\u0b9f\u0bc2\u0bb0\u0bae\u0bcd \u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Duram Godhumai)"
+  },
+  {
+    "crop": "Rapeseed",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "EU",
+    "driver": "Feedstock demand for biofuels surging with high European gas prices.",
+    "classification": "General",
+    "tamil_name": "\u0bb0\u0bc7\u0baa\u0bcd\u0b9a\u0bc0\u0b9f\u0bcd (Rapeseed)"
+  },
+  {
+    "crop": "Cotton (Long Staple)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Vietnam",
+    "driver": "Mill use recovery; rebuilding inventories for apparel export growth.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi/Spring",
+    "demand": "Critical",
+    "country": "UAE",
+    "driver": "Food security priority; heavy reliance on Indian \"Nashik\" crop clusters.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Utilizing sorghum to bypass US-specific corn tariffs in animal feed.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Apples (Gala)",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "India",
+    "driver": "Increasing middle-class demand for premium Washington varieties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potatoes (Seed)",
+    "seasonality": "Spring/Autumn",
+    "demand": "High",
+    "country": "Mexico",
+    "driver": "Expansion of potato chip manufacturing and high-yield seed demand.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "Increasing",
+    "country": "USA",
+    "driver": "Wellness/extract sector growth; focus on GI-tagged Nizamabad sources.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Grapes (Seedless)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Netherlands",
+    "driver": "EU redistribution hub for Southern Hemisphere (Chile/SA) fruit.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "India",
+    "driver": "Diversifying to Argentine oil due to Black Sea supply chain instability.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Millets (Pearl)",
+    "seasonality": "Kharif",
+    "demand": "Emerging",
+    "country": "Global",
+    "driver": "Rise of \"Smart Food\" and gluten-free snack demand in Western retail.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Tea (Black)",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "UK",
+    "driver": "Demand for sustainable/certified Kenyan tea amid supply fluctuations.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sesame Seeds",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "South Korea",
+    "driver": "Industrial demand for high-grade oilseeds from African exporters.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd (Ellu)"
+  },
+  {
+    "crop": "Barley (Feed)",
+    "seasonality": "Winter",
+    "demand": "Stable",
+    "country": "Saudi Arabia",
+    "driver": "Continued use as traditional livestock feed; reacting to rising fertilizer costs.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cashews",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "Surge in European plant-based milk and healthy snack manufacturing.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf (Mundiri)"
+  },
+  {
+    "crop": "Wheat (Milling)",
+    "seasonality": "Winter/Spring",
+    "demand": "High",
+    "country": "Egypt",
+    "driver": "Shift toward Black Sea origins (Russia/Kazakhstan) to manage a 6MMT global stock rise.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Corn (Yellow)",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "Mexico",
+    "driver": "Strong domestic demand for industrial processing; US exports remains steady.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Shifting reliance toward Brazil to bypass US trade policy uncertainties.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Palm Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "Prices at mid-2022 highs; spillover from record crude oil prices.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Ennai)"
+  },
+  {
+    "crop": "Sugar (Raw)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Indonesia",
+    "driver": "Industrial food expansion and high diversion of Brazil cane to ethanol.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Oats",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "USA",
+    "driver": "33% increase in Australian oat area forecast to meet Western health-milk demand.",
+    "classification": "General",
+    "tamil_name": "\u0b93\u0b9f\u0bcd\u0bb8\u0bcd (Oats)"
+  },
+  {
+    "crop": "Barley (Feed)",
+    "seasonality": "Winter",
+    "demand": "Stable",
+    "country": "Saudi Arabia",
+    "driver": "Transition back to traditional feed as fertilizer costs impact other grains.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cotton",
+    "seasonality": "Summer/Fall",
+    "demand": "High",
+    "country": "Vietnam",
+    "driver": "Mill use recovery; rebuilding inventories for apparel manufacturing.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf (Paruthi)"
+  },
+  {
+    "crop": "Rubber (Natural)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Automotive rebound in East Asia driving Thai and Vietnamese exports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Canola/Rapeseed",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "European Union",
+    "driver": "Massive biofuel feedstock demand due to substantially elevated energy prices.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0ba9\u0bcb\u0bb2\u0bbe/\u0b95\u0b9f\u0bb2\u0bc8 (Kanola/Kadala)"
+  },
+  {
+    "crop": "Chickpeas",
+    "seasonality": "Rabi/Spring",
+    "demand": "High",
+    "country": "Pakistan",
+    "driver": "Rising preference for plant-based proteins amid meat price volatility.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0b9f\u0bb2\u0bc8 (Kondai Kadalai)"
+  },
+  {
+    "crop": "Apples",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "India",
+    "driver": "Increasing middle-class demand for premium Washington and Polish varieties.",
+    "classification": "General",
+    "tamil_name": "\u0b86\u0baa\u0bcd\u0baa\u0bbf\u0bb3\u0bcd (Apple)"
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "Supply tightness in the Black Sea driving a shift to Argentine alternatives.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Used to bypass US-specific corn tariffs for livestock feed alternatives.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Continued wellness/functional food trend; focus on GI-tagged sources.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Cashews",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "Record Indian exports (USD 369M) fueled by European healthy snack market.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf (Mundiri)"
+  },
+  {
+    "crop": "Rice (Basmati)",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Saudi Arabia",
+    "driver": "Strong preference for premium varieties despite a 3% dip in general rice prices.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Mangoes",
+    "seasonality": "Spring/Summer",
+    "demand": "Increasing",
+    "country": "USA",
+    "driver": "Improved logistics allow for higher volume of GI-tagged Alphonso imports.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bbe\u0bae\u0bcd\u0baa\u0bb4\u0bae\u0bcd (Mam Pazham)"
+  },
+  {
+    "crop": "Lentils (Pulses)",
+    "seasonality": "Rabi/Spring",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Essential protein staple; domestic crop shortfall in early 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Grapes",
+    "seasonality": "Spring",
+    "demand": "Increasing",
+    "country": "Netherlands",
+    "driver": "Major EU hub for re-exporting off-season Southern Hemisphere fruit.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bbf\u0bb0\u0bbe\u0b9f\u0bcd\u0b9a\u0bc8 (Thiratchai)"
+  },
+  {
+    "crop": "Tomato",
+    "seasonality": "Off-season",
+    "demand": "Moderate",
+    "country": "UK",
+    "driver": "Energy costs impacting glasshouse production; reliance on Moroccan imports.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0b95\u0bcd\u0b95\u0bbe\u0bb3\u0bbf (Thakkali)"
+  },
+  {
+    "crop": "Cocoa",
+    "seasonality": "Year-round",
+    "demand": "Softening",
+    "country": "Global",
+    "driver": "7% price fall projected for 2026 as global supply finally expands.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0b95\u0bcb (Koko)"
+  },
+  {
+    "crop": "Wheat (Hard Red)",
+    "seasonality": "Winter/Spring",
+    "demand": "High",
+    "country": "Egypt",
+    "driver": "Shift toward Black Sea origins (Russia/Kazakhstan) as US prices lose competitiveness.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "China",
+    "driver": "Record imports (16 MMT in April) from Brazil to secure stocks before May trade summits.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Corn (Maize)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "Domestic Ethanol Blending Program (EBP) driving massive internal demand.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Palm Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "Price spillover from crude oil; prices hitting mid-2022 highs.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Ennai)"
+  },
+  {
+    "crop": "Sugar (Raw)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Indonesia",
+    "driver": "Industrial food expansion + high diversion of Brazilian cane to Ethanol.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cotton",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "Vietnam",
+    "driver": "Textile mill recovery; rebuilding inventories for garment export growth.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf (Paruthi)"
+  },
+  {
+    "crop": "Rubber (Natural)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Automotive rebound in East Asia driving Thai and Vietnamese exports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Coconut Oil",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Surge in \"Near-Zero Residue\" demand for premium food and wellness products.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bc7\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bcd \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Thengay Ennay)"
+  },
+  {
+    "crop": "Potato (Fresh)",
+    "seasonality": "Spring",
+    "demand": "Moderate",
+    "country": "USA",
+    "driver": "Fresh prices hitting new lows; diversion of surplus to the processing industry.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Domestic demand for biofuels surging with WTI Crude over $93.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Soya Ennai)"
+  },
+  {
+    "crop": "Cocoa",
+    "seasonality": "Year-round",
+    "demand": "Softening",
+    "country": "EU",
+    "driver": "Q1 grindings down 7.8%; high prices finally cooling European consumer demand.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0b95\u0bcb (Koko)"
+  },
+  {
+    "crop": "Coffee (Arabica)",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "Germany",
+    "driver": "Brazil 2026/27 crop revised up 17%, easing global supply concerns.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Basmati Rice",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Saudi Arabia",
+    "driver": "Middle East premium preference remains strong despite falling general rice prices.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0b9a\u0bc1\u0bae\u0ba4\u0bbf \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Basumathi Arisi)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Utilizing sorghum to bypass US-specific corn tariffs in livestock feed.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Lentils (Pulses)",
+    "seasonality": "Rabi/Spring",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Essential protein staple; domestic crop under-performing in Q2 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Wellness trend; high demand for functional extracts and natural dyes.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Cashews",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Netherlands",
+    "driver": "EU hub for plant-based milk manufacturing and healthy snack retail.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf (Mundiri)"
+  },
+  {
+    "crop": "Canola Oil",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "Canada (Export)",
+    "driver": "Global feedstock demand surging amid elevated fossil fuel energy prices.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0ba9\u0bcb\u0bb2\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Canola Ennai)"
+  },
+  {
+    "crop": "Chickpeas",
+    "seasonality": "Rabi",
+    "demand": "Very High",
+    "country": "Pakistan",
+    "driver": "Rising preference for plant protein due to volatility in local meat prices.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0b9f\u0bb2\u0bc8 (Kondai Kadalai)"
+  },
+  {
+    "crop": "Grapes",
+    "seasonality": "Spring",
+    "demand": "Increasing",
+    "country": "Netherlands",
+    "driver": "Hub for re-exporting biological-control fruits from South Africa and Chile.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bbf\u0bb0\u0bbe\u0b9f\u0bcd\u0b9a\u0bc8 (Thiratchai)"
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi",
+    "demand": "Critical",
+    "country": "UAE",
+    "driver": "Middle East food security focus; critical reliance on Indian export clusters.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Agarwood",
+    "seasonality": "Year-round",
+    "demand": "Emerging",
+    "country": "UAE",
+    "driver": "Indian North-East states expanding plantation exports for luxury perfumes.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bbf\u0bb2\u0bcd (Agil)"
+  },
+  {
+    "crop": "Wheat (Durum)",
+    "seasonality": "Spring",
+    "demand": "Moderate",
+    "country": "Italy",
+    "driver": "High fertilizer costs causing a projected drop in global planted area.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Wheat (Winter)",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Iran",
+    "driver": "Faster-than-expected pace of imports to secure stocks amid regional conflict.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Cake/Meal",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Italy",
+    "driver": "Significant recent private sales (100k MT) to support dairy sector.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b95\u0bc7\u0b95\u0bcd/\u0bae\u0bc0\u0bb2\u0bcd (Soya Kek/Meal)"
+  },
+  {
+    "crop": "Corn (Yellow)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "South Korea",
+    "driver": "Major private sales (136k MT) for delivery in MY 2025/26 livestock cycle.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rice (Indica)",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Philippines",
+    "driver": "1.6% dip in global rice trade volume tightening local food security procurement.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Coconut",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Growing demand for GI-tagged coconut water and oil from coastal India.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bc7\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bcd (Thengay)"
+  },
+  {
+    "crop": "Sandalwood",
+    "seasonality": "Perennial",
+    "demand": "High",
+    "country": "China",
+    "driver": "Expansion of luxury wood and oil exports from India\u2019s maritime states.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0ba8\u0bcd\u0ba4\u0ba9\u0bae\u0bcd (Sandhanam)"
+  },
+  {
+    "crop": "Cocoa",
+    "seasonality": "Year-round",
+    "demand": "Stable",
+    "country": "Netherlands",
+    "driver": "India capturing 2026 market share with $295M in traceable exports.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0b95\u0bcb (Koko)"
+  },
+  {
+    "crop": "Agarwood",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "UAE",
+    "driver": "North Eastern Indian plantations expanding to meet 2026 perfume demand.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bbf\u0bb2\u0bcd (Agil)"
+  },
+  {
+    "crop": "Almonds",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "Focus on hilly region production to reduce reliance on California imports.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0ba4\u0bbe\u0bae\u0bcd (Badam)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Decreasing",
+    "country": "Mexico",
+    "driver": "Lowest production in 3 decades due to persistent drought in Tamaulipas.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Sugar (Specialty)",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Specialty sugar imports reaching a multi-year high of 268k STRV.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cotton",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Pakistan",
+    "driver": "300,000-bale production increase boosting local textile mill use.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf (Paruthi)"
+  },
+  {
+    "crop": "Wheat (Spring)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "EU",
+    "driver": "Increased production (supplies up 1.5M tons) to offset Ukraine shortfalls.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Corn (White)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Colombia",
+    "driver": "New private sales (100k MT) to fill domestic grain gap in early 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cashews",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "Record Indian exports (USD 369M) targeting health-snack sector.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf (Mundiri)"
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "India",
+    "driver": "5.1% price index jump in April due to Near East conflict supply risks.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Barley",
+    "seasonality": "Winter",
+    "demand": "Stable",
+    "country": "Saudi Arabia",
+    "driver": "Maintaining traditional feed source as urea fertilizer prices hit $1,000/ton.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0bb0\u0bcd\u0bb2\u0bbf (Barley)"
+  },
+  {
+    "crop": "Mangoes (Fresh)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Global",
+    "driver": "117M tonnes of Indian fruit production supporting new 2026 trade routes.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potatoes",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Mexico",
+    "driver": "Strategic expansion of potato processing facilities for local retail.",
+    "classification": "General",
+    "tamil_name": "\u0b89\u0bb0\u0bc1\u0bb3\u0bc8\u0b95\u0bcd\u0b95\u0bbf\u0bb4\u0b99\u0bcd\u0b95\u0bc1 (Urulaik Kilangu)"
+  },
+  {
+    "crop": "Durum Wheat",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "Global",
+    "driver": "Shift toward less fertilizer-intensive crops as nitrogen costs soar.",
+    "classification": "General",
+    "tamil_name": "\u0b9f\u0bc2\u0bb0\u0bae\u0bcd \u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Duram Godhumai)"
+  },
+  {
+    "crop": "Corn (Maize)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "South Korea",
+    "driver": "Recent private sales of 136k MT to support robust livestock feed needs.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rice (Long Grain)",
+    "seasonality": "Annual",
+    "demand": "Stable",
+    "country": "Philippines",
+    "driver": "Continued import reliance to buffer against 1.6% dip in global trade volume.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Egypt",
+    "driver": "Expanding domestic crush capacity; imports raised to meet soybean meal demand.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Sugar (Beet)",
+    "seasonality": "Autumn/Winter",
+    "demand": "Softening",
+    "country": "USA",
+    "driver": "Slight production cut (32k STRV) due to lower sucrose recovery in 2026 piles.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Wheat (Milling)",
+    "seasonality": "Winter/Spring",
+    "demand": "High",
+    "country": "Morocco",
+    "driver": "Poor regional rainfall leading to 1.5M ton import surge from EU/Black Sea.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "5.1% price index jump in April; shift to Argentine oil for supply security.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Soybean Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Domestic biofuel mandates pushing soybean oil prices to 59 cents/lb.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Soya Ennai)"
+  },
+  {
+    "crop": "Cassava",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "Industrial starch demand rising as China pivots away from corn-based starch.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bb0\u0bb5\u0bb3\u0bcd\u0bb3\u0bbf \u0b95\u0bbf\u0bb4\u0b99\u0bcd\u0b95\u0bc1 (Maravalli Kilangu)"
+  },
+  {
+    "crop": "Basmati Rice",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Iran",
+    "driver": "Strategic food security procurement; consistent demand for Indian long-grain.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0b9a\u0bc1\u0bae\u0ba4\u0bbf \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Basumathi Arisi)"
+  },
+  {
+    "crop": "Lentils",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "UAE",
+    "driver": "Plant-based protein surge; focus on long-term sourcing with Indian exporters.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1 (Paruppu)"
+  },
+  {
+    "crop": "Black Pepper",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Demand for high-potency Indian Tellicherry pepper in organic food lines.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bbf\u0bb3\u0b95\u0bc1 (Milagu)"
+  },
+  {
+    "crop": "Sandalwood Oil",
+    "seasonality": "Perennial",
+    "demand": "High",
+    "country": "France",
+    "driver": "Luxury cosmetic sector growth; reliance on certified Indian maritime exports.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0ba8\u0bcd\u0ba4\u0ba9 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Sandhana Ennai)"
+  },
+  {
+    "crop": "Durum Wheat",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Italy",
+    "driver": "Tight global stocks pushing high demand for high-protein pasta wheat.",
+    "classification": "General",
+    "tamil_name": "\u0b9f\u0bc2\u0bb0\u0bae\u0bcd \u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Duram Godhumai)"
+  },
+  {
+    "crop": "Barley (Malt)",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "Specialty brewing sector growth despite overall grain import reduction goals.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cotton (Lint)",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "Pakistan",
+    "driver": "300,000-bale production increase fueling a rebound in textile mills.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Almonds",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "California shipments remaining steady despite expansion in domestic hilly crops.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0ba4\u0bbe\u0bae\u0bcd (Badam)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Decreasing",
+    "country": "Mexico",
+    "driver": "Production hitting 3-decade lows due to extreme drought in Tamaulipas.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Coconut Water",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "UK",
+    "driver": "Growth in the functional beverage market and demand for \"Pure Origin\" labels.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bc7\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bcd \u0ba8\u0bc0\u0bb0\u0bcd (Thengai Neer)"
+  },
+  {
+    "crop": "Potatoes (Seed)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Mexico",
+    "driver": "Expansion of the domestic potato chip and snack processing infrastructure.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Oranges (Valencia)",
+    "seasonality": "Winter",
+    "demand": "Stable",
+    "country": "Canada",
+    "driver": "Reliance on Florida and Mexican crops as transport logistics improve in 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rubber (TSR20)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Rebound in auto-manufacturing and high tire replacement demand in Q2.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Saffron",
+    "seasonality": "Autumn",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Growing culinary use in high-end fusion cuisine and wellness tea blends.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bc1\u0b99\u0bcd\u0b95\u0bc1\u0bae\u0baa\u0bcd\u0baa\u0bc2 (Kungumapoo)"
+  },
+  {
+    "crop": "Wheat (Soft)",
+    "seasonality": "Spring",
+    "demand": "Moderate",
+    "country": "Indonesia",
+    "driver": "Emerging as top global importer alongside Egypt to fill calorie gaps.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Meal",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Vietnam",
+    "driver": "20% YoY export growth from major suppliers to feed growing aquaculture.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0bae\u0bc0\u0bb2\u0bcd (Soya Meal)"
+  },
+  {
+    "crop": "Mangoes (Frozen)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Surge in demand for exotic fruit pulps for the European dairy industry.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Tea (Green)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Russia",
+    "driver": "Robust demand for organic green teas; shift toward direct Asian sourcing.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Corn (White)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Colombia",
+    "driver": "100k MT private sale to satisfy white corn demand for human consumption.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi",
+    "demand": "Critical",
+    "country": "UAE",
+    "driver": "Regional food security strategy; total dependence on Nashik (India) crops.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Grapes (Red)",
+    "seasonality": "Spring",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "High-end fruit market recovery; demand for seedless Australian varieties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Chickpeas",
+    "seasonality": "Rabi",
+    "demand": "Very High",
+    "country": "Pakistan",
+    "driver": "Crucial protein bridge as local meat prices remain volatile in April 2026.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0b9f\u0bb2\u0bc8 (Kondai Kadalai)"
+  },
+  {
+    "crop": "Cashews (W320)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "European plant-based milk manufacturers expanding snack product lines.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Seeds",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "Turkey",
+    "driver": "Crushing industry demand; supply volatility in Black Sea affecting prices.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0bb5\u0bbf\u0ba4\u0bc8 (Suria Kanti Vithai)"
+  },
+  {
+    "crop": "Millets",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "Global",
+    "driver": "\"Smart Food\" initiative driving awareness of climate-resilient grains.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bbf\u0bb1\u0bc1 \u0ba4\u0bbe\u0ba9\u0bbf\u0baf\u0b99\u0bcd\u0b95\u0bb3\u0bcd (Siru Thaniyangal)"
+  },
+  {
+    "crop": "Sesame Seeds",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "South Korea",
+    "driver": "Industrial oil processing demand remains high; focusing on African supply.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd (Ellu)"
+  },
+  {
+    "crop": "Dry Beans",
+    "seasonality": "Spring",
+    "demand": "Stable",
+    "country": "Brazil",
+    "driver": "Domestic consumption high; focus on sustaining soil health via rotation.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bb1\u0bc8\u0baf\u0ba9\u0bcd \u0baa\u0baf\u0bb1\u0bc1 (Varayen Payaru)"
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Pharmaceutical and wellness extract sector driving GI-tagged exports.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Pears",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "Vietnam",
+    "driver": "Emerging middle-class demand for temperate fruits in SE Asia.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bc7\u0bb0\u0bbf\u0b95\u0bcd\u0b95\u0bbe\u0baf\u0bcd (Perikay)"
+  },
+  {
+    "crop": "Rapeseed (Canola)",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "EU",
+    "driver": "Biofuel targets driving imports as crude oil remains above $95/barrel.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Peanuts",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "China",
+    "driver": "Oilseed demand remain elevated despite pivot toward grain self-sufficiency.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf \u0baa\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1 (Mundiri Paruppu)"
+  },
+  {
+    "crop": "Walnuts",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "India (Import)",
+    "driver": "High demand for premium snacks despite rising domestic production.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bcd\u0bb0\u0bc2\u0b9f\u0bcd (Akroot)"
+  },
+  {
+    "crop": "Chilli (Dry)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Thailand",
+    "driver": "Industrial processing for spice blends; reliance on Guntur (India) exports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Hops",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "USA (Export)",
+    "driver": "Global craft beer expansion driving demand for aromatic specialty varieties.",
+    "classification": "General",
+    "tamil_name": "\u0bb9\u0bbe\u0baa\u0bcd\u0bb8\u0bcd (Hops)"
+  },
+  {
+    "crop": "Strawberries",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "UK",
+    "driver": "Vertical farming expansion reducing some import reliance for off-season fruit.",
+    "classification": "General",
+    "tamil_name": "\u0bb8\u0bcd\u0b9f\u0bcd\u0bb0\u0bbe\u0baa\u0bc6\u0bb0\u0bcd\u0bb0\u0bbf (Strawberry)"
+  },
+  {
+    "crop": "Lentils (Red)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Vital protein source; imports necessary due to 2026 production shortfall.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Joha Rice",
+    "seasonality": "Kharif",
+    "demand": "Emerging",
+    "country": "USA",
+    "driver": "Boutique market growth for GI-tagged aromatic rice from Northeast India.",
+    "classification": "General",
+    "tamil_name": "\u0b9c\u0bcb\u0bb9\u0bbe \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Joha Arisi)"
+  },
+  {
+    "crop": "Wheat (SRW)",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Morocco",
+    "driver": "Regional rainfall deficit requiring 1.5 MMT in additional EU imports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rice (Jasmine)",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Record growth in Asian-fusion dining; preference for aromatic varieties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "China",
+    "driver": "Massive 16 MMT April intake from Brazil to secure supply chains.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Corn (High-Oil)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Japan",
+    "driver": "Specific demand for high-energy livestock feed for premium wagyu beef.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Palm Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "Price spillover from crude oil; prices hitting 4-year highs in Q2 2026.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Ennai)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Decreasing",
+    "country": "Mexico",
+    "driver": "Production at 3-decade lows due to extreme drought in Tamaulipas.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Cotton (Upland)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Mill use recovery; rebuilding inventories for ready-made garment exports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sugar (Cane)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Brazil (Int)",
+    "driver": "Massive internal diversion to Ethanol due to Brent crude staying >$100.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Oats",
+    "seasonality": "Spring",
+    "demand": "Stable",
+    "country": "USA",
+    "driver": "Expansion of the oat-milk sector; Australian supply filling 2026 gaps.",
+    "classification": "General",
+    "tamil_name": "\u0b93\u0b9f\u0bcd\u0bb8\u0bcd (Oats)"
+  },
+  {
+    "crop": "Cashews (W240)",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "Germany",
+    "driver": "Record Indian exports to EU driven by the healthy snacking trend.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rubber (RSS3)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Rebound in auto-manufacturing and tire replacement cycles in East Asia.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Chickpeas (Kabuli)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Pakistan",
+    "driver": "Rising preference for plant protein as local mutton prices spike.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potato (Fresh)",
+    "seasonality": "Spring",
+    "demand": "Moderate",
+    "country": "Mexico",
+    "driver": "Industrial expansion; demand for specific processing-grade varieties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Barley (Feed)",
+    "seasonality": "Winter",
+    "demand": "High",
+    "country": "Saudi Arabia",
+    "driver": "Maintaining traditional feed source as Urea prices hit $1,000/ton.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Mangoes (Kent)",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "UK",
+    "driver": "Growth in retail demand for \"Ethical & Traceable\" tropical fruit labels.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "5.1% price index jump this month; shift to Argentine supply.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Cocoa",
+    "seasonality": "Year-round",
+    "demand": "Softening",
+    "country": "Global",
+    "driver": "7% price fall projected for 2026 as African production finally stabilizes.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0b95\u0bcb (Koko)"
+  },
+  {
+    "crop": "Coffee (Robusta)",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "Vietnam (Exp)",
+    "driver": "Brazil production revised up 17%, easing global supply pressure on Robusta.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Canola Oil",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "EU",
+    "driver": "Biofuel targets driving imports; canola trading at 59 cents/lb premium.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0ba9\u0bcb\u0bb2\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Canola Ennai)"
+  },
+  {
+    "crop": "Saffron",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Functional food trend; surge in wellness teas and luxury culinary use.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bc1\u0b99\u0bcd\u0b95\u0bc1\u0bae\u0baa\u0bcd\u0baa\u0bc2 (Kungumapoo)"
+  },
+  {
+    "crop": "Joha Rice",
+    "seasonality": "Kharif",
+    "demand": "Emerging",
+    "country": "USA",
+    "driver": "Boutique market growth for GI-tagged aromatic rice from NE India.",
+    "classification": "General",
+    "tamil_name": "\u0b9c\u0bcb\u0bb9\u0bbe \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Joha Arisi)"
+  },
+  {
+    "crop": "Agarwood",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "UAE",
+    "driver": "Expansion of Indian plantations to meet luxury perfume sector demand.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bbf\u0bb2\u0bcd (Agil)"
+  },
+  {
+    "crop": "Apples (Fuji)",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "India",
+    "driver": "Premium Washington and Polish varieties capturing the middle-class market.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Lentils (Red)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Vital protein bridge due to domestic 2026 production shortfalls.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Durum Wheat",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Italy",
+    "driver": "High protein pasta-grade wheat in demand despite soaring fertilizer costs.",
+    "classification": "General",
+    "tamil_name": "\u0b9f\u0bc2\u0bb0\u0bae\u0bcd \u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Duram Godhumai)"
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Pharmaceutical extract sector driving high-curcumin content exports.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Sesame Seeds",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "South Korea",
+    "driver": "Industrial demand for high-grade oilseeds from African exporters.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd (Ellu)"
+  },
+  {
+    "crop": "Wheat (HRW)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "India (Int)",
+    "driver": "Record 120 MMT domestic harvest boosting internal food security stocks.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sandalwood",
+    "seasonality": "Perennial",
+    "demand": "High",
+    "country": "China",
+    "driver": "Demand for luxury wood and oil exports from India's maritime states.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0ba8\u0bcd\u0ba4\u0ba9\u0bae\u0bcd (Sandhanam)"
+  },
+  {
+    "crop": "Coconut Water",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "USA",
+    "driver": "\"Pure Origin\" label demand driving exports from Indian coastal clusters.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bc7\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bcd \u0ba8\u0bc0\u0bb0\u0bcd (Thengai Neer)"
+  },
+  {
+    "crop": "Millets (Ragi)",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "Global",
+    "driver": "Expansion of \"Smart Food\" sector; gluten-free snacks in Western retail.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Grapes (Seedless)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Netherlands",
+    "driver": "Major EU redistribution hub for Southern Hemisphere biological-control fruit.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Chilli (Dry)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Thailand",
+    "driver": "Industrial processing for spice blends; reliance on Guntur (India) supply.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Meal",
+    "seasonality": "Year-round",
+    "demand": "Stable",
+    "country": "Vietnam",
+    "driver": "20% YoY growth in livestock sector driving high-protein feed imports.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0bae\u0bc0\u0bb2\u0bcd (Soya Meal)"
+  },
+  {
+    "crop": "Basmati Rice",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Saudi Arabia",
+    "driver": "Middle East premium preference remains a pillar of 2026 rice trade.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0b9a\u0bc1\u0bae\u0ba4\u0bbf \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Basumathi Arisi)"
+  },
+  {
+    "crop": "Strawberries",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "UK",
+    "driver": "Vertical farming growth slightly reducing off-season import reliance.",
+    "classification": "General",
+    "tamil_name": "\u0bb8\u0bcd\u0b9f\u0bcd\u0bb0\u0bbe\u0baa\u0bc6\u0bb0\u0bcd\u0bb0\u0bbf (Strawberry)"
+  },
+  {
+    "crop": "Hops",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "USA (Exp)",
+    "driver": "Craft beer expansion globally driving demand for aroma-rich varieties.",
+    "classification": "General",
+    "tamil_name": "\u0bb9\u0bbe\u0baa\u0bcd\u0bb8\u0bcd (Hops)"
+  },
+  {
+    "crop": "Walnuts",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "India",
+    "driver": "High demand for premium snacks despite 2026 domestic crop expansion.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bcd\u0bb0\u0bc2\u0b9f\u0bcd (Akroot)"
+  },
+  {
+    "crop": "Peanuts",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "China",
+    "driver": "Oilseed demand remains elevated as China shifts away from corn starch.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf \u0baa\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1 (Mundiri Paruppu)"
+  },
+  {
+    "crop": "Black Pepper",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Organic spice lines demanding high-potency Indian Tellicherry pepper.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bbf\u0bb3\u0b95\u0bc1 (Milagu)"
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi",
+    "demand": "Critical",
+    "country": "UAE",
+    "driver": "Focus on regional food security; total reliance on Maharashtra clusters.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Pears",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "Vietnam",
+    "driver": "Rising middle-class demand for temperate fruits in Southeast Asia.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bc7\u0bb0\u0bbf\u0b95\u0bcd\u0b95\u0bbe\u0baf\u0bcd (Perikay)"
+  },
+  {
+    "crop": "Wheat (Spring)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "EU",
+    "driver": "Increased production to offset Black Sea supply chain uncertainties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA (Int)",
+    "driver": "Domestic biofuel mandates pushing prices to 59 cents per pound.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Soya Ennai)"
+  },
+  {
+    "crop": "Cassava Starch",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "China",
+    "driver": "Key corn substitute for industrial applications in the 10-year outlook.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bbe\u0bb5\u0bc1 \u0bae\u0bbe\u0bb5\u0bc1 (Mavu Mavu)"
+  },
+  {
+    "crop": "Mustard Seeds",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Shift toward non-GMO oilseeds for the European food processing sector.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bc1\u0b95\u0bc1 (Kadugu)"
+  },
+  {
+    "crop": "Wheat (SRW)",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Morocco",
+    "driver": "Regional rainfall deficit requiring 1.5 MMT in additional EU imports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rice (Jasmine)",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Record growth in Asian-fusion dining; preference for aromatic varieties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "China",
+    "driver": "Massive 16 MMT April intake from Brazil to secure supply chains.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Corn (High-Oil)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Japan",
+    "driver": "Specific demand for high-energy livestock feed for premium wagyu beef.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Palm Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "Price spillover from crude oil; prices hitting 4-year highs in Q2 2026.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Ennai)"
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Decreasing",
+    "country": "Mexico",
+    "driver": "Production at 3-decade lows due to extreme drought in Tamaulipas.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Cotton (Upland)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Mill use recovery; rebuilding inventories for ready-made garment exports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sugar (Cane)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Brazil (Int)",
+    "driver": "Massive internal diversion to Ethanol due to Brent crude staying >$100.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Oats",
+    "seasonality": "Spring",
+    "demand": "Stable",
+    "country": "USA",
+    "driver": "Expansion of the oat-milk sector; Australian supply filling 2026 gaps.",
+    "classification": "General",
+    "tamil_name": "\u0b93\u0b9f\u0bcd\u0bb8\u0bcd (Oats)"
+  },
+  {
+    "crop": "Cashews (W240)",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "Germany",
+    "driver": "Record Indian exports to EU driven by the healthy snacking trend.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rubber (RSS3)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Japan",
+    "driver": "Rebound in auto-manufacturing and tire replacement cycles in East Asia.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Chickpeas (Kabuli)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Pakistan",
+    "driver": "Rising preference for plant protein as local mutton prices spike.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potato (Fresh)",
+    "seasonality": "Spring",
+    "demand": "Moderate",
+    "country": "Mexico",
+    "driver": "Industrial expansion; demand for specific processing-grade varieties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Barley (Feed)",
+    "seasonality": "Winter",
+    "demand": "High",
+    "country": "Saudi Arabia",
+    "driver": "Maintaining traditional feed source as Urea prices hit $1,000/ton.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Mangoes (Kent)",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "UK",
+    "driver": "Growth in retail demand for \"Ethical & Traceable\" tropical fruit labels.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "5.1% price index jump this month; shift to Argentine supply.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Cocoa",
+    "seasonality": "Year-round",
+    "demand": "Softening",
+    "country": "Global",
+    "driver": "7% price fall projected for 2026 as African production finally stabilizes.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0b95\u0bcb (Koko)"
+  },
+  {
+    "crop": "Coffee (Robusta)",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "Vietnam (Exp)",
+    "driver": "Brazil production revised up 17%, easing global supply pressure on Robusta.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Canola Oil",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "EU",
+    "driver": "Biofuel targets driving imports; canola trading at 59 cents/lb premium.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0ba9\u0bcb\u0bb2\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Canola Ennai)"
+  },
+  {
+    "crop": "Saffron",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Functional food trend; surge in wellness teas and luxury culinary use.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bc1\u0b99\u0bcd\u0b95\u0bc1\u0bae\u0baa\u0bcd\u0baa\u0bc2 (Kungumapoo)"
+  },
+  {
+    "crop": "Joha Rice",
+    "seasonality": "Kharif",
+    "demand": "Emerging",
+    "country": "USA",
+    "driver": "Boutique market growth for GI-tagged aromatic rice from NE India.",
+    "classification": "General",
+    "tamil_name": "\u0b9c\u0bcb\u0bb9\u0bbe \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Joha Arisi)"
+  },
+  {
+    "crop": "Agarwood",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "UAE",
+    "driver": "Expansion of Indian plantations to meet luxury perfume sector demand.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bbf\u0bb2\u0bcd (Agil)"
+  },
+  {
+    "crop": "Apples (Fuji)",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "India",
+    "driver": "Premium Washington and Polish varieties capturing the middle-class market.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Lentils (Red)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Vital protein bridge due to domestic 2026 production shortfalls.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Durum Wheat",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Italy",
+    "driver": "High protein pasta-grade wheat in demand despite soaring fertilizer costs.",
+    "classification": "General",
+    "tamil_name": "\u0b9f\u0bc2\u0bb0\u0bae\u0bcd \u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Duram Godhumai)"
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Pharmaceutical extract sector driving high-curcumin content exports.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Sesame Seeds",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "South Korea",
+    "driver": "Industrial demand for high-grade oilseeds from African exporters.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd (Ellu)"
+  },
+  {
+    "crop": "Wheat (HRW)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "India (Int)",
+    "driver": "Record 120 MMT domestic harvest boosting internal food security stocks.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sandalwood",
+    "seasonality": "Perennial",
+    "demand": "High",
+    "country": "China",
+    "driver": "Demand for luxury wood and oil exports from India's maritime states.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0ba8\u0bcd\u0ba4\u0ba9\u0bae\u0bcd (Sandhanam)"
+  },
+  {
+    "crop": "Coconut Water",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "USA",
+    "driver": "\"Pure Origin\" label demand driving exports from Indian coastal clusters.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bc7\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bcd \u0ba8\u0bc0\u0bb0\u0bcd (Thengai Neer)"
+  },
+  {
+    "crop": "Millets (Ragi)",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "Global",
+    "driver": "Expansion of \"Smart Food\" sector; gluten-free snacks in Western retail.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Grapes (Seedless)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Netherlands",
+    "driver": "Major EU redistribution hub for Southern Hemisphere biological-control fruit.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Chilli (Dry)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Thailand",
+    "driver": "Industrial processing for spice blends; reliance on Guntur (India) supply.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Meal",
+    "seasonality": "Year-round",
+    "demand": "Stable",
+    "country": "Vietnam",
+    "driver": "20% YoY growth in livestock sector driving high-protein feed imports.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0bae\u0bc0\u0bb2\u0bcd (Soya Meal)"
+  },
+  {
+    "crop": "Basmati Rice",
+    "seasonality": "Kharif",
+    "demand": "Very High",
+    "country": "Saudi Arabia",
+    "driver": "Middle East premium preference remains a pillar of 2026 rice trade.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0b9a\u0bc1\u0bae\u0ba4\u0bbf \u0b85\u0bb0\u0bbf\u0b9a\u0bbf (Basumathi Arisi)"
+  },
+  {
+    "crop": "Strawberries",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "UK",
+    "driver": "Vertical farming growth slightly reducing off-season import reliance.",
+    "classification": "General",
+    "tamil_name": "\u0bb8\u0bcd\u0b9f\u0bcd\u0bb0\u0bbe\u0baa\u0bc6\u0bb0\u0bcd\u0bb0\u0bbf (Strawberry)"
+  },
+  {
+    "crop": "Hops",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "USA (Exp)",
+    "driver": "Craft beer expansion globally driving demand for aroma-rich varieties.",
+    "classification": "General",
+    "tamil_name": "\u0bb9\u0bbe\u0baa\u0bcd\u0bb8\u0bcd (Hops)"
+  },
+  {
+    "crop": "Walnuts",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "India",
+    "driver": "High demand for premium snacks despite 2026 domestic crop expansion.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bcd\u0bb0\u0bc2\u0b9f\u0bcd (Akroot)"
+  },
+  {
+    "crop": "Peanuts",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "China",
+    "driver": "Oilseed demand remains elevated as China shifts away from corn starch.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf \u0baa\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1 (Mundiri Paruppu)"
+  },
+  {
+    "crop": "Black Pepper",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Organic spice lines demanding high-potency Indian Tellicherry pepper.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bbf\u0bb3\u0b95\u0bc1 (Milagu)"
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi",
+    "demand": "Critical",
+    "country": "UAE",
+    "driver": "Focus on regional food security; total reliance on Maharashtra clusters.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Pears",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "Vietnam",
+    "driver": "Rising middle-class demand for temperate fruits in Southeast Asia.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bc7\u0bb0\u0bbf\u0b95\u0bcd\u0b95\u0bbe\u0baf\u0bcd (Perikay)"
+  },
+  {
+    "crop": "Wheat (Spring)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "EU",
+    "driver": "Increased production to offset Black Sea supply chain uncertainties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA (Int)",
+    "driver": "Domestic biofuel mandates pushing prices to 59 cents per pound.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Soya Ennai)"
+  },
+  {
+    "crop": "Cassava Starch",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "China",
+    "driver": "Key corn substitute for industrial applications in the 10-year outlook.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bbe\u0bb5\u0bc1 \u0bae\u0bbe\u0bb5\u0bc1 (Mavu Mavu)"
+  },
+  {
+    "crop": "Mustard Seeds",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Shift toward non-GMO oilseeds for the European food processing sector.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bc1\u0b95\u0bc1 (Kadugu)"
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "China",
+    "driver": "White House reports indicate hope for an additional 8 MMT purchase.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Corn (Yellow)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Brazil (Internal)",
+    "driver": "Safrinha (second crop) planting under way; critical moisture window.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Wheat (Milling)",
+    "seasonality": "Winter/Spring",
+    "demand": "Increasing",
+    "country": "Egypt",
+    "driver": "Strait of Hormuz volatility making Black Sea routes more attractive.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potatoes (Fresh)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "USA (Internal)",
+    "driver": "US planting areas hit a new historical low; yields down 1.97% YoY.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sugar (Raw)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "Record 7.2% price jump this month as Brazil pivots cane to ethanol.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Biofuel uptake surge; oil prices hit $98.71/barrel in late March.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Soya Ennai)"
+  },
+  {
+    "crop": "Rice (Broken)",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "West Africa",
+    "driver": "Demand for affordable calories as whole-grain prices remain volatile.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Barley (Feed)",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Saudi Arabia",
+    "driver": "Shift away from corn due to high nitrogen/fertilizer costs ($1,000+/ton).",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cotton (Lint)",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Vietnam",
+    "driver": "15% projected export increase from major global suppliers in 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Lentils (Red)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Vital protein bridge as global meat prices index rises 1% this month.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Palm Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "Vegetable oil index rose 5.1% in April; Hormuz disruption risk factor.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Ennai)"
+  },
+  {
+    "crop": "Corn (Starch)",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "China",
+    "driver": "Pivoting toward industrial starch to reduce food-grade corn reliance.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cashews (W320)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "Surge in European \"Dairy-Free\" manufacturing using Indian kernels.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "Global",
+    "driver": "13.2% year-on-year increase; Near East conflict tightening supply.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Wheat (Hard Red)",
+    "seasonality": "Spring",
+    "demand": "Moderate",
+    "country": "Mexico",
+    "driver": "US ending stocks at 938M bushels; shift to competitive South American grain.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sorghum",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "Demand for US sorghum to bypass corn-specific trade barrier costs.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0bb3\u0bae\u0bcd (Solam)"
+  },
+  {
+    "crop": "Onions",
+    "seasonality": "Rabi",
+    "demand": "Critical",
+    "country": "UAE",
+    "driver": "Middle East food security; total reliance on Indian \"Nashik\" clusters.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bae\u0bcd (Vengayam)"
+  },
+  {
+    "crop": "Potato (Seed)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Mexico",
+    "driver": "High production material prices driving demand for high-yield seeds.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Durum Wheat",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Italy",
+    "driver": "Tight global stocks pushing high demand for high-protein pasta wheat.",
+    "classification": "General",
+    "tamil_name": "\u0b9f\u0bc2\u0bb0\u0bae\u0bcd \u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Duram Godhumai)"
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Extract industry growth; focus on GI-tagged high-curcumin varieties.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Soybean Meal",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Vietnam",
+    "driver": "Expanding aquaculture sector demand for high-protein feed supplements.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0bae\u0bc0\u0bb2\u0bcd (Soya Meal)"
+  },
+  {
+    "crop": "Oats",
+    "seasonality": "Spring",
+    "demand": "Stable",
+    "country": "USA",
+    "driver": "\"Sustainable Milk\" trend; Australian oat area expansion to meet US demand.",
+    "classification": "General",
+    "tamil_name": "\u0b93\u0b9f\u0bcd\u0bb8\u0bcd (Oats)"
+  },
+  {
+    "crop": "Grapes",
+    "seasonality": "Spring",
+    "demand": "Increasing",
+    "country": "Netherlands",
+    "driver": "Major EU hub for re-exporting biological-control fruits from the South.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bbf\u0bb0\u0bbe\u0b9f\u0bcd\u0b9a\u0bc8 (Thiratchai)"
+  },
+  {
+    "crop": "Peanuts",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "EU",
+    "driver": "Shift toward certified traceable origins (USA/India) in the snack sector.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf \u0baa\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1 (Mundiri Paruppu)"
+  },
+  {
+    "crop": "Wheat (Soft)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Indonesia",
+    "driver": "Emerging as a top global calorie importer to fill 2026 grain gaps.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cocoa",
+    "seasonality": "Year-round",
+    "demand": "Softening",
+    "country": "Global",
+    "driver": "Prices falling 7% in 2026 as African production stabilizes post-2025.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bcb\u0b95\u0bcb (Koko)"
+  },
+  {
+    "crop": "Chickpeas",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Pakistan",
+    "driver": "Plant-based protein surge due to meat price volatility (index up 1%).",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0b9f\u0bb2\u0bc8 (Kondai Kadalai)"
+  },
+  {
+    "crop": "Rubber (Block)",
+    "seasonality": "Year-round",
+    "demand": "Increasing",
+    "country": "USA",
+    "driver": "Industrial demand for tires/belts as logistical infrastructure expands.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Apples (Gala)",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "India",
+    "driver": "Growing middle-class demand for premium Washington varieties.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Seeds",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "Turkey",
+    "driver": "Crushing industry volatility due to Near East supply disruptions.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0bb5\u0bbf\u0ba4\u0bc8 (Suria Kanti Vithai)"
+  },
+  {
+    "crop": "Millets",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "Global",
+    "driver": "\"Smart Food\" branding driving ancient grain use in Western retail.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bbf\u0bb1\u0bc1 \u0ba4\u0bbe\u0ba9\u0bbf\u0baf\u0b99\u0bcd\u0b95\u0bb3\u0bcd (Siru Thaniyangal)"
+  },
+  {
+    "crop": "Garlic",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Indonesia",
+    "driver": "Critical reliance on Chinese exports for local culinary consumption.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bc2\u0ba3\u0bcd\u0b9f\u0bc1 (Poondu)"
+  },
+  {
+    "crop": "Wheat (Durum)",
+    "seasonality": "Spring",
+    "demand": "Moderate",
+    "country": "Morocco",
+    "driver": "Dry weather hurting local yields; demand for high-protein semolina wheat.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Coconut Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Shift toward \"Zero-Residue\" oils for premium food and wellness products.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bc7\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bcd \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Thengay Ennay)"
+  },
+  {
+    "crop": "Pears",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "Vietnam",
+    "driver": "Middle-class demand growth for temperate fruits in Southeast Asia.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bc7\u0bb0\u0bbf\u0b95\u0bcd\u0b95\u0bbe\u0baf\u0bcd (Perikay)"
+  },
+  {
+    "crop": "Sandalwood",
+    "seasonality": "Perennial",
+    "demand": "High",
+    "country": "China",
+    "driver": "Luxury wood/oil demand; maritime India expanding certified exports.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0ba8\u0bcd\u0ba4\u0ba9\u0bae\u0bcd (Sandhanam)"
+  },
+  {
+    "crop": "Sesame Seeds",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "South Korea",
+    "driver": "Industrial oil processing demand remains high; focus on African supply.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd (Ellu)"
+  },
+  {
+    "crop": "Agarwood",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "UAE",
+    "driver": "Perfume sector growth; NE Indian plantations hitting peak 2026 exports.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bbf\u0bb2\u0bcd (Agil)"
+  },
+  {
+    "crop": "Limes",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "USA",
+    "driver": "Consistent off-season demand met by Mexican greenhouse clusters.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb2\u0bc1\u0bae\u0bbf\u0b9a\u0bcd\u0b9a\u0bc8 (Elumichai)"
+  },
+  {
+    "crop": "Wheat (Feed)",
+    "seasonality": "Winter",
+    "demand": "High",
+    "country": "Thailand",
+    "driver": "Using low-grade wheat as a price-effective substitute for corn feed.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Cake",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Italy",
+    "driver": "Recent private sales (100k MT) to support the premium dairy sector.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd \u0b95\u0bc7\u0b95\u0bcd (Soybean Cake)"
+  },
+  {
+    "crop": "Mustard Seeds",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Shift to non-GMO oilseeds for European food manufacturing.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bc1\u0b95\u0bc1 (Kadugu)"
+  },
+  {
+    "crop": "Corn (White)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Colombia",
+    "driver": "Private sales (100k MT) for 2025/26 human consumption needs.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cardamom",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "Kuwait",
+    "driver": "High-grade green cardamom in demand for the Middle East coffee market.",
+    "classification": "General",
+    "tamil_name": "\u0b8f\u0bb2\u0b95\u0bcd\u0b95\u0bbe\u0baf\u0bcd (Elakai)"
+  },
+  {
+    "crop": "Dry Beans",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Brazil",
+    "driver": "Internal protein demand remains a pillar of the 2026 domestic market.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bb1\u0bc8\u0baf\u0ba9\u0bcd \u0baa\u0baf\u0bb1\u0bc1 (Varayen Payaru)"
+  },
+  {
+    "crop": "Alfalfa",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Saudi Arabia",
+    "driver": "Expanding dairy sector needing high-protein imported forage.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0bb2\u0bcd\u0b83\u0baa\u0bbe\u0bb2\u0bcd\u0b83\u0baa\u0bbe (Alfalfa)"
+  },
+  {
+    "crop": "Wheat (Spring)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "EU",
+    "driver": "Production raised to offset supply chain uncertainties in the Near East.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potato (Seed)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Algeria",
+    "driver": "State-led initiative to secure domestic potato yields for food security.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Mangoes (Fresh)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Global",
+    "driver": "Record Indian production (117M tons) opening new trade corridors.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Lentils (Green)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "India (Int)",
+    "driver": "Buffer stocking to manage local pulse inflation in early 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Banana",
+    "seasonality": "Year-round",
+    "demand": "Stable",
+    "country": "Russia",
+    "driver": "Supply chain rerouting via India and Ecuador to bypass sanctions.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bbe\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bb4\u0bae\u0bcd (Vazhai Pazham)"
+  },
+  {
+    "crop": "Palm Kernel Oil",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Sustainable care ingredients and bio-lubricant demand surging.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b95\u0bc6\u0bb0\u0bcd\u0ba9\u0bb2\u0bcd \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Kernel Ennay)"
+  },
+  {
+    "crop": "Hops",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "USA (Exp)",
+    "driver": "Craft beer globalization driving demand for aroma-rich varieties.",
+    "classification": "General",
+    "tamil_name": "\u0bb9\u0bbe\u0baa\u0bcd\u0bb8\u0bcd (Hops)"
+  },
+  {
+    "crop": "Rice (Indica)",
+    "seasonality": "Kharif",
+    "demand": "High",
+    "country": "Philippines",
+    "driver": "Import reliance to buffer against a 1.6% dip in global rice trade.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sorghum (Feed)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "China",
+    "driver": "Feed alternative to bypass corn tariffs; private buying announcements expected.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Strawberries",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "UK",
+    "driver": "Growth in vertical farming reducing off-season import volatility.",
+    "classification": "General",
+    "tamil_name": "\u0bb8\u0bcd\u0b9f\u0bcd\u0bb0\u0bbe\u0baa\u0bc6\u0bb0\u0bcd\u0bb0\u0bbf (Strawberry)"
+  },
+  {
+    "crop": "Chilli (Dry)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Thailand",
+    "driver": "Industrial spice processing; reliance on Indian Guntur clusters.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Wheat (Milling)",
+    "seasonality": "Winter/Spring",
+    "demand": "Increasing",
+    "country": "Libya",
+    "driver": "Transitioning back to traditional Black Sea suppliers in early 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Corn (Yellow)",
+    "seasonality": "Summer",
+    "demand": "Increasing",
+    "country": "Mexico",
+    "driver": "US exports steady; strong industrial demand for processing-grade corn.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sugar (Beet)",
+    "seasonality": "Winter",
+    "demand": "Softening",
+    "country": "USA",
+    "driver": "32k STRV reduction in output due to lower sucrose recovery in 2026.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cashews (Pieces)",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Netherlands",
+    "driver": "EU plant-based yogurt and spreads expansion using Indian cashew pieces.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Tea (Orthodox)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Russia",
+    "driver": "Direct sourcing of premium leaf from India and Sri Lanka for 2026 retail.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Onions (Red)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "UK",
+    "driver": "Demand for Indian onions in hospitality sector due to energy-cost hikes in EU.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "Brazil",
+    "driver": "Increasing internal biodiesel mandates as crude oil stays above $100.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Soya Ennai)"
+  },
+  {
+    "crop": "Cotton (Carded)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "China",
+    "driver": "Textile recovery; mill use raised by 300k bales in latest April report.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potatoes (Seed)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Mexico",
+    "driver": "Expansion of potato chip manufacturing requiring specific high-yield seeds.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Turmeric (Powder)",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "Organic food coloring and natural preservative sector growth.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Palm Stearin",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "India",
+    "driver": "Industrial surfactant demand; price volatility linked to energy markets.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0bae\u0bcd \u0bb8\u0bcd\u0b9f\u0bbf\u0baf\u0bb0\u0bbf\u0ba9\u0bcd (Palm Stearin)"
+  },
+  {
+    "crop": "Peanuts (Blanched)",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "EU",
+    "driver": "Snack sector demand; shift to certified African and US origins.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cloves",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "Indonesia",
+    "driver": "High internal demand for the tobacco and spice manufacturing industries.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bbf\u0bb0\u0bbe\u0bae\u0bcd\u0baa\u0bc1 (Krambu)"
+  },
+  {
+    "crop": "Wheat (Hard)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Nigeria",
+    "driver": "Millers seeking high-protein wheat to manage bread price inflation.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Canola Meal",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "China",
+    "driver": "Aquaculture feed demand as alternative protein sources tighten in Asia.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0ba9\u0bcb\u0bb2\u0bbe \u0b8a\u0b9f\u0bcd\u0b9f\u0b9a\u0bcd\u0b9a\u0ba4\u0bcd\u0ba4\u0bc1 (Canola Meal)"
+  },
+  {
+    "crop": "Coconut Water",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "USA",
+    "driver": "\"Pure Origin\" label demand driving exports from Indian coastal clusters.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bc7\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bcd \u0ba8\u0bc0\u0bb0\u0bcd (Thengai Neer)"
+  },
+  {
+    "crop": "Rapeseed Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "Canada",
+    "driver": "Renewable diesel feedstock demand hitting record highs in April 2026.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bb2\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Kadala Ennay)"
+  },
+  {
+    "crop": "Rice (Basmati)",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Saudi Arabia",
+    "driver": "Premium aromatic preference remains firm despite 3% dip in coarse rice.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Oranges",
+    "seasonality": "Winter",
+    "demand": "Stable",
+    "country": "Canada",
+    "driver": "Reliance on Mexican and Florida citrus as logistics costs stabilize.",
+    "classification": "General",
+    "tamil_name": "\u0b86\u0bb0\u0b9e\u0bcd\u0b9a\u0bc1 (Arainju)"
+  },
+  {
+    "crop": "Saffron",
+    "seasonality": "Autumn",
+    "demand": "Very High",
+    "country": "Global",
+    "driver": "High-end culinary and medicinal demand for certified Persian/Indian crops.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bc1\u0b99\u0bcd\u0b95\u0bc1\u0bae\u0baa\u0bcd\u0baa\u0bc2 (Kungumapoo)"
+  },
+  {
+    "crop": "Soybean Meal",
+    "seasonality": "Year-round",
+    "demand": "Stable",
+    "country": "Algeria",
+    "driver": "Expanding livestock and poultry sectors requiring high-protein supplements.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0bae\u0bc0\u0bb2\u0bcd (Soya Meal)"
+  },
+  {
+    "crop": "Coffee (Arabica)",
+    "seasonality": "Autumn",
+    "demand": "Stable",
+    "country": "Germany",
+    "driver": "Brazil production revised up 17%, easing global supply fears.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Walnuts",
+    "seasonality": "Autumn",
+    "demand": "Moderate",
+    "country": "India",
+    "driver": "High urban snack demand despite domestic crop expansion in J&K.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bcd\u0bb0\u0bc2\u0b9f\u0bcd (Akroot)"
+  },
+  {
+    "crop": "Wheat (HRW)",
+    "seasonality": "Winter",
+    "demand": "High",
+    "country": "Iraq",
+    "driver": "Securing grain stocks amid Strait of Hormuz logistics concerns.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Corn (Yellow)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Vietnam",
+    "driver": "Animal feed demand for the expanding domestic poultry industry.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "China",
+    "driver": "Diversification of oil imports away from traditional Black Sea origins.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Barley (Brewing)",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "Malt demand for the premium beer segment remains a trade outlier.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rapeseed (Canola)",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "EU",
+    "driver": "Green energy mandates driving imports as oil stays above $95/bbl.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Garlic (Dry)",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Continued shift toward fresh-processed garlic for the retail sector.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Wheat (Feed)",
+    "seasonality": "Winter",
+    "demand": "Moderate",
+    "country": "South Korea",
+    "driver": "Using low-cost wheat to offset the 4% rise in corn prices this quarter.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potato (Seed)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Uzbekistan",
+    "driver": "Central Asian goal for potato self-sufficiency driving seed imports.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Peanut Oil",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "China",
+    "driver": "Demand remains elevated as industrial starch pivots away from corn.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bb2\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Kadala Ennay)"
+  },
+  {
+    "crop": "Wheat (Spring)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Egypt",
+    "driver": "Shift toward Russian milling wheat to capitalize on $1.5M ton global stock rise.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Canola Seed",
+    "seasonality": "Summer",
+    "demand": "Very High",
+    "country": "China",
+    "driver": "Anti-dumping tariffs lowered to 5.9%; suspension of tariffs on meal until Dec 2026.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0ba9\u0bcb\u0bb2\u0bbe \u0bb5\u0bbf\u0ba4\u0bc8 (Kanola Vithai)"
+  },
+  {
+    "crop": "Soybeans",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "USA (Internal)",
+    "driver": "Record demand for biofuel feedstocks; oil prices hit 59 cents per pound.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Soya Beans)"
+  },
+  {
+    "crop": "Cotton",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Mill use recovery; rebuilding inventories for ready-made garment (RMG) exports.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bb0\u0bc1\u0ba4\u0bcd\u0ba4\u0bbf (Paruthi)"
+  },
+  {
+    "crop": "Sugar (Specialty)",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "High-tier tariff imports raised to 268k STRV to meet gourmet food demand.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Corn (Yellow)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "Internal demand for ethanol blending (EBP) program driving local price support.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Rice (Medium)",
+    "seasonality": "Annual",
+    "demand": "Increasing",
+    "country": "USA",
+    "driver": "Medium-grain farm price raised to $14.70/cwt due to tight \"Other State\" supply.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "Brazil",
+    "driver": "Increased domestic biodiesel mandates amid crude oil price volatility.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Soya Ennai)"
+  },
+  {
+    "crop": "Palm Oil",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "India",
+    "driver": "5.1% vegetable oil index spike in April; Hormuz disruption risk premium.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Ennai)"
+  },
+  {
+    "crop": "Rubber (TSR20)",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Japan",
+    "driver": "Rebound in auto-manufacturing and tire replacement cycles in East Asia.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sunflower Oil",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "Near East conflict escalation raising input costs and diversifying suppliers.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf\u0b95\u0bbe\u0ba8\u0bcd\u0ba4\u0bbf \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Suria Kanti Ennay)"
+  },
+  {
+    "crop": "Barley (Malt)",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "China",
+    "driver": "Growth in premium craft brewing sector despite general grain import targets.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Sorghum (Feed)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "China",
+    "driver": "Used to bypass US-specific corn tariffs; private buying announcements expected.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Lentils (Red)",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Bangladesh",
+    "driver": "Vital protein bridge as global meat price index rises 1% this month.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Cashews (W320)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Germany",
+    "driver": "Surge in European \"Dairy-Free\" manufacturing using Indian cashew kernels.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Peanuts",
+    "seasonality": "Summer",
+    "demand": "Moderate",
+    "country": "China",
+    "driver": "Shift to oilseed production to reduce reliance on corn-based industrial starch.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0bc1\u0ba8\u0bcd\u0ba4\u0bbf\u0bb0\u0bbf \u0baa\u0bb0\u0bc1\u0baa\u0bcd\u0baa\u0bc1 (Mundiri Paruppu)"
+  },
+  {
+    "crop": "Almonds",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "India",
+    "driver": "Urban snack demand remaining firm; focus on high-yield California imports.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bbe\u0ba4\u0bbe\u0bae\u0bcd (Badam)"
+  },
+  {
+    "crop": "Potato (Seed)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "Algeria",
+    "driver": "State-led goal for potato self-sufficiency driving seed import demand.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Potatoes (Fresh)",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "USA (Internal)",
+    "driver": "US planting areas hit a historical low; yields down 1.97% YoY.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Durum Wheat",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Italy",
+    "driver": "High-protein pasta-grade wheat in demand despite soaring fertilizer costs.",
+    "classification": "General",
+    "tamil_name": "\u0b9f\u0bc2\u0bb0\u0bae\u0bcd \u0b95\u0bcb\u0ba4\u0bc1\u0bae\u0bc8 (Duram Godhumai)"
+  },
+  {
+    "crop": "Turmeric",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "USA",
+    "driver": "Pharma extract sector growth; focus on GI-tagged Indian high-curcumin crops.",
+    "classification": "General",
+    "tamil_name": "\u0bae\u0b9e\u0bcd\u0b9a\u0bb3\u0bcd (Manjal)"
+  },
+  {
+    "crop": "Coconut Water",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "UK",
+    "driver": "\"Sustainable Origin\" demand driving exports from Indian coastal clusters.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bc7\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0bcd \u0ba8\u0bc0\u0bb0\u0bcd (Thengai Neer)"
+  },
+  {
+    "crop": "Chickpeas",
+    "seasonality": "Rabi",
+    "demand": "High",
+    "country": "Pakistan",
+    "driver": "Crucial protein bridge as local meat prices remain volatile in April 2026.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0bca\u0ba3\u0bcd\u0b9f\u0bc8\u0b95\u0bcd\u0b95\u0b9f\u0bb2\u0bc8 (Kondai Kadalai)"
+  },
+  {
+    "crop": "Mustard Seeds",
+    "seasonality": "Winter",
+    "demand": "Increasing",
+    "country": "Germany",
+    "driver": "Shift to non-GMO oilseeds for European food manufacturing sector.",
+    "classification": "General",
+    "tamil_name": "\u0b95\u0b9f\u0bc1\u0b95\u0bc1 (Kadugu)"
+  },
+  {
+    "crop": "Corn (White)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Colombia",
+    "driver": "Specific demand for white corn for human consumption vs yellow feed grains.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Oats",
+    "seasonality": "Spring",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Expansion of oat-milk market; Australian supply filling 2026 production gaps.",
+    "classification": "General",
+    "tamil_name": "\u0b93\u0b9f\u0bcd\u0bb8\u0bcd (Oats)"
+  },
+  {
+    "crop": "Grapes",
+    "seasonality": "Spring",
+    "demand": "Increasing",
+    "country": "Netherlands",
+    "driver": "Major EU hub for re-exporting bio-control fruits from South Africa/Chile.",
+    "classification": "General",
+    "tamil_name": "\u0ba4\u0bbf\u0bb0\u0bbe\u0b9f\u0bcd\u0b9a\u0bc8 (Thiratchai)"
+  },
+  {
+    "crop": "Agarwood",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "UAE",
+    "driver": "Perfume sector growth; NE Indian plantations hitting peak 2026 exports.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0b95\u0bbf\u0bb2\u0bcd (Agil)"
+  },
+  {
+    "crop": "Limes",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "USA",
+    "driver": "Consistent off-season demand met by Mexican greenhouse clusters.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb2\u0bc1\u0bae\u0bbf\u0b9a\u0bcd\u0b9a\u0bc8 (Elumichai)"
+  },
+  {
+    "crop": "Wheat (Feed)",
+    "seasonality": "Winter",
+    "demand": "High",
+    "country": "Thailand",
+    "driver": "Using low-grade wheat as a price-effective substitute for imported corn.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Soybean Cake",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Italy",
+    "driver": "Private sales (100k MT) to support the premium dairy and cheese sector.",
+    "classification": "General",
+    "tamil_name": "\u0b9a\u0bcb\u0baf\u0bbe \u0baa\u0bc0\u0ba9\u0bcd \u0b95\u0bc7\u0b95\u0bcd (Soybean Cake)"
+  },
+  {
+    "crop": "Cardamom",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "Kuwait",
+    "driver": "High-grade green cardamom in demand for the Middle East coffee market.",
+    "classification": "General",
+    "tamil_name": "\u0b8f\u0bb2\u0b95\u0bcd\u0b95\u0bbe\u0baf\u0bcd (Elakai)"
+  },
+  {
+    "crop": "Dry Beans",
+    "seasonality": "Summer",
+    "demand": "Stable",
+    "country": "Brazil",
+    "driver": "Internal protein demand remains a pillar of the 2026 domestic market.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bb1\u0bc8\u0baf\u0ba9\u0bcd \u0baa\u0baf\u0bb1\u0bc1 (Varayen Payaru)"
+  },
+  {
+    "crop": "Alfalfa",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Saudi Arabia",
+    "driver": "Expanding dairy sector requiring high-protein imported forage for herds.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0bb2\u0bcd\u0b83\u0baa\u0bbe\u0bb2\u0bcd\u0b83\u0baa\u0bbe (Alfalfa)"
+  },
+  {
+    "crop": "Mangoes (Fresh)",
+    "seasonality": "Summer",
+    "demand": "High",
+    "country": "Global",
+    "driver": "Record Indian production (117M tons) opening new maritime trade corridors.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Banana",
+    "seasonality": "Year-round",
+    "demand": "Stable",
+    "country": "Russia",
+    "driver": "Supply chain rerouting via India and Ecuador to ensure food security.",
+    "classification": "General",
+    "tamil_name": "\u0bb5\u0bbe\u0bb4\u0bc8\u0baa\u0bcd\u0baa\u0bb4\u0bae\u0bcd (Vazhai Pazham)"
+  },
+  {
+    "crop": "Palm Kernel Oil",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "USA",
+    "driver": "Sustainable care ingredients and bio-lubricant demand surging in Q2.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0ba9\u0bc8 \u0b95\u0bc6\u0bb0\u0bcd\u0ba9\u0bb2\u0bcd \u0b8e\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Pannai Kernel Ennay)"
+  },
+  {
+    "crop": "Hops",
+    "seasonality": "Autumn",
+    "demand": "High",
+    "country": "USA (Export)",
+    "driver": "Craft beer globalization driving demand for aroma-rich hop varieties.",
+    "classification": "General",
+    "tamil_name": "\u0bb9\u0bbe\u0baa\u0bcd\u0bb8\u0bcd (Hops)"
+  },
+  {
+    "crop": "Rice (Broken)",
+    "seasonality": "Annual",
+    "demand": "High",
+    "country": "West Africa",
+    "driver": "Most affordable calorie source; filling the gap from high-grade rice.",
+    "classification": "General",
+    "tamil_name": ""
+  },
+  {
+    "crop": "Pineapple",
+    "seasonality": "Year-round",
+    "demand": "Stable",
+    "country": "USA",
+    "driver": "Consistent demand for fresh-cut convenience fruit in retail sectors.",
+    "classification": "General",
+    "tamil_name": "\u0b85\u0ba9\u0bbe\u0b9a\u0bbf (Anasi)"
+  },
+  {
+    "crop": "Sesame Oil",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "South Korea",
+    "driver": "High-end culinary demand for cold-pressed African sesame oil.",
+    "classification": "General",
+    "tamil_name": "\u0b8e\u0bb3\u0bcd\u0bb3\u0bc6\u0ba3\u0bcd\u0ba3\u0bc6\u0baf\u0bcd (Ellennai)"
+  },
+  {
+    "crop": "Garlic",
+    "seasonality": "Annual",
+    "demand": "Very High",
+    "country": "Indonesia",
+    "driver": "Significant reliance on Chinese exports for local culinary staples.",
+    "classification": "General",
+    "tamil_name": "\u0baa\u0bc2\u0ba3\u0bcd\u0b9f\u0bc1 (Poondu)"
+  },
+  {
+    "crop": "Agathi Keerai (Hummingbird tree leaves)",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "Singapore, Malaysia, Sri Lanka",
+    "driver": "Export demand from Singapore, Malaysia, Sri Lanka. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "Hummingbird tree leaves"
+  },
+  {
+    "crop": "Amaranthus (Mulaikeerai, Sirukeerai, Thandukeerai)",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "Singapore, Malaysia, UAE",
+    "driver": "Export demand from Singapore, Malaysia, UAE. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "Mulaikeerai, Sirukeerai, Thandukeerai"
+  },
+  {
+    "crop": "Ash Gourd (Sambal Poosanykai)",
+    "seasonality": "Summer/Kharif",
+    "demand": "Moderate",
+    "country": "UAE, Qatar, Saudi Arabia, USA (Frozen)",
+    "driver": "Export demand from UAE, Qatar, Saudi Arabia, USA (Frozen). Classification: Gourds & Vines",
+    "classification": "Gourds & Vines",
+    "tamil_name": "Sambal Poosanykai"
+  },
+  {
+    "crop": "Bitter Gourd (Pavakkai)",
+    "seasonality": "Summer/Kharif",
+    "demand": "High",
+    "country": "UAE, Oman, Qatar, USA (Frozen/Cut)",
+    "driver": "Export demand from UAE, Oman, Qatar, USA (Frozen/Cut). Classification: Gourds & Vines",
+    "classification": "Gourds & Vines",
+    "tamil_name": "Pavakkai"
+  },
+  {
+    "crop": "Bottle Gourd (Suraikai)",
+    "seasonality": "Summer/Kharif",
+    "demand": "Moderate",
+    "country": "UAE, Kuwait",
+    "driver": "Export demand from UAE, Kuwait. Classification: Gourds & Vines",
+    "classification": "Gourds & Vines",
+    "tamil_name": "Suraikai"
+  },
+  {
+    "crop": "Bok Choy / Pok Choy",
+    "seasonality": "Winter",
+    "demand": "Moderate",
+    "country": "UAE, Singapore, Maldives",
+    "driver": "Export demand from UAE, Singapore, Maldives. Classification: English Lettuces & Herbs",
+    "classification": "English Lettuces & Herbs",
+    "tamil_name": "\u0baa\u0bcb\u0b95\u0bcd \u0b9a\u0bcb\u0baf\u0bcd (Pok Choy)"
+  },
+  {
+    "crop": "Broad Beans (Avarakkai)",
+    "seasonality": "Rabi/Year-round",
+    "demand": "High",
+    "country": "UAE, UK, Singapore",
+    "driver": "Export demand from UAE, UK, Singapore. Classification: Bulb & Pod Vegetables",
+    "classification": "Bulb & Pod Vegetables",
+    "tamil_name": "Avarakkai"
+  },
+  {
+    "crop": "Broccoli",
+    "seasonality": "Winter/Rabi",
+    "demand": "Moderate",
+    "country": "UAE, UK, Netherlands",
+    "driver": "Export demand from UAE, UK, Netherlands. Classification: Cole & Exotic Crops",
+    "classification": "Cole & Exotic Crops",
+    "tamil_name": "\u0baa\u0bc1\u0bb0\u0bcb\u0b95\u0bcd\u0b95\u0bcb\u0bb2\u0bbf (Brokoli)"
+  },
+  {
+    "crop": "Cabbage (Green & Red)",
+    "seasonality": "Winter/Rabi",
+    "demand": "High",
+    "country": "UAE, Qatar, Malaysia",
+    "driver": "Export demand from UAE, Qatar, Malaysia. Classification: Cole & Exotic Crops",
+    "classification": "Cole & Exotic Crops",
+    "tamil_name": "Green & Red"
+  },
+  {
+    "crop": "Capsicum / Bell Peppers",
+    "seasonality": "Kharif/Rabi",
+    "demand": "High",
+    "country": "UAE, Qatar, UK, Maldives",
+    "driver": "Export demand from UAE, Qatar, UK, Maldives. Classification: Fruit Vegetables",
+    "classification": "Fruit Vegetables",
+    "tamil_name": "\u0b95\u0bc1\u0b9f\u0bc8 \u0bae\u0bbf\u0bb3\u0b95\u0bbe\u0baf\u0bcd (Kudai Milagai)"
+  },
+  {
+    "crop": "Cauliflower",
+    "seasonality": "Winter/Rabi",
+    "demand": "High",
+    "country": "UAE, Oman, Kuwait",
+    "driver": "Export demand from UAE, Oman, Kuwait. Classification: Cole & Exotic Crops",
+    "classification": "Cole & Exotic Crops",
+    "tamil_name": "\u0baa\u0bc2\u0b95\u0bcd\u0b95\u0bcb\u0b9a\u0bc1 (Pookkosu)"
+  },
+  {
+    "crop": "Celery Leaves",
+    "seasonality": "Winter",
+    "demand": "Low",
+    "country": "UK, Netherlands, UAE",
+    "driver": "Export demand from UK, Netherlands, UAE. Classification: English Lettuces & Herbs",
+    "classification": "English Lettuces & Herbs",
+    "tamil_name": "\u0b9a\u0bc6\u0bb2\u0bb0\u0bbf \u0b87\u0bb2\u0bc8 (Selari Ilai)"
+  },
+  {
+    "crop": "Chinese Cabbage",
+    "seasonality": "Winter",
+    "demand": "Low",
+    "country": "Singapore, UAE",
+    "driver": "Export demand from Singapore, UAE. Classification: English Lettuces & Herbs",
+    "classification": "English Lettuces & Herbs",
+    "tamil_name": "\u0b9a\u0bc0\u0ba9 \u0b95\u0bbe\u0bb2\u0bbf\u0baa\u0bbf\u0bb3\u0bb5\u0bb0\u0bcd (Cina Kaliflower)"
+  },
+  {
+    "crop": "Chow Chow (Chayote)",
+    "seasonality": "Winter/Rabi",
+    "demand": "Moderate",
+    "country": "UAE, Malaysia",
+    "driver": "Export demand from UAE, Malaysia. Classification: Cole & Exotic Crops",
+    "classification": "Cole & Exotic Crops",
+    "tamil_name": "Chayote"
+  },
+  {
+    "crop": "Cluster Beans (Kothavarangai)",
+    "seasonality": "Rabi/Year-round",
+    "demand": "High",
+    "country": "UAE, Saudi Arabia, UK",
+    "driver": "Export demand from UAE, Saudi Arabia, UK. Classification: Bulb & Pod Vegetables",
+    "classification": "Bulb & Pod Vegetables",
+    "tamil_name": "Kothavarangai"
+  },
+  {
+    "crop": "Coriander (Kothamalli)",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "UAE, Singapore, Malaysia, UK",
+    "driver": "Export demand from UAE, Singapore, Malaysia, UK. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "Kothamalli"
+  },
+  {
+    "crop": "Cucumber (Vellarikkai)",
+    "seasonality": "Summer/Kharif",
+    "demand": "High",
+    "country": "UAE, Qatar, Oman",
+    "driver": "Export demand from UAE, Qatar, Oman. Classification: Gourds & Vines",
+    "classification": "Gourds & Vines",
+    "tamil_name": "Vellarikkai"
+  },
+  {
+    "crop": "Curry Leaves (Karuveppilai)",
+    "seasonality": "Year-round",
+    "demand": "Very High",
+    "country": "UAE, Singapore, Malaysia, UK, Germany",
+    "driver": "Export demand from UAE, Singapore, Malaysia, UK, Germany. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "Karuveppilai"
+  },
+  {
+    "crop": "Drumstick / Annual Moringa (Murungai)",
+    "seasonality": "Rabi/Year-round",
+    "demand": "Very High",
+    "country": "UAE, Saudi Arabia, Singapore, Malaysia, USA",
+    "driver": "Export demand from UAE, Saudi Arabia, Singapore, Malaysia, USA. Classification: Bulb & Pod Vegetables",
+    "classification": "Bulb & Pod Vegetables",
+    "tamil_name": "Murungai"
+  },
+  {
+    "crop": "Elephant Foot Yam (Senai Kizhangu)",
+    "seasonality": "Winter/Rabi",
+    "demand": "High",
+    "country": "USA, UK, Singapore, Malaysia",
+    "driver": "Export demand from USA, UK, Singapore, Malaysia. Classification: Tubers & Root Vegetables",
+    "classification": "Tubers & Root Vegetables",
+    "tamil_name": "Senai Kizhangu"
+  },
+  {
+    "crop": "Fenugreek Leaves (Methi)",
+    "seasonality": "Year-round",
+    "demand": "Moderate",
+    "country": "UAE, Qatar, Kuwait",
+    "driver": "Export demand from UAE, Qatar, Kuwait. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "Methi"
+  },
+  {
+    "crop": "French Beans",
+    "seasonality": "Rabi/Year-round",
+    "demand": "Very High",
+    "country": "UK, Netherlands, Germany, UAE",
+    "driver": "Export demand from UK, Netherlands, Germany, UAE. Classification: Bulb & Pod Vegetables",
+    "classification": "Bulb & Pod Vegetables",
+    "tamil_name": "\u0baa\u0bbf\u0bb0\u0bc6\u0b9e\u0bcd\u0b9a\u0bc1 \u0baa\u0bc0\u0ba9\u0bcd\u0bb8\u0bcd (Prenju Beans)"
+  },
+  {
+    "crop": "Green Chilli (Milagai)",
+    "seasonality": "Kharif/Rabi",
+    "demand": "Very High",
+    "country": "UAE, Saudi Arabia, Qatar, UK, Germany",
+    "driver": "Export demand from UAE, Saudi Arabia, Qatar, UK, Germany. Classification: Fruit Vegetables",
+    "classification": "Fruit Vegetables",
+    "tamil_name": "Milagai"
+  },
+  {
+    "crop": "Iceberg Lettuce",
+    "seasonality": "Winter",
+    "demand": "High",
+    "country": "UAE, Singapore, UK",
+    "driver": "Export demand from UAE, Singapore, UK. Classification: English Lettuces & Herbs",
+    "classification": "English Lettuces & Herbs",
+    "tamil_name": "\u0b90\u0bb8\u0bcd\u0baa\u0bc6\u0bb0\u0bcd\u0b95\u0bcd \u0bb2\u0bc6\u0b9f\u0bcd\u0baf\u0bc2\u0bb8\u0bcd (Iceberg Lettuce)"
+  },
+  {
+    "crop": "Ivy Gourd (Kovakkai)",
+    "seasonality": "Summer/Kharif",
+    "demand": "High",
+    "country": "UAE, Oman, Qatar",
+    "driver": "Export demand from UAE, Oman, Qatar. Classification: Gourds & Vines",
+    "classification": "Gourds & Vines",
+    "tamil_name": "Kovakkai"
+  },
+  {
+    "crop": "Kale",
+    "seasonality": "Winter",
+    "demand": "Low",
+    "country": "UK, Germany, Netherlands",
+    "driver": "Export demand from UK, Germany, Netherlands. Classification: English Lettuces & Herbs",
+    "classification": "English Lettuces & Herbs",
+    "tamil_name": "\u0b95\u0bc7\u0bb2\u0bcd (Kale)"
+  },
+  {
+    "crop": "Knol Khol (Kohlrabi)",
+    "seasonality": "Winter/Rabi",
+    "demand": "Low",
+    "country": "UAE, Kuwait",
+    "driver": "Export demand from UAE, Kuwait. Classification: Cole & Exotic Crops",
+    "classification": "Cole & Exotic Crops",
+    "tamil_name": "Kohlrabi"
+  },
+  {
+    "crop": "Leeks",
+    "seasonality": "Winter",
+    "demand": "Low",
+    "country": "UK, UAE",
+    "driver": "Export demand from UK, UAE. Classification: English Lettuces & Herbs",
+    "classification": "English Lettuces & Herbs",
+    "tamil_name": "\u0bb5\u0bc6\u0b99\u0bcd\u0b95\u0bbe\u0baf\u0ba4\u0bcd\u0ba4\u0bbf\u0ba9\u0bcd \u0b95\u0bc1\u0b9f\u0bc1\u0bae\u0bcd\u0baa\u0ba4\u0bcd\u0ba4\u0bc8\u0b9a\u0bcd \u0b9a\u0bc7\u0bb0\u0bcd\u0ba8\u0bcd\u0ba4 \u0b92\u0bb0\u0bc1 \u0b95\u0bca\u0b9f\u0bbf (Leeks)"
+  },
+  {
+    "crop": "Lollo Rosso (Red leaf lettuce)",
+    "seasonality": "Winter",
+    "demand": "Low",
+    "country": "UAE, Singapore",
+    "driver": "Export demand from UAE, Singapore. Classification: English Lettuces & Herbs",
+    "classification": "English Lettuces & Herbs",
+    "tamil_name": "Red leaf lettuce"
+  },
+  {
+    "crop": "Manathakkali Keerai",
+    "seasonality": "Year-round",
+    "demand": "Moderate",
+    "country": "Singapore, Malaysia",
+    "driver": "Export demand from Singapore, Malaysia. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "\u0bae\u0ba3\u0ba4\u0bcd\u0ba4\u0b95\u0bcd\u0b95\u0bbe\u0bb3\u0bbf \u0b95\u0bc0\u0bb0\u0bc8 (Manathakkali Keerai)"
+  },
+  {
+    "crop": "Okra / Bhendi (Vendakkai)",
+    "seasonality": "Kharif/Rabi",
+    "demand": "Very High",
+    "country": "UAE, Saudi Arabia, Qatar, UK, Germany",
+    "driver": "Export demand from UAE, Saudi Arabia, Qatar, UK, Germany. Classification: Fruit Vegetables",
+    "classification": "Fruit Vegetables",
+    "tamil_name": "Vendakkai"
+  },
+  {
+    "crop": "Palak / Spinach (Pasalaikeerai)",
+    "seasonality": "Year-round",
+    "demand": "High",
+    "country": "UAE, Kuwait, Oman",
+    "driver": "Export demand from UAE, Kuwait, Oman. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "Pasalaikeerai"
+  },
+  {
+    "crop": "Ponnanganni Keerai",
+    "seasonality": "Year-round",
+    "demand": "Moderate",
+    "country": "Singapore, Malaysia",
+    "driver": "Export demand from Singapore, Malaysia. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "\u0baa\u0bca\u0ba9\u0bcd\u0ba9\u0bbe\u0b99\u0bcd\u0b95\u0ba3\u0bcd\u0ba3\u0bbf \u0b95\u0bc0\u0bb0\u0bc8 (Ponnanganni Keerai)"
+  },
+  {
+    "crop": "Radish (Mullangi)",
+    "seasonality": "Winter/Rabi",
+    "demand": "Moderate",
+    "country": "UAE, Qatar",
+    "driver": "Export demand from UAE, Qatar. Classification: Tubers & Root Vegetables",
+    "classification": "Tubers & Root Vegetables",
+    "tamil_name": "Mullangi"
+  },
+  {
+    "crop": "Ribbed Gourd (Peerkangai)",
+    "seasonality": "Summer/Kharif",
+    "demand": "High",
+    "country": "UAE, Qatar, Oman",
+    "driver": "Export demand from UAE, Qatar, Oman. Classification: Gourds & Vines",
+    "classification": "Gourds & Vines",
+    "tamil_name": "Peerkangai"
+  },
+  {
+    "crop": "Romaine Lettuce",
+    "seasonality": "Winter",
+    "demand": "Moderate",
+    "country": "UAE, Singapore, Maldives",
+    "driver": "Export demand from UAE, Singapore, Maldives. Classification: English Lettuces & Herbs",
+    "classification": "English Lettuces & Herbs",
+    "tamil_name": "\u0bb0\u0bcb\u0bae\u0bc8\u0ba9\u0bcd \u0bb2\u0bc6\u0b9f\u0bcd\u0b9f\u0bc2\u0bb8\u0bcd (Roman Lettus)"
+  },
+  {
+    "crop": "Small Onion / Shallots (Sambar Vengayam)",
+    "seasonality": "Rabi/Year-round",
+    "demand": "Very High",
+    "country": "Malaysia, Singapore, Sri Lanka, UAE, Indonesia",
+    "driver": "Export demand from Malaysia, Singapore, Sri Lanka, UAE, Indonesia. Classification: Bulb & Pod Vegetables",
+    "classification": "Bulb & Pod Vegetables",
+    "tamil_name": "Sambar Vengayam"
+  },
+  {
+    "crop": "Large Onion (Bellary Vengayam)",
+    "seasonality": "Rabi/Year-round",
+    "demand": "Very High",
+    "country": "UAE, Saudi Arabia, Kuwait, Malaysia",
+    "driver": "Export demand from UAE, Saudi Arabia, Kuwait, Malaysia. Classification: Bulb & Pod Vegetables",
+    "classification": "Bulb & Pod Vegetables",
+    "tamil_name": "Bellary Vengayam"
+  },
+  {
+    "crop": "Snake Gourd (Pudalangai)",
+    "seasonality": "Summer/Kharif",
+    "demand": "High",
+    "country": "UAE, Oman, Qatar, Canada (Frozen)",
+    "driver": "Export demand from UAE, Oman, Qatar, Canada (Frozen). Classification: Gourds & Vines",
+    "classification": "Gourds & Vines",
+    "tamil_name": "Pudalangai"
+  },
+  {
+    "crop": "Sweet Potato",
+    "seasonality": "Winter/Rabi",
+    "demand": "Moderate",
+    "country": "UAE, Canada",
+    "driver": "Export demand from UAE, Canada. Classification: Tubers & Root Vegetables",
+    "classification": "Tubers & Root Vegetables",
+    "tamil_name": "\u0b9a\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0bb0\u0bc8 \u0bb5\u0bb3\u0bcd\u0bb3\u0bbf (Sarkarai Valli)"
+  },
+  {
+    "crop": "Tapioca (Maravalli Kizhangu)",
+    "seasonality": "Winter/Rabi",
+    "demand": "Very High",
+    "country": "Indonesia, Vietnam, USA, UAE",
+    "driver": "Export demand from Indonesia, Vietnam, USA, UAE. Classification: Tubers & Root Vegetables",
+    "classification": "Tubers & Root Vegetables",
+    "tamil_name": "Maravalli Kizhangu"
+  },
+  {
+    "crop": "Water Clover (Aaraikeerai)",
+    "seasonality": "Year-round",
+    "demand": "Low",
+    "country": "Singapore",
+    "driver": "Export demand from Singapore. Classification: Traditional Greens",
+    "classification": "Traditional Greens",
+    "tamil_name": "Aaraikeerai"
+  },
+  {
+    "crop": "Zucchini (Green & Yellow)",
+    "seasonality": "Winter/Rabi",
+    "demand": "Moderate",
+    "country": "UAE, Maldives",
+    "driver": "Export demand from UAE, Maldives. Classification: Cole & Exotic Crops",
+    "classification": "Cole & Exotic Crops",
+    "tamil_name": "Green & Yellow"
+  }
+]

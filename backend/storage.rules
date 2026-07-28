@@ -1,0 +1,30 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // ── Profile Images ─────────────────────────────────────────────
+    match /profile_images/{userId}/{allPaths=**} {
+      // Only the owner can read their profile images
+      allow read: if request.auth != null && request.auth.uid == userId;
+      // Writes go through Admin SDK only (server-side upload)
+      allow write: if false;
+    }
+
+    // ── Crop Scan Images ───────────────────────────────────────────
+    match /crop_scans/{userId}/{allPaths=**} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false;
+    }
+
+    // ── Farm Media ─────────────────────────────────────────────────
+    match /farm_media/{userId}/{allPaths=**} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false;
+    }
+
+    // Deny everything else
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
