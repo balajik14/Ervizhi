@@ -20,3 +20,6 @@ python-jose
 sqlalchemy
 httpx
 email-validator>=2.0.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision

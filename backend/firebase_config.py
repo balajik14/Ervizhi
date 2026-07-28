@@ -32,21 +32,31 @@ def _init_firebase() -> firebase_admin.App:
     if _app is not None:
         return _app
 
+    import json
+
     service_account_path = os.getenv(
         "FIREBASE_SERVICE_ACCOUNT_PATH", "firebase-service-account.json"
     )
+    firebase_cred_json = os.getenv("FIREBASE_CREDENTIALS_JSON")
 
-    if not os.path.exists(service_account_path):
-        logger.warning(
-            "Firebase service account file not found at '%s'. "
-            "Firebase features will be unavailable.",
-            service_account_path,
-        )
-        raise FileNotFoundError(
-            f"Firebase service account JSON not found: {service_account_path}"
-        )
-
-    cred = credentials.Certificate(service_account_path)
+    if firebase_cred_json:
+        try:
+            cred_dict = json.loads(firebase_cred_json)
+            cred = credentials.Certificate(cred_dict)
+        except json.JSONDecodeError as e:
+            logger.error("Failed to parse FIREBASE_CREDENTIALS_JSON: %s", e)
+            raise
+    else:
+        if not os.path.exists(service_account_path):
+            logger.warning(
+                "Firebase service account file not found at '%s'. "
+                "Firebase features will be unavailable.",
+                service_account_path,
+            )
+            raise FileNotFoundError(
+                f"Firebase service account JSON not found: {service_account_path}"
+            )
+        cred = credentials.Certificate(service_account_path)
     storage_bucket_name = os.getenv("FIREBASE_STORAGE_BUCKET", "")
 
     _app = firebase_admin.initialize_app(
