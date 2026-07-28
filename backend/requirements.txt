@@ -19,3 +19,4 @@ pydantic-settings
 python-jose
 sqlalchemy
 httpx
+email-validator>=2.0.0
