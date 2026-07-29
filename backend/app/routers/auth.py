@@ -170,24 +170,29 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
         otp_store.pop(email, None)
         raise HTTPException(status_code=400, detail="Verification expired. Please request a new OTP.")
     
-    # Remove from store once registered
-    otp_store.pop(email, None)
-
     # Check if username already exists
     user_by_username = db.query(User).filter(User.username == username).first()
     if user_by_username:
         raise HTTPException(status_code=400, detail="Username already exists. Please choose a different username.")
 
-    # Create new user in local SQLite DB
-    user = User(
-        email=email,
-        username=username,
-        hashed_password=get_password_hash(data.password),
-        language_pref="en",
-    )
-    db.add(user)
-    db.commit()
-    db.refresh(user)
+    try:
+        # Create new user in local SQLite DB
+        user = User(
+            email=email,
+            username=username,
+            hashed_password=get_password_hash(data.password),
+            language_pref="en",
+        )
+        db.add(user)
+        db.commit()
+        db.refresh(user)
+    except Exception as e:
+        db.rollback()
+        logger.error(f"Database error during registration: {e}")
+        raise HTTPException(status_code=500, detail="Database error occurred during registration.")
+
+    # Remove from store once successfully registered
+    otp_store.pop(email, None)
 
     # Sync user with Firebase Auth & Firestore
     try:

@@ -16,7 +16,11 @@ import { auth } from '../firebase';
 const PRODUCTION_API_URL = Constants.expoConfig?.extra?.apiBaseUrl as string | undefined;
 const debuggerHost = Constants.expoConfig?.hostUri;
 const localIp = debuggerHost?.split(':')[0] || '10.54.160.113';
-export const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL || process.env.VITE_API_BASE_URL || PRODUCTION_API_URL || 'https://ervizhi.onrender.com/api';
+let base_url = process.env.EXPO_PUBLIC_API_URL || process.env.VITE_API_BASE_URL || PRODUCTION_API_URL || 'https://ervizhi.onrender.com/api';
+if (base_url.endsWith('onrender.com')) {
+    base_url += '/api';
+}
+export const API_BASE_URL = base_url;
 
 // ─── Get current auth token (Firebase first, then local fallback) ────
 async function getAuthToken(): Promise<string | null> {
