@@ -1,5 +1,5 @@
 import { Stack, useRouter, useSegments } from 'expo-router';
-import { useColorScheme, ActivityIndicator, View, ImageBackground } from 'react-native';
+import { useColorScheme, ActivityIndicator, View, ImageBackground, Platform } from 'react-native';
 import { ThemeProvider, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createContext, useState, useContext, useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -92,6 +92,25 @@ function InnerLayout() {
 
 
 // ─── Root Layout ────────────────────────────────────────────────────
+const WebAutofillFix = () => {
+  if (Platform.OS !== 'web') return null;
+  return (
+    <style type="text/css">
+      {`
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #0a291f inset !important;
+            -webkit-text-fill-color: #f1f5f9 !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+      `}
+    </style>
+  );
+};
+
+// ─── Root Layout ────────────────────────────────────────────────────
 export default function RootLayout() {
   const systemColorScheme = useColorScheme();
   const [isTamil, setIsTamil] = useState(false);
@@ -102,6 +121,7 @@ export default function RootLayout() {
 
   return (
     <AuthProvider>
+      <WebAutofillFix />
       <AppContext.Provider value={{ isTamil, toggleLanguage, isDarkMode, toggleTheme }}>
         <ThemeProvider value={isDarkMode ? DarkNatureGreenTheme : NatureGreenTheme}>
           <SafeAreaProvider>
