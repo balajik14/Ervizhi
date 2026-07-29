@@ -1,0 +1,3 @@
+Soil Columns: ['Area', 'N', 'P', 'K']
+Suggest Columns: ['S.No', 'Constituency Name', 'District', 'Crop 1', 'Crop 2', 'Crop 3']
+Merged Columns: ['Area', 'N', 'P', 'K', 'S.No', 'Constituency Name', 'District', 'Crop 1', 'Crop 2', 'Crop 3']

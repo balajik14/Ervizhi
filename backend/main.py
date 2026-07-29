@@ -20,10 +20,9 @@ import os
 
 # Configure CORS — allow all origins in development (restrict via ALLOWED_ORIGINS env var in production)
 _raw_origins = os.getenv("ALLOWED_ORIGINS", "")
+ALLOWED_ORIGINS = ["*", "https://ervizhi.vercel.app"]
 if _raw_origins:
-    ALLOWED_ORIGINS = _raw_origins.split(",")
-else:
-    ALLOWED_ORIGINS = ["*"]
+    ALLOWED_ORIGINS.extend(_raw_origins.split(","))
 
 app.add_middleware(
     CORSMiddleware,
@@ -42,4 +41,8 @@ app.include_router(weather.router, prefix="/api/weather", tags=["Weather"])
 
 @app.get("/")
 def read_root():
-    return {"message": "Welcome to the Ervizhi API"}
+    return {"status": "ok", "message": "Welcome to the Ervizhi API"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
