@@ -41,9 +41,14 @@ def _init_firebase() -> firebase_admin.App:
 
     if firebase_cred_json:
         try:
-            # Handle escaped newlines from Render environment variables
-            creds_clean = firebase_cred_json.replace('\\n', '\n')
-            cred_dict = json.loads(creds_clean)
+            # Step 1: Escape literal backslashes so json.loads doesn't crash on raw control chars
+            formatted_json_str = firebase_cred_json.replace('\\\\n', '\\n')
+            cred_dict = json.loads(formatted_json_str)
+            
+            # Step 2: Fix the RSA private key internal newlines after JSON decoding
+            if "private_key" in cred_dict and isinstance(cred_dict["private_key"], str):
+                cred_dict["private_key"] = cred_dict["private_key"].replace('\\n', '\n')
+                
             cred = credentials.Certificate(cred_dict)
         except json.JSONDecodeError as e:
             logger.error("[FIRESTORE CRITICAL] Failed to parse FIREBASE_CREDENTIALS_JSON: %s", e)

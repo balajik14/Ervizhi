@@ -210,14 +210,15 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
         firestore_db = firebase_config.get_firestore_client()
         if firestore_db:
             from firebase_admin import firestore
-            user_ref = firestore_db.collection('users').document(email)
+            user_ref = firestore_db.collection('users').document(user.username)
             user_ref.set({
-                'email': email,
-                'username': username,
+                'username': user.username,
+                'email': user.email,
+                'hashed_password': user.hashed_password,
                 'is_verified': True,
                 'created_at': firestore.SERVER_TIMESTAMP
             })
-            logger.info(f"[FIRESTORE SUCCESS] Wrote user {email} to Firestore!")
+            logger.info(f"[FIRESTORE SUCCESS] Wrote user {user.username} to Firestore!")
         else:
             logger.warning(f"[FIRESTORE WARN] Firestore DB not initialized, skipping write for {email}")
     except Exception as e:
