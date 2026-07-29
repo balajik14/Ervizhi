@@ -11,7 +11,7 @@ from app.routers.auth import get_current_user
 
 router = APIRouter()
 
-@router.get("/", response_model=List[MachineryResponse])
+@router.get("", response_model=List[MachineryResponse])
 def read_machineries(
     db: Session = Depends(get_db),
     location: Optional[str] = Query(None),
@@ -48,7 +48,7 @@ def read_machinery(id: uuid.UUID, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Machinery not found")
     return machinery
 
-@router.post("/", response_model=MachineryResponse)
+@router.post("", response_model=MachineryResponse)
 def create_machinery(
     machinery_in: MachineryCreate,
     db: Session = Depends(get_db),

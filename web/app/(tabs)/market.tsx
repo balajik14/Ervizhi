@@ -168,7 +168,7 @@ export default function MarketScreen() {
   // Load predictions dynamically from backend or fall back to mock data
   useEffect(() => {
     setIsLoading(true);
-    fetchWithTimeout(`${API_BASE_URL}/api/ml/price-predict?crop=${encodeURIComponent(selectedCrop)}`)
+    fetchWithTimeout(`${API_BASE_URL}/ml/price-predict?crop=${encodeURIComponent(selectedCrop)}`)
       .then(res => res.json())
       .then(data => {
         setIsLoading(false);

@@ -11,14 +11,14 @@ from app.routers.auth import get_current_user
 
 router = APIRouter()
 
-@router.get("/", response_model=List[FarmResponse])
+@router.get("", response_model=List[FarmResponse])
 def read_farms(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
     return db.query(Farm).filter(Farm.user_id == current_user.id).all()
 
-@router.post("/", response_model=FarmResponse)
+@router.post("", response_model=FarmResponse)
 def create_farm(
     farm_in: FarmCreate,
     db: Session = Depends(get_db),

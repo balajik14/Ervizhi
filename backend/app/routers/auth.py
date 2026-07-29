@@ -271,6 +271,23 @@ def login_local(data: LoginLocalRequest, db: Session = Depends(get_db)):
         user.is_verified = True
         db.commit()
 
+    # Sync user with Firestore on login
+    firestore_db = firebase_config.get_firestore_client()
+    if firestore_db:
+        try:
+            from firebase_admin import firestore
+            doc_ref = firestore_db.collection("users").document(user.username)
+            doc_ref.set({
+                "username": user.username,
+                "email": user.email,
+                "is_verified": True,
+                "created_at": firestore.SERVER_TIMESTAMP,
+                "last_login": firestore.SERVER_TIMESTAMP
+            }, merge=True)
+            print(f"[FIRESTORE WRITE SUCCESS] Saved {user.username} to Firestore!")
+        except Exception as e:
+            print(f"[FIRESTORE WRITE FAILED]: {e}")
+
     access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     token = create_access_token(data={"sub": str(user.id)}, expires_delta=access_token_expires)
 
