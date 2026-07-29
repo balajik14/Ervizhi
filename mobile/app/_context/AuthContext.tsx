@@ -137,7 +137,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   
   // ── Register with Email Link ─────────────────────────────────────────────
   const registerWithEmail = useCallback(async (email: string, password: string, username: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/register-email`, {
+    const apiUrl = `${API_BASE_URL}/auth/register`;
+    console.log('Sending registration request to:', apiUrl);
+    const response = await fetchWithTimeout(apiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email.trim().toLowerCase(), username: username.trim().toLowerCase(), password }),
