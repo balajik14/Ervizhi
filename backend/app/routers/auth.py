@@ -15,6 +15,7 @@ from app.core.config import settings
 from app.models.user import User
 from app.schemas.user import UserCreate, UserResponse, UserUpdate, Token
 import firebase_config
+from firebase_config import get_firestore_client
 
 router = APIRouter()
 
@@ -207,19 +208,18 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
             logger.warning(f"[FIREBASE AUTH WARN] Firebase Auth user creation note: {e}")
         
         # Write to Firestore
-        firestore_db = firebase_config.get_firestore_client()
-        if firestore_db:
+        db_firestore = get_firestore_client()
+        if db_firestore:
             try:
                 from firebase_admin import firestore
-                doc_ref = firestore_db.collection("users").document(user.username)
-                doc_ref.set({
+                db_firestore.collection("users").document(user.username).set({
                     "username": user.username,
                     "email": user.email,
                     "is_verified": True,
                     "created_at": firestore.SERVER_TIMESTAMP,
                     "last_login": firestore.SERVER_TIMESTAMP
                 }, merge=True)
-                print(f"[FIRESTORE SUCCESS] Created user document for {user.username} in 'users' collection")
+                print(f"[FIRESTORE WRITE SUCCESS] Created/Updated user: {user.username}")
             except Exception as e:
                 print(f"[FIRESTORE WRITE ERROR]: {e}")
         else:
@@ -272,21 +272,20 @@ def login_local(data: LoginLocalRequest, db: Session = Depends(get_db)):
         db.commit()
 
     # Sync user with Firestore on login
-    firestore_db = firebase_config.get_firestore_client()
-    if firestore_db:
+    db_firestore = get_firestore_client()
+    if db_firestore:
         try:
             from firebase_admin import firestore
-            doc_ref = firestore_db.collection("users").document(user.username)
-            doc_ref.set({
+            db_firestore.collection("users").document(user.username).set({
                 "username": user.username,
                 "email": user.email,
                 "is_verified": True,
                 "created_at": firestore.SERVER_TIMESTAMP,
                 "last_login": firestore.SERVER_TIMESTAMP
             }, merge=True)
-            print(f"[FIRESTORE WRITE SUCCESS] Saved {user.username} to Firestore!")
+            print(f"[FIRESTORE WRITE SUCCESS] Created/Updated user: {user.username}")
         except Exception as e:
-            print(f"[FIRESTORE WRITE FAILED]: {e}")
+            print(f"[FIRESTORE WRITE ERROR]: {e}")
 
     access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     token = create_access_token(data={"sub": str(user.id)}, expires_delta=access_token_expires)
