@@ -3,7 +3,7 @@ load_dotenv()
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import auth, machinery, farm, ml, weather
+from app.routers import auth, machinery, farm, ml, weather, trade
 
 # Automatically create tables for SQLite/PostgreSQL
 from app.core.database import engine, Base
@@ -43,6 +43,7 @@ app.include_router(machinery.router, prefix="/api/machinery", tags=["Machinery"]
 app.include_router(farm.router, prefix="/api/farms", tags=["Farms"])
 app.include_router(ml.router, prefix="/api/ml", tags=["Machine Learning"])
 app.include_router(weather.router, prefix="/api/weather", tags=["Weather"])
+app.include_router(trade.router, prefix="/api/trade", tags=["Trade"])
 
 @app.get("/")
 def read_root():

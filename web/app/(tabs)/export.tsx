@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   View, Text, StyleSheet, TextInput, FlatList,
   TouchableOpacity, ScrollView, Animated
@@ -7,9 +7,10 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useApp } from '../_layout';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, GRADIENTS, RADIUS, SHADOWS, SPACING } from '../../constants/theme';
+import { API_BASE_URL, fetchWithTimeout } from '../_api/config';
 
 // Import the real dataset from assets
-const TRADE_DATA = require('../../assets/trade_data.json') as Array<{
+const STATIC_TRADE_DATA = require('../../assets/trade_data.json') as Array<{
   crop: string;
   seasonality: string;
   demand: string;
@@ -34,20 +35,39 @@ const demandColor = (demand: string) => {
 export default function ExportScreen() {
   const { isTamil } = useApp();
   const [query, setQuery] = useState('');
-  const [selected, setSelected] = useState<typeof TRADE_DATA[0] | null>(null);
+  const [tradeData, setTradeData] = useState<any[]>(STATIC_TRADE_DATA);
+  const [selected, setSelected] = useState<any | null>(null);
   const scaleAnim = React.useRef(new Animated.Value(1)).current;
   const [activeInput, setActiveInput] = useState<boolean>(false);
+
+  useEffect(() => {
+    const loadTradeListings = async () => {
+      try {
+        const response = await fetchWithTimeout(`${API_BASE_URL}/trade`);
+        if (response.ok) {
+          const data = await response.json();
+          if (Array.isArray(data) && data.length > 0) {
+            // Merge dynamic database listings before static fallback data
+            setTradeData([...data, ...STATIC_TRADE_DATA]);
+          }
+        }
+      } catch (e) {
+        console.log("[TRADE FETCH NOTE] Failed to fetch live trade listings:", e);
+      }
+    };
+    loadTradeListings();
+  }, []);
 
   const filtered = useMemo(() => {
     if (!query.trim()) return [];
     const q = query.toLowerCase();
-    return TRADE_DATA.filter(d =>
+    return tradeData.filter(d =>
       d.crop.toLowerCase().includes(q) ||
       (d.tamil_name && d.tamil_name.toLowerCase().includes(q))
     ).slice(0, 20);
-  }, [query]);
+  }, [query, tradeData]);
 
-  const handleSelect = (item: typeof TRADE_DATA[0]) => {
+  const handleSelect = (item: any) => {
     Animated.sequence([
       Animated.timing(scaleAnim, { toValue: 0.97, duration: 100, useNativeDriver: true }),
       Animated.spring(scaleAnim, { toValue: 1, useNativeDriver: true }),
@@ -178,20 +198,20 @@ export default function ExportScreen() {
         {!selected && (
           <View style={styles.statsCard}>
             <Text style={styles.statsTitle}>{isTamil ? 'வேளாண் தரவுத்தளம்' : 'Agri Dataset'}</Text>
-            <View style={styles.statRow}>
-              <View style={styles.statItem}>
-                <Text style={styles.statNumber}>{TRADE_DATA.length}</Text>
-                <Text style={styles.statLabel}>{isTamil ? 'பொருட்கள்' : 'Products'}</Text>
-              </View>
-              <View style={styles.statItem}>
-                <Text style={styles.statNumber}>{new Set(TRADE_DATA.map(d => d.country)).size}</Text>
-                <Text style={styles.statLabel}>{isTamil ? 'நாடுகள்' : 'Countries'}</Text>
-              </View>
-              <View style={styles.statItem}>
-                <Text style={styles.statNumber}>{TRADE_DATA.filter(d => d.demand === 'Very High').length}</Text>
-                <Text style={styles.statLabel}>{isTamil ? 'உயர் தேவை' : 'High Demand'}</Text>
-              </View>
-            </View>
+             <View style={styles.statRow}>
+               <View style={styles.statItem}>
+                 <Text style={styles.statNumber}>{tradeData.length}</Text>
+                 <Text style={styles.statLabel}>{isTamil ? 'பொருட்கள்' : 'Products'}</Text>
+               </View>
+               <View style={styles.statItem}>
+                 <Text style={styles.statNumber}>{new Set(tradeData.map(d => d.country)).size}</Text>
+                 <Text style={styles.statLabel}>{isTamil ? 'நாடுகள்' : 'Countries'}</Text>
+               </View>
+               <View style={styles.statItem}>
+                 <Text style={styles.statNumber}>{tradeData.filter(d => d.demand === 'Very High').length}</Text>
+                 <Text style={styles.statLabel}>{isTamil ? 'உயர் தேவை' : 'High Demand'}</Text>
+               </View>
+             </View>
             <Text style={styles.hint}>
               {isTamil ? '⬆ மேலே உங்கள் வேளாண் பொருளின் பெயரை தட்டச்சு செய்யவும்' : '⬆ Type your agri product name above to see global demand'}
             </Text>
