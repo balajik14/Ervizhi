@@ -50,7 +50,8 @@ type AuthContextType = {
   isAuthenticated: boolean;
   sendOTP: (email: string) => Promise<string>;
   verifyOtpOnly: (email: string, otp: string) => Promise<void>;
-  verifyOTPAndRegister: (email: string, username: string, password: string, otp: string) => Promise<void>;
+  sendVerificationLink: (email: string, username: string, password: string) => Promise<void>;
+  verifyEmailToken: (token: string, email: string) => Promise<void>;
   resetPasswordWithOTP: (email: string, otp: string, newPassword: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
@@ -182,23 +183,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const verifyOTPAndRegister = useCallback(async (email: string, username: string, password: string, otp: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp-register`, {
+  const sendVerificationLink = useCallback(async (email: string, username: string, password: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/send-verification-link`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: email.trim().toLowerCase(),
         username: username.trim().toLowerCase(),
-        password,
-        otp: otp.trim()
+        password
       }),
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.detail || 'OTP Verification or Registration failed.');
+      throw new Error(data.detail || 'Failed to send verification link.');
     }
-    await _setAuth(data.token, data.profile);
-  }, [_setAuth]);
+  }, []);
+
+  const verifyEmailToken = useCallback(async (token: string, email: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-link?token=${token}&email=${email}`);
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || 'Email verification failed.');
+    }
+  }, []);
 
   const resetPasswordWithOTP = useCallback(async (email: string, otp: string, newPassword: string): Promise<void> => {
     const response = await fetchWithTimeout(`${API_BASE_URL}/auth/reset-password`, {
