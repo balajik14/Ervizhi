@@ -183,20 +183,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const register = useCallback(async (email: string, username: string, password: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: email.trim().toLowerCase(),
-        username: username.trim().toLowerCase(),
-        password
-      }),
-    });
-    const data = await response.json();
-    if (!response.ok) {
-      throw new Error(data.detail || 'Registration failed.');
+    try {
+      const response = await fetchWithTimeout(`${API_BASE_URL}/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.trim().toLowerCase(),
+          username: username.trim().toLowerCase(),
+          password
+        }),
+      });
+      
+      let data;
+      try {
+        data = await response.json();
+      } catch (e) {
+        throw new Error('Received invalid response from server. Check CORS or server status.');
+      }
+
+      if (!response.ok) {
+        throw new Error(data?.detail || 'Registration failed.');
+      }
+      await _setAuth(data.token, data.profile);
+    } catch (error: any) {
+      if (error.message.includes('Network') || error.message.includes('fetch')) {
+        throw new Error('Network error or CORS issue: Could not connect to the server.');
+      }
+      throw error;
     }
-    await _setAuth(data.token, data.profile);
   }, [_setAuth]);
 
   const resetPasswordWithOTP = useCallback(async (email: string, otp: string, newPassword: string): Promise<void> => {

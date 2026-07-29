@@ -18,15 +18,10 @@ app = FastAPI(title="Ervizhi API", description="Production Backend for Ervizhi A
 
 import os
 
-# Configure CORS — allow all origins in development (restrict via ALLOWED_ORIGINS env var in production)
-_raw_origins = os.getenv("ALLOWED_ORIGINS", "")
-ALLOWED_ORIGINS = ["*", "https://ervizhi.vercel.app"]
-if _raw_origins:
-    ALLOWED_ORIGINS.extend(_raw_origins.split(","))
-
+# Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
