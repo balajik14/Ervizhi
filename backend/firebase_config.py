@@ -41,11 +41,10 @@ def _init_firebase() -> firebase_admin.App:
 
     if firebase_cred_json:
         try:
-            # Step 1: Escape literal backslashes so json.loads doesn't crash on raw control chars
-            formatted_json_str = firebase_cred_json.replace('\\\\n', '\\n')
-            cred_dict = json.loads(formatted_json_str)
+            # Step A: Parse raw JSON string cleanly without replacing internal backslashes first
+            cred_dict = json.loads(firebase_cred_json, strict=False)
             
-            # Step 2: Fix the RSA private key internal newlines after JSON decoding
+            # Step B: Fix RSA private key newlines AFTER decoding into a dictionary
             if "private_key" in cred_dict and isinstance(cred_dict["private_key"], str):
                 cred_dict["private_key"] = cred_dict["private_key"].replace('\\n', '\n')
                 

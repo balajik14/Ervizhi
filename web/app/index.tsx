@@ -283,7 +283,7 @@ function AuthForm() {
                   
                   <TouchableOpacity style={styles.primaryBtn} onPress={handleLogin} disabled={isLoading}>
                     <View style={styles.primaryBtnGrad}>
-                      {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
+                      {isLoading ? <LeafLoader size={24} /> : (
                         <Text style={styles.primaryBtnText}>{isTamil ? 'உள்நுழைய' : 'Secure Login'}</Text>
                       )}
                     </View>
@@ -318,7 +318,7 @@ function AuthForm() {
                       />
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleRegister} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
+                          {isLoading ? <LeafLoader size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'OTP அனுப்பு' : 'Send Verification OTP'}</Text>
                           )}
                         </View>
@@ -341,7 +341,7 @@ function AuthForm() {
                       />
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleRegister} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
+                          {isLoading ? <LeafLoader size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'சரிபார்க்கவும்' : 'Verify OTP'}</Text>
                           )}
                         </View>
@@ -376,7 +376,7 @@ function AuthForm() {
                       />
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleRegister} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
+                          {isLoading ? <LeafLoader size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'கணக்கை உருவாக்கு' : 'Create Account'}</Text>
                           )}
                         </View>
@@ -413,7 +413,7 @@ function AuthForm() {
 
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleForgotPassword} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
+                          {isLoading ? <LeafLoader size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'OTP அனுப்பு' : 'Send OTP'}</Text>
                           )}
                         </View>
@@ -448,7 +448,7 @@ function AuthForm() {
 
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleForgotPassword} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
+                          {isLoading ? <LeafLoader size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'கடவுச்சொல்லை மாற்று' : 'Reset Password'}</Text>
                           )}
                         </View>
