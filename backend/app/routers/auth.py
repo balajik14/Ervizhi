@@ -209,17 +209,19 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
         # Write to Firestore
         firestore_db = firebase_config.get_firestore_client()
         if firestore_db:
-            from firebase_admin import firestore
-            user_ref = firestore_db.collection('users').document(user.username)
-            user_ref.set({
-                'username': user.username,
-                'email': user.email,
-                'hashed_password': user.hashed_password,
-                'is_verified': True,
-                'created_at': firestore.SERVER_TIMESTAMP,
-                'last_login': firestore.SERVER_TIMESTAMP
-            }, merge=True)
-            logger.info(f"[FIRESTORE SUCCESS] Wrote user {user.username} to Firestore!")
+            try:
+                from firebase_admin import firestore
+                doc_ref = firestore_db.collection("users").document(user.username)
+                doc_ref.set({
+                    "username": user.username,
+                    "email": user.email,
+                    "is_verified": True,
+                    "created_at": firestore.SERVER_TIMESTAMP,
+                    "last_login": firestore.SERVER_TIMESTAMP
+                }, merge=True)
+                print(f"[FIRESTORE SUCCESS] Created user document for {user.username} in 'users' collection")
+            except Exception as e:
+                print(f"[FIRESTORE WRITE ERROR]: {e}")
         else:
             logger.warning(f"[FIRESTORE WARN] Firestore DB not initialized, skipping write for {email}")
     except Exception as e:
