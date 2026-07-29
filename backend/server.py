@@ -84,19 +84,7 @@ else:
 # ---------------------------------------------------------------------------
 # ML Model Paths & Globals
 # ---------------------------------------------------------------------------
-SOIL_PATH = "models_and_data/TN Soil Properties.xlsx"
-SUGGESTION_PATH = "models_and_data/crop_suggestion.xlsx"
-MODEL_PATH = "models_and_data/xgboost_crop_model.json"
-LE_PATH = "models_and_data/label_encoder.pkl"
-MODEL_7FEAT_PATH = "models_and_data/xgboost_crop_7feat.json"
-LE_7FEAT_PATH = "models_and_data/label_encoder_7feat.pkl"
-
-df_merged = None
-model = None
-le = None
-model_7feat = None
-le_7feat = None
-crop_requirements = None
+# ML logic now correctly handled in app.services.ml_service
 
 
 def get_auth_db():
@@ -109,8 +97,7 @@ def get_auth_db():
 
 
 def init_backend():
-    """Load datasets and ML models (unchanged from original)."""
-    global df_merged, model, le, model_7feat, le_7feat, crop_requirements
+    """Initialize local SQLite Auth DB."""
 
     # Initialize local SQLite Auth DB
     try:
@@ -175,62 +162,6 @@ def init_backend():
         logger.info("Local SQLite Auth database initialized.")
     except Exception as e:
         logger.error("Failed to initialize SQLite Auth DB: %s", e)
-
-    # 1. Load and Merge Datasets
-    if os.path.exists(SOIL_PATH) and os.path.exists(SUGGESTION_PATH):
-        try:
-            df_soil = pd.read_excel(SOIL_PATH)
-            df_suggest = pd.read_excel(SUGGESTION_PATH)
-            
-            # Preprocess area names to prevent join misses due to whitespaces/casing
-            df_soil["Area"] = df_soil["Area"].astype(str).str.strip().str.lower()
-            df_suggest["Constituency Name"] = df_suggest["Constituency Name"].astype(str).str.strip().str.lower()
-            
-            df_merged = pd.merge(
-                df_soil, df_suggest,
-                left_on="Area", right_on="Constituency Name",
-                how="inner",
-            )
-            logger.info("Datasets loaded and merged. Rows: %d", len(df_merged))
-        except Exception as e:
-            logger.error("Error loading datasets: %s", e)
-    else:
-        logger.warning("Dataset files missing.")
-
-    # 2. XGBoost 3-feat model
-    if df_merged is not None and len(df_merged) > 0:
-        try:
-            X = df_merged[["N", "P", "K"]]
-            y = df_merged["Crop 1"]
-            le = joblib.load(LE_PATH) if os.path.exists(LE_PATH) else None
-            if le is None:
-                from sklearn.preprocessing import LabelEncoder
-                le = LabelEncoder()
-                y_encoded = le.fit_transform(y)
-                joblib.dump(le, LE_PATH)
-            else:
-                y_encoded = le.transform(y)
-            model = xgb.XGBClassifier(objective="multi:softprob")
-            if os.path.exists(MODEL_PATH):
-                model.load_model(MODEL_PATH)
-                logger.info("XGBoost model loaded.")
-            else:
-                model.fit(X, y_encoded)
-                model.save_model(MODEL_PATH)
-                logger.info("XGBoost model trained and saved.")
-        except Exception as e:
-            logger.error("Error initialising model: %s", e)
-
-    # 3. 7-feature model
-    if os.path.exists(MODEL_7FEAT_PATH) and os.path.exists(LE_7FEAT_PATH):
-        try:
-            model_7feat = xgb.XGBClassifier()
-            model_7feat.load_model(MODEL_7FEAT_PATH)
-            le_7feat = joblib.load(LE_7FEAT_PATH)
-            logger.info("7-feature XGBoost model loaded.")
-        except Exception as e:
-            logger.error("Error loading 7-feature model: %s", e)
-
 
 init_backend()
 

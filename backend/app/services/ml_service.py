@@ -3,9 +3,7 @@ import pandas as pd
 import numpy as np
 import xgboost as xgb
 import joblib
-import torch
-import torch.nn as nn
-from torchvision import models, transforms
+
 import base64
 import io
 from PIL import Image
@@ -20,17 +18,27 @@ MODEL_7FEAT_PATH = os.path.join(BASE_DIR, 'xgboost_crop_7feat.json')
 LE_7FEAT_PATH = os.path.join(BASE_DIR, 'label_encoder_7feat.pkl')
 CROP_REC_PATH = os.path.join(BASE_DIR, 'Crop_recommendation.csv')
 
-class MarketLSTM(nn.Module):
+class MarketLSTM:
     def __init__(self, input_size=1, hidden_size=16, num_layers=1, output_size=1):
-        super(MarketLSTM, self).__init__()
+        import torch
+        import torch.nn as nn
+        self.torch = torch
+        self.nn = nn
         self.hidden_size = hidden_size
         self.num_layers = num_layers
         self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
         self.fc = nn.Linear(hidden_size, output_size)
+        self.state_dict = None
         
-    def forward(self, x):
-        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
-        c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
+    def load_state_dict(self, state_dict):
+        self.state_dict = state_dict
+
+    def eval(self):
+        pass
+
+    def __call__(self, x):
+        h0 = self.torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
+        c0 = self.torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
         out, _ = self.lstm(x, (h0, c0))
         out = self.fc(out[:, -1, :])
         return out
@@ -45,11 +53,13 @@ class MLService:
         self.crop_requirements = None
         self.lstm_model = None
         self.disease_model = None
-        self._init_backend()
-        self._init_lstm()
-        self._init_disease()
+        self._backend_initialized = False
+        self._lstm_initialized = False
+        self._disease_initialized = False
 
     def _init_backend(self):
+        if self._backend_initialized: return
+        self._backend_initialized = True
         # 1. Load and Merge Datasets
         if os.path.exists(SOIL_PATH) and os.path.exists(SUGGESTION_PATH):
             try:
@@ -91,10 +101,29 @@ class MLService:
                 print(f"Error loading 7-feature model: {e}")
 
     def _init_lstm(self):
+        if self._lstm_initialized: return
+        self._lstm_initialized = True
         lstm_path = os.path.join(BASE_DIR, 'backend', 'market_lstm.pt')
         if os.path.exists(lstm_path):
             try:
-                self.lstm_model = MarketLSTM()
+                import torch
+                import torch.nn as nn
+                # Redefine MarketLSTM properly with nn.Module here since torch is available
+                class RealMarketLSTM(nn.Module):
+                    def __init__(self, input_size=1, hidden_size=16, num_layers=1, output_size=1):
+                        super(RealMarketLSTM, self).__init__()
+                        self.hidden_size = hidden_size
+                        self.num_layers = num_layers
+                        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
+                        self.fc = nn.Linear(hidden_size, output_size)
+                    def forward(self, x):
+                        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
+                        c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
+                        out, _ = self.lstm(x, (h0, c0))
+                        out = self.fc(out[:, -1, :])
+                        return out
+
+                self.lstm_model = RealMarketLSTM()
                 self.lstm_model.load_state_dict(torch.load(lstm_path, map_location=torch.device('cpu')))
                 self.lstm_model.eval()
                 print("[ML SERVICE] Loaded MarketLSTM successfully.")
@@ -102,6 +131,8 @@ class MLService:
                 print(f"Error loading LSTM model: {e}")
 
     def _init_disease(self):
+        if self._disease_initialized: return
+        self._disease_initialized = True
         model_path = os.path.join(BASE_DIR, 'backend', 'disease_yolo.pt')
         if os.path.exists(model_path):
             try:
@@ -115,6 +146,7 @@ class MLService:
             self.disease_model = None
 
     def recommend_by_npk(self, N: float, P: float, K: float):
+        self._init_backend()
         if self.model is None or self.le is None:
             return None
         input_data = np.array([[N, P, K]])
@@ -122,6 +154,7 @@ class MLService:
         return self.le.inverse_transform(prediction)[0]
 
     def recommend_by_7feat(self, N, P, K, temp, humidity, ph, rainfall):
+        self._init_backend()
         if self.model_7feat is None or self.le_7feat is None:
             return None
         input_data = np.array([[N, P, K, temp, humidity, ph, rainfall]])
@@ -129,6 +162,7 @@ class MLService:
         return self.le_7feat.inverse_transform(prediction)[0]
 
     def get_constituency_info(self, name: str):
+        self._init_backend()
         if self.df_merged is None:
             return None
         lower_name = name.lower().trim() if hasattr(name.lower(), 'trim') else name.lower().strip()
@@ -174,6 +208,7 @@ class MLService:
         return crop_matrix.get(current_crop.lower(), 'corn')
 
     def calculate_fertilizer(self, crop_name: str, land_size_acres: float):
+        self._init_backend()
         base_n, base_p, base_k = 50, 25, 25
         if self.crop_requirements:
             req = None
@@ -219,6 +254,7 @@ class MLService:
             return True # Fallback if error
 
     def plant_disease_inference(self, image_base64: str, is_tamil: bool):
+        self._init_disease()
         if self.disease_model is None:
             # Fallback if model not trained
             status = "Healthy" if len(image_base64) % 2 == 0 else "Diseased"
@@ -294,6 +330,7 @@ class MLService:
         crop_key = crop.lower().strip()
         history = CROP_BASE_PRICES.get(crop_key, [2000, 2050, 2100, 2150, 2130, 2180, 2200])
         
+        self._init_lstm()
         if self.lstm_model is None:
             days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
             return [{"day": d, "price": p} for d, p in zip(days, history)]
@@ -302,6 +339,7 @@ class MLService:
         predictions = []
         days_of_week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         
+        import torch
         with torch.no_grad():
             for i in range(7):
                 last_7 = np.array(seq[-7:], dtype=np.float32) / 10000.0
