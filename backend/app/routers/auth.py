@@ -200,21 +200,28 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
 
     # Sync user with Firebase Auth & Firestore
     try:
-        fb_user = firebase_config.create_user(email=email, password=data.password, display_name=username)
-        print(f"[FIREBASE AUTH] User created in Firebase: {fb_user.uid}")
+        try:
+            fb_user = firebase_config.create_user(email=email, password=data.password, display_name=username)
+            logger.info(f"[FIREBASE AUTH] User created in Firebase: {fb_user.uid}")
+        except Exception as e:
+            logger.warning(f"[FIREBASE AUTH WARN] Firebase Auth user creation note: {e}")
         
         # Write to Firestore
-        if firebase_config.db is not None:
+        firestore_db = firebase_config.get_firestore_client()
+        if firestore_db:
             from firebase_admin import firestore
-            user_ref = firebase_config.db.collection('users').document(email)
+            user_ref = firestore_db.collection('users').document(email)
             user_ref.set({
                 'email': email,
                 'username': username,
                 'is_verified': True,
                 'created_at': firestore.SERVER_TIMESTAMP
             })
+            logger.info(f"[FIRESTORE SUCCESS] Wrote user {email} to Firestore!")
+        else:
+            logger.warning(f"[FIRESTORE WARN] Firestore DB not initialized, skipping write for {email}")
     except Exception as e:
-        print(f"[FIREBASE AUTH] Firebase sync note: {e}")
+        logger.error(f"[FIRESTORE ERROR] Failed to write to Firestore: {e}", exc_info=True)
 
     # Create token
     access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)

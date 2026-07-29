@@ -41,10 +41,12 @@ def _init_firebase() -> firebase_admin.App:
 
     if firebase_cred_json:
         try:
-            cred_dict = json.loads(firebase_cred_json)
+            # Handle escaped newlines from Render environment variables
+            creds_clean = firebase_cred_json.replace('\\n', '\n')
+            cred_dict = json.loads(creds_clean)
             cred = credentials.Certificate(cred_dict)
         except json.JSONDecodeError as e:
-            logger.error("Failed to parse FIREBASE_CREDENTIALS_JSON: %s", e)
+            logger.error("[FIRESTORE CRITICAL] Failed to parse FIREBASE_CREDENTIALS_JSON: %s", e)
             raise
     else:
         if not os.path.exists(service_account_path):
