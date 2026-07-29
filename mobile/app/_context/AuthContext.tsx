@@ -23,12 +23,10 @@ type AuthContextType = {
   /** True ONLY during the initial app-start session restore. Never true during login/register. */
   isLoading: boolean;
   isAuthenticated: boolean;
-  loginWithEmail: (email: string, password: string) => Promise<void>;
-  registerWithEmail: (email: string, password: string, username: string) => Promise<void>;
-  loginLocal: (username: string, password: string) => Promise<void>;
-  sendOTP: (email: string, mode?: string) => Promise<string>;
+  sendOTP: (email: string) => Promise<string>;
   verifyOtpOnly: (email: string, otp: string) => Promise<void>;
   verifyOTPAndRegister: (email: string, username: string, password: string, otp: string) => Promise<void>;
+  resetPasswordWithOTP: (email: string, otp: string, newPassword: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
   refreshProfile: () => Promise<void>;
@@ -41,12 +39,10 @@ const AuthContext = createContext<AuthContextType>({
   token: null,
   isLoading: true,
   isAuthenticated: false,
-  loginWithEmail: async () => {},
-  registerWithEmail: async () => {},
-  loginLocal: async () => {},
   sendOTP: async () => "",
   verifyOtpOnly: async () => {},
   verifyOTPAndRegister: async () => {},
+  resetPasswordWithOTP: async () => {},
   loginWithGoogle: async () => {},
   logout: async () => {},
   refreshProfile: async () => {},
@@ -135,52 +131,57 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [_setAuth]);
 
   
-  // ── Register with Email Link ─────────────────────────────────────────────
-  const registerWithEmail = useCallback(async (email: string, password: string, username: string): Promise<void> => {
-    const apiUrl = `${API_BASE_URL}/auth/register`;
-    console.log('Sending registration request to:', apiUrl);
-    const response = await fetchWithTimeout(apiUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email.trim().toLowerCase(), username: username.trim().toLowerCase(), password }),
-    });
-    const data = await response.json();
-    if (!response.ok) {
-      throw new Error(data.detail || 'Registration failed.');
-    }
-  }, []);
-
-  // ── Verify Email Token ─────────────────────────────────────────────
-  const verifyEmailToken = useCallback(async (token: string, email: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-email?token=${token}&email=${encodeURIComponent(email)}`, {
-      method: 'GET',
-    });
-    const data = await response.json();
-    if (!response.ok) {
-      throw new Error(data.detail || 'Invalid or expired verification token.');
-    }
-  }, []);
-
-  // ── Forgot Password Email ─────────────────────────────
-  const forgotPasswordEmail = useCallback(async (email: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/forgot-password-email`, {
+  // ── OTP Methods ─────────────────────────────────────────────
+  const sendOTP = useCallback(async (email: string): Promise<string> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/send-otp`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email.trim().toLowerCase() }),
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.detail || 'Failed to send reset email.');
+      throw new Error(data.detail || 'Failed to send OTP.');
+    }
+    return data.otp;
+  }, []);
+
+  const verifyOtpOnly = useCallback(async (email: string, otp: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp-only`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email.trim().toLowerCase(), otp: otp.trim() }),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || 'Invalid or expired OTP.');
     }
   }, []);
 
-  // ── Reset Password Link ───────────────────────────────────────────────
-  const resetPasswordLink = useCallback(async (token: string, newPassword: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/reset-password-link`, {
+  const verifyOTPAndRegister = useCallback(async (email: string, username: string, password: string, otp: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp-register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        token: token.trim(),
+        email: email.trim().toLowerCase(),
+        username: username.trim().toLowerCase(),
+        password,
+        otp: otp.trim()
+      }),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || 'OTP Verification or Registration failed.');
+    }
+    await _setAuth(data.token, data.profile);
+  }, [_setAuth]);
+
+  const resetPasswordWithOTP = useCallback(async (email: string, otp: string, newPassword: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/reset-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email.trim().toLowerCase(),
+        otp: otp.trim(),
         new_password: newPassword,
       }),
     });
@@ -191,10 +192,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // ── Compat Fallbacks ────────────────────────────────────────────
-  const loginWithEmail = useCallback(
-    async (email: string, password: string) => loginLocal(email, password),
-    [loginLocal]
-  );
 
 
 
@@ -236,12 +233,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         token,
         isLoading,
         isAuthenticated: !!user,
-        loginWithEmail,
-        registerWithEmail,
         loginLocal,
         sendOTP,
         verifyOtpOnly,
         verifyOTPAndRegister,
+        resetPasswordWithOTP,
         loginWithGoogle,
         logout,
         refreshProfile,

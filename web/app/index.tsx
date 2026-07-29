@@ -32,7 +32,7 @@ export default function AuthScreen() {
 
 function AuthForm() {
   const { isTamil, toggleLanguage } = useApp();
-  const { loginLocal, registerWithEmail, forgotPasswordEmail } = useAuth();
+  const { loginLocal, sendOTP, verifyOTPAndRegister, resetPasswordWithOTP } = useAuth();
   const { width } = useWindowDimensions();
   const isDesktop = width > 768;
 
@@ -42,7 +42,8 @@ function AuthForm() {
   const [password, setPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [linkSent, setLinkSent] = useState(false);
+  const [otpSent, setOtpSent] = useState(false);
+  const [otp, setOtp] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
@@ -62,7 +63,7 @@ function AuthForm() {
   useFocusEffect(
     useCallback(() => {
       setUsername(''); setLoginUsername(''); setPassword(''); setNewPassword('');
-      setEmail(''); setLinkSent(false);
+      setEmail(''); setOtpSent(false); setOtp('');
       setMode('login'); setIsLoading(false); setErrorMsg(null); setSuccessMsg(null);
     }, [])
   );
@@ -90,38 +91,77 @@ function AuthForm() {
   const handleRegister = async () => {
     setErrorMsg(null);
     setSuccessMsg(null);
-    if (!email.trim() || !username.trim() || !password.trim()) {
-      setErrorMsg(isTamil ? 'அனைத்து விவரங்களையும் உள்ளிடவும்.' : 'Please enter all details.');
-      return;
-    }
-    setIsLoading(true);
-    try {
-      await registerWithEmail(email.trim(), password, username.trim());
-      setLinkSent(true);
-      setSuccessMsg(isTamil ? 'உங்கள் மின்னஞ்சலை சரிபார்க்கவும்.' : 'Registration successful! Please check your email for the verification link.');
-    } catch (e: any) {
-      setErrorMsg(e.message || 'Registration failed.');
-    } finally {
-      setIsLoading(false);
+    if (!otpSent) {
+      if (!email.trim() || !username.trim() || !password.trim()) {
+        setErrorMsg(isTamil ? 'அனைத்து விவரங்களையும் உள்ளிடவும்.' : 'Please enter all details.');
+        return;
+      }
+      setIsLoading(true);
+      try {
+        await sendOTP(email.trim());
+        setOtpSent(true);
+        setSuccessMsg(isTamil ? 'OTP அனுப்பப்பட்டது.' : 'OTP sent to your email.');
+      } catch (e: any) {
+        setErrorMsg(e.message || 'Failed to send OTP.');
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      if (!otp.trim()) {
+        setErrorMsg(isTamil ? 'OTP ஐ உள்ளிடவும்.' : 'Please enter the OTP.');
+        return;
+      }
+      setIsLoading(true);
+      try {
+        await verifyOTPAndRegister(email.trim(), username.trim(), password, otp.trim());
+        // Success handled by AuthContext
+      } catch (e: any) {
+        setErrorMsg(e.message || 'Registration failed.');
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
   const handleForgotPassword = async () => {
     setErrorMsg(null);
     setSuccessMsg(null);
-    if (!email.trim()) {
-      setErrorMsg(isTamil ? 'மின்னஞ்சலை உள்ளிடவும்.' : 'Please enter your email.');
-      return;
-    }
-    setIsLoading(true);
-    try {
-      await forgotPasswordEmail(email.trim());
-      setLinkSent(true);
-      setSuccessMsg(isTamil ? 'கடவுச்சொல் மீட்டமைப்பு இணைப்பு அனுப்பப்பட்டது.' : 'Password reset link sent to your email.');
-    } catch (e: any) {
-      setErrorMsg(e.message || 'Failed to send reset email.');
-    } finally {
-      setIsLoading(false);
+    if (!otpSent) {
+      if (!email.trim()) {
+        setErrorMsg(isTamil ? 'மின்னஞ்சலை உள்ளிடவும்.' : 'Please enter your email.');
+        return;
+      }
+      setIsLoading(true);
+      try {
+        await sendOTP(email.trim());
+        setOtpSent(true);
+        setSuccessMsg(isTamil ? 'OTP அனுப்பப்பட்டது.' : 'OTP sent to your email.');
+      } catch (e: any) {
+        setErrorMsg(e.message || 'Failed to send OTP email.');
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      if (!otp.trim() || !newPassword.trim()) {
+        setErrorMsg(isTamil ? 'OTP மற்றும் புதிய கடவுச்சொல்லை உள்ளிடவும்.' : 'Please enter OTP and new password.');
+        return;
+      }
+      setIsLoading(true);
+      try {
+        await resetPasswordWithOTP(email.trim(), otp.trim(), newPassword);
+        setSuccessMsg(isTamil ? 'கடவுச்சொல் வெற்றிகரமாக மாற்றப்பட்டது.' : 'Password reset successful. You can login now.');
+        setTimeout(() => {
+          setMode('login');
+          setOtpSent(false);
+          setOtp('');
+          setNewPassword('');
+          setEmail('');
+        }, 3000);
+      } catch (e: any) {
+        setErrorMsg(e.message || 'Failed to reset password.');
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -246,7 +286,7 @@ function AuthForm() {
               {/* REGISTER MODE */}
               {mode === 'register' && (
                 <>
-                  {!linkSent ? (
+                  {!otpSent ? (
                     <>
                       <Text style={styles.label}>{isTamil ? 'மின்னஞ்சல் முகவரி' : 'Email Address'}</Text>
                       <TextInput
@@ -288,22 +328,36 @@ function AuthForm() {
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleRegister} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
                           {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
-                            <Text style={styles.primaryBtnText}>{isTamil ? 'கணக்கை உருவாக்கு' : 'Register Account'}</Text>
+                            <Text style={styles.primaryBtnText}>{isTamil ? 'OTP அனுப்பு' : 'Send OTP'}</Text>
                           )}
                         </View>
                       </TouchableOpacity>
                     </>
                   ) : (
-                    <View style={{ alignItems: 'center', paddingVertical: 20 }}>
-                      <MaterialIcons name="mark-email-unread" size={64} color={COLORS.gold} style={{ marginBottom: 15 }} />
-                      <Text style={[styles.formTitle, { marginBottom: 10 }]}>{isTamil ? 'மின்னஞ்சலை சரிபார்க்கவும்' : 'Check Your Email'}</Text>
-                      <Text style={{ textAlign: 'center', color: COLORS.textSecondary, marginBottom: 20 }}>
-                        {isTamil ? 'சரிபார்ப்பு இணைப்பு உங்கள் மின்னஞ்சலுக்கு அனுப்பப்பட்டுள்ளது.' : 'We\'ve sent a verification link to your email. Click the link to activate your account.'}
-                      </Text>
-                    </View>
+                    <>
+                      <Text style={styles.label}>{isTamil ? 'OTP ஐ உள்ளிடவும்' : 'Enter OTP'}</Text>
+                      <TextInput
+                        style={inputStyle('otp')}
+                        placeholder={isTamil ? '6 இலக்க OTP' : '6-digit OTP'}
+                        value={otp}
+                        onChangeText={setOtp}
+                        keyboardType="number-pad"
+                        placeholderTextColor={COLORS.textMuted}
+                        onFocus={() => setFocusedInput('otp')}
+                        onBlur={() => setFocusedInput(null)}
+                        editable={!isLoading}
+                      />
+                      <TouchableOpacity style={styles.primaryBtn} onPress={handleRegister} disabled={isLoading}>
+                        <View style={styles.primaryBtnGrad}>
+                          {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
+                            <Text style={styles.primaryBtnText}>{isTamil ? 'கணக்கை உருவாக்கு' : 'Verify & Register'}</Text>
+                          )}
+                        </View>
+                      </TouchableOpacity>
+                    </>
                   )}
 
-                  <TouchableOpacity style={styles.secondaryBtn} onPress={() => { setMode('login'); setErrorMsg(null); setSuccessMsg(null); setLinkSent(false); }} disabled={isLoading}>
+                  <TouchableOpacity style={styles.secondaryBtn} onPress={() => { setMode('login'); setErrorMsg(null); setSuccessMsg(null); setOtpSent(false); }} disabled={isLoading}>
                     <Text style={styles.secondaryBtnText}>
                       {isTamil ? 'ஏற்கனவே கணக்கு உள்ளதா? உள்நுழையவும்' : 'Already have an account? Login'}
                     </Text>
@@ -311,11 +365,10 @@ function AuthForm() {
                 </>
               )}
 
-              
               {/* FORGOT PASSWORD MODE */}
               {mode === 'forgot' && (
                 <>
-                  {!linkSent ? (
+                  {!otpSent ? (
                     <>
                       <Text style={styles.label}>{isTamil ? 'மின்னஞ்சல் முகவரி' : 'Account Email Address'}</Text>
                       <TextInput
@@ -334,22 +387,49 @@ function AuthForm() {
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleForgotPassword} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
                           {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
-                            <Text style={styles.primaryBtnText}>{isTamil ? 'இணைப்பை அனுப்பு' : 'Send Reset Link'}</Text>
+                            <Text style={styles.primaryBtnText}>{isTamil ? 'OTP அனுப்பு' : 'Send OTP'}</Text>
                           )}
                         </View>
                       </TouchableOpacity>
                     </>
                   ) : (
-                    <View style={{ alignItems: 'center', paddingVertical: 20 }}>
-                      <MaterialIcons name="mark-email-unread" size={64} color={COLORS.gold} style={{ marginBottom: 15 }} />
-                      <Text style={[styles.formTitle, { marginBottom: 10 }]}>{isTamil ? 'மின்னஞ்சலை சரிபார்க்கவும்' : 'Check Your Email'}</Text>
-                      <Text style={{ textAlign: 'center', color: COLORS.textSecondary, marginBottom: 20 }}>
-                        {isTamil ? 'மீட்டமைக்க இணைப்பு உங்கள் மின்னஞ்சலுக்கு அனுப்பப்பட்டுள்ளது.' : 'A password reset link has been sent to your email.'}
-                      </Text>
-                    </View>
+                    <>
+                      <Text style={styles.label}>{isTamil ? 'OTP ஐ உள்ளிடவும்' : 'Enter OTP'}</Text>
+                      <TextInput
+                        style={inputStyle('otp')}
+                        placeholder={isTamil ? '6 இலக்க OTP' : '6-digit OTP'}
+                        value={otp}
+                        onChangeText={setOtp}
+                        keyboardType="number-pad"
+                        placeholderTextColor={COLORS.textMuted}
+                        onFocus={() => setFocusedInput('otp')}
+                        onBlur={() => setFocusedInput(null)}
+                        editable={!isLoading}
+                      />
+                      <Text style={styles.label}>{isTamil ? 'புதிய கடவுச்சொல்' : 'New Password'}</Text>
+                      <TextInput
+                        style={inputStyle('newPass')}
+                        placeholder="••••••••"
+                        value={newPassword}
+                        onChangeText={setNewPassword}
+                        secureTextEntry
+                        placeholderTextColor={COLORS.textMuted}
+                        onFocus={() => setFocusedInput('newPass')}
+                        onBlur={() => setFocusedInput(null)}
+                        editable={!isLoading}
+                      />
+
+                      <TouchableOpacity style={styles.primaryBtn} onPress={handleForgotPassword} disabled={isLoading}>
+                        <View style={styles.primaryBtnGrad}>
+                          {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
+                            <Text style={styles.primaryBtnText}>{isTamil ? 'கடவுச்சொல்லை மாற்று' : 'Reset Password'}</Text>
+                          )}
+                        </View>
+                      </TouchableOpacity>
+                    </>
                   )}
 
-                  <TouchableOpacity style={styles.secondaryBtn} onPress={() => { setMode('login'); setErrorMsg(null); setSuccessMsg(null); setLinkSent(false); }} disabled={isLoading}>
+                  <TouchableOpacity style={styles.secondaryBtn} onPress={() => { setMode('login'); setErrorMsg(null); setSuccessMsg(null); setOtpSent(false); }} disabled={isLoading}>
                     <Text style={styles.secondaryBtnText}>
                       {isTamil ? 'உள்நுழைவுக்குத் திரும்பு' : 'Back to Login'}
                     </Text>
