@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback, Rea
 import { User } from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
+import { router } from 'expo-router';
 import { API_BASE_URL, fetchWithTimeout } from '../_api/config';
 
 // Safe storage wrapper to prevent AsyncStorage hanging on Web
@@ -243,6 +244,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setToken(null);
     await safeStorage.removeItem('user_token');
     await safeStorage.removeItem('user_profile');
+    if (Platform.OS === 'web' && typeof window !== 'undefined') {
+      window.location.href = '/';
+    } else {
+      router.replace('/');
+    }
   }, []);
 
   // ── Refresh Profile ─────────────────────────────────────────────

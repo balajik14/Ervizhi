@@ -182,6 +182,7 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
             username=username,
             hashed_password=get_password_hash(data.password),
             language_pref="en",
+            is_verified=True,
         )
         db.add(user)
         db.commit()
@@ -254,8 +255,10 @@ def login_local(data: LoginLocalRequest, db: Session = Depends(get_db)):
 
     if not user or not verify_password(data.password, user.hashed_password):
         raise HTTPException(status_code=400, detail="Incorrect username or password")
+    # Auto-verify existing unverified users since OTP registration is required
     if not getattr(user, 'is_verified', True):
-        raise HTTPException(status_code=403, detail="Account not verified. Please check your email for the verification link.")
+        user.is_verified = True
+        db.commit()
 
     access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     token = create_access_token(data={"sub": str(user.id)}, expires_delta=access_token_expires)
