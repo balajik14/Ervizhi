@@ -12,7 +12,17 @@ from app.models.farm import Farm
 from app.models.machinery import Machinery
 from app.models.crop_scan import CropScan
 
-Base.metadata.create_all(bind=engine)
+import logging
+_logger = logging.getLogger(__name__)
+
+try:
+    Base.metadata.create_all(bind=engine)
+    _logger.info("Database tables created/verified successfully.")
+except Exception as e:
+    _logger.warning(f"Table creation failed ({e}), dropping and recreating all tables...")
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+    _logger.info("Database tables recreated successfully.")
 
 app = FastAPI(title="Ervizhi API", description="Production Backend for Ervizhi Agritech App")
 

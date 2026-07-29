@@ -1,6 +1,5 @@
 import uuid
-from sqlalchemy import Column, String, Float, Date, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy import Column, String, Float, Date, DateTime, ForeignKey, Uuid
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from app.core.database import Base
@@ -8,8 +7,8 @@ from app.core.database import Base
 class Farm(Base):
     __tablename__ = "farms"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
-    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4, index=True)
+    user_id = Column(Uuid, ForeignKey("users.id"), nullable=False)
     farm_name = Column(String, nullable=False)
     land_size_acres = Column(Float, nullable=False)
     soil_nitrogen = Column(Float, nullable=True)

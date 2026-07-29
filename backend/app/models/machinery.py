@@ -1,6 +1,5 @@
 import uuid
-from sqlalchemy import Column, String, Float, Boolean, Text, DateTime, ForeignKey
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy import Column, String, Float, Boolean, Text, DateTime, ForeignKey, Uuid
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from app.core.database import Base
@@ -8,8 +7,8 @@ from app.core.database import Base
 class Machinery(Base):
     __tablename__ = "machinery"
 
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
-    owner_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
+    id = Column(Uuid, primary_key=True, default=uuid.uuid4, index=True)
+    owner_id = Column(Uuid, ForeignKey("users.id"), nullable=False)
     machineTitle = Column(String, index=True, nullable=False)
     description = Column(Text, nullable=True)
     location = Column(String, index=True, nullable=False)
