@@ -24,4 +24,4 @@ email-validator>=2.0.0
 torch
 torchvision
 ultralytics
-sib-api-v3-sdk
+requests

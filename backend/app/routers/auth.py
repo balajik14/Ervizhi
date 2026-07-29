@@ -1,7 +1,6 @@
 import random
 import os
-import sib_api_v3_sdk
-from sib_api_v3_sdk.rest import ApiException
+import requests
 import logging
 from datetime import datetime, timedelta
 from fastapi import APIRouter, Depends, HTTPException, status
@@ -94,38 +93,49 @@ def send_otp(data: SendOTPRequest, db: Session = Depends(get_db)):
         return {"message": "OTP generated and logged (Brevo API key missing)"}
 
     # 1. CHECK BACKEND SMTP CONFIGURATION & ERROR HANDLING
+    url = "https://api.brevo.com/v3/smtp/email"
+    headers = {
+        "accept": "application/json",
+        "api-key": api_key,
+        "content-type": "application/json"
+    }
+    
+    html_content = f"""
+    <html>
+      <body>
+        <h2>Welcome to Ervizhi Smart Farming Platform!</h2>
+        <p>Your one-time password (OTP) is: <strong style="font-size:24px;">{otp}</strong></p>
+        <p>Please enter this code in the app to complete your registration or login.</p>
+        <hr>
+        <h2>எர்விழிக்கு வரவேற்கிறோம்!</h2>
+        <p>உங்கள் சரிபார்ப்பு குறியீடு (OTP): <strong style="font-size:24px;">{otp}</strong></p>
+      </body>
+    </html>
+    """
+    
+    payload = {
+        "sender": {
+            "name": "Ervizhi",
+            "email": "balajikalyanasundharam14@gmail.com"
+        },
+        "to": [{"email": email}],
+        "subject": "Ervizhi - Your Verification Code / சரிபார்ப்பு குறியீடு",
+        "htmlContent": html_content
+    }
+
     try:
-        configuration = sib_api_v3_sdk.Configuration()
-        configuration.api_key['api-key'] = api_key
-
-        api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
-        
-        html_content = f"""
-        <html>
-          <body>
-            <h2>Welcome to Ervizhi Smart Farming Platform!</h2>
-            <p>Your one-time password (OTP) is: <strong style="font-size:24px;">{otp}</strong></p>
-            <p>Please enter this code in the app to complete your registration or login.</p>
-            <hr>
-            <h2>எர்விழிக்கு வரவேற்கிறோம்!</h2>
-            <p>உங்கள் சரிபார்ப்பு குறியீடு (OTP): <strong style="font-size:24px;">{otp}</strong></p>
-          </body>
-        </html>
-        """
-        
-        send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
-            to=[{"email": email}],
-            sender={"name": "Ervizhi", "email": "balajikalyanasundharam14@gmail.com"},
-            subject="Ervizhi - Your Verification Code / சரிபார்ப்பு குறியீடு",
-            html_content=html_content
-        )
-
-        api_instance.send_transac_email(send_smtp_email)
-        logger.info(f"[OTP SERVICE] Email sent successfully to {email} via Brevo")
-        return {"message": "OTP sent successfully"}
-    except ApiException as e:
-        logger.error(f"[OTP SERVICE] Brevo API error: {e}")
-        raise HTTPException(status_code=500, detail="Failed to send OTP email. Please try again later.")
+        response = requests.post(url, json=payload, headers=headers, timeout=10)
+        if response.status_code in [200, 201, 202]:
+            logger.info(f"[OTP SERVICE] Email sent successfully to {email} via Brevo API")
+            return {"message": "OTP sent successfully"}
+        else:
+            logger.error(f"[OTP SERVICE] Brevo API error ({response.status_code}): {response.text}")
+            logger.info(f"[DEBUG OTP] Fallback OTP for {email}: {otp}")
+            return {"message": "OTP generated and logged (Brevo API failed)"}
+    except Exception as e:
+        logger.error(f"[OTP SERVICE] Failed to connect to Brevo API: {e}")
+        logger.info(f"[DEBUG OTP] Fallback OTP for {email}: {otp}")
+        return {"message": "OTP generated and logged (Brevo API connection failed)"}
 
 @router.post("/verify-otp")
 def verify_otp(data: VerifyOTPOnlyRequest, db: Session = Depends(get_db)):
