@@ -188,8 +188,11 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
         db.refresh(user)
     except Exception as e:
         db.rollback()
-        logger.error(f"Database error during registration: {e}")
-        raise HTTPException(status_code=500, detail="Database error occurred during registration.")
+        logger.error(f"Registration DB Error: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=500, 
+            detail=f"Database error: {str(e)}"
+        )
 
     # Remove from store once successfully registered
     otp_store.pop(email, None)
