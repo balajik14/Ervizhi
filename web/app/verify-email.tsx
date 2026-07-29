@@ -7,7 +7,7 @@ import { useAuth } from './_context/AuthContext';
 import { COLORS, RADIUS, SHADOWS, SPACING, GRADIENTS } from '../constants/theme';
 
 export default function VerifyEmailScreen() {
-  const { token } = useLocalSearchParams();
+  const { token, email } = useLocalSearchParams();
   const { verifyEmailToken } = useAuth();
   const router = useRouter();
   
@@ -15,6 +15,12 @@ export default function VerifyEmailScreen() {
   const [message, setMessage] = useState('Verifying your email...');
 
   useEffect(() => {
+    if (!token || !email) {
+      setStatus('error');
+      setMessage('Invalid verification link. Token or email is missing.');
+      return;
+    }
+
     if (!token) {
       setStatus('error');
       setMessage('Invalid verification link. Token is missing.');
@@ -23,7 +29,7 @@ export default function VerifyEmailScreen() {
 
     const verify = async () => {
       try {
-        await verifyEmailToken(token as string);
+        await verifyEmailToken(token as string, email as string);
         setStatus('success');
         setMessage('Your account has been successfully verified!');
       } catch (e: any) {
@@ -33,7 +39,7 @@ export default function VerifyEmailScreen() {
     };
 
     verify();
-  }, [token, verifyEmailToken]);
+  }, [token, email, verifyEmailToken]);
 
   return (
     <LinearGradient colors={GRADIENTS.heroBg} style={styles.container}>

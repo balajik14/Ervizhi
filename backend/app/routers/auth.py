@@ -20,7 +20,7 @@ router = APIRouter()
 
 import uuid
 
-@router.post("/register-email")
+@router.post("/register")
 def register_email(data: RegisterEmailRequest, db: Session = Depends(get_db)):
     email = data.email.strip().lower()
     username = data.username.strip().lower()
@@ -87,7 +87,9 @@ def verify_email(token: str, db: Session = Depends(get_db)):
         token_store.pop(token, None)
         raise HTTPException(status_code=400, detail="Verification link has expired. Please register again.")
         
-    email = stored["email"]
+    email_stored = stored["email"]
+    if email_stored.lower() != email.lower():
+        raise HTTPException(status_code=400, detail="Email mismatch.")
     username = stored["username"]
     password = stored["password"]
     
@@ -382,7 +384,7 @@ def verify_otp_register(data: VerifyOTPRegisterRequest, db: Session = Depends(ge
         "profile": format_profile(user)
     }
 
-@router.post("/login-local")
+@router.post("/login")
 def login_local(data: LoginLocalRequest, db: Session = Depends(get_db)):
     username = data.username.strip().lower()
     
@@ -412,6 +414,8 @@ def login_local(data: LoginLocalRequest, db: Session = Depends(get_db)):
 
     if not user or not verify_password(data.password, user.hashed_password):
         raise HTTPException(status_code=400, detail="Incorrect username or password")
+    if not getattr(user, 'is_verified', True):
+        raise HTTPException(status_code=403, detail="Account not verified. Please check your email for the verification link.")
 
     access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
     token = create_access_token(data={"sub": str(user.id)}, expires_delta=access_token_expires)
@@ -494,40 +498,4 @@ def update_profile_image(
     db.commit()
     db.refresh(current_user)
     return {"msg": "Profile image updated successfully"}
-
-# ── Backwards Compatible Endpoints for old API spec ──
-@router.post("/register", response_model=UserResponse)
-def register(user_in: UserCreate, db: Session = Depends(get_db)) -> Any:
-    user = db.query(User).filter(User.email == user_in.email).first()
-    if user:
-        raise HTTPException(status_code=400, detail="The user with this email already exists in the system.")
-    user = db.query(User).filter(User.username == user_in.username).first()
-    if user:
-        raise HTTPException(status_code=400, detail="The user with this username already exists in the system.")
-    
-    user_obj = User(
-        email=user_in.email,
-        username=user_in.username,
-        hashed_password=get_password_hash(user_in.password),
-        full_name=user_in.full_name,
-        district=user_in.district,
-    )
-    db.add(user_obj)
-    db.commit()
-    db.refresh(user_obj)
-    return user_obj
-
-@router.post("/login", response_model=Token)
-def login(db: Session = Depends(get_db), form_data: OAuth2PasswordRequestForm = Depends()) -> Any:
-    user = db.query(User).filter(User.username == form_data.username).first()
-    if not user or not verify_password(form_data.password, user.hashed_password):
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Incorrect username or password")
-        
-    access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
-    access_token = create_access_token(data={"sub": str(user.id)}, expires_delta=access_token_expires)
-    return {"access_token": access_token, "token_type": "bearer"}
-
-@router.post("/logout")
-def logout() -> Any:
-    return {"msg": "Successfully logged out. Please clear the token on the client side."}
 

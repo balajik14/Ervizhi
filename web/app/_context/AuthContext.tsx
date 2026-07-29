@@ -51,7 +51,7 @@ type AuthContextType = {
   loginWithEmail: (email: string, password: string) => Promise<void>;
   registerWithEmail: (email: string, password: string, username: string) => Promise<void>;
   loginLocal: (username: string, password: string) => Promise<void>;
-  verifyEmailToken: (token: string) => Promise<void>;
+  verifyEmailToken: (token: string, email: string) => Promise<void>;
   forgotPasswordEmail: (email: string) => Promise<void>;
   resetPasswordLink: (token: string, newPassword: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
@@ -174,8 +174,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // ── Verify Email Token ─────────────────────────────────────────────
-  const verifyEmailToken = useCallback(async (token: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-email?token=${token}`, {
+  const verifyEmailToken = useCallback(async (token: string, email: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-email?token=${token}&email=${encodeURIComponent(email)}`, {
       method: 'GET',
     });
     const data = await response.json();

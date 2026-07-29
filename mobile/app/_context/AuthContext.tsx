@@ -149,8 +149,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // ── Verify Email Token ─────────────────────────────────────────────
-  const verifyEmailToken = useCallback(async (token: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-email?token=${token}`, {
+  const verifyEmailToken = useCallback(async (token: string, email: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-email?token=${token}&email=${encodeURIComponent(email)}`, {
       method: 'GET',
     });
     const data = await response.json();
