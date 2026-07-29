@@ -50,8 +50,7 @@ type AuthContextType = {
   isAuthenticated: boolean;
   sendOTP: (email: string) => Promise<string>;
   verifyOtpOnly: (email: string, otp: string) => Promise<void>;
-  sendVerificationLink: (email: string, username: string, password: string) => Promise<void>;
-  verifyEmailToken: (token: string, email: string) => Promise<void>;
+  register: (email: string, username: string, password: string) => Promise<void>;
   resetPasswordWithOTP: (email: string, otp: string, newPassword: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
@@ -172,7 +171,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const verifyOtpOnly = useCallback(async (email: string, otp: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp-only`, {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email.trim().toLowerCase(), otp: otp.trim() }),
@@ -183,8 +182,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const sendVerificationLink = useCallback(async (email: string, username: string, password: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/send-verification-link`, {
+  const register = useCallback(async (email: string, username: string, password: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -195,17 +194,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.detail || 'Failed to send verification link.');
+      throw new Error(data.detail || 'Registration failed.');
     }
-  }, []);
-
-  const verifyEmailToken = useCallback(async (token: string, email: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-link?token=${token}&email=${email}`);
-    const data = await response.json();
-    if (!response.ok) {
-      throw new Error(data.detail || 'Email verification failed.');
-    }
-  }, []);
+    await _setAuth(data.token, data.profile);
+  }, [_setAuth]);
 
   const resetPasswordWithOTP = useCallback(async (email: string, otp: string, newPassword: string): Promise<void> => {
     const response = await fetchWithTimeout(`${API_BASE_URL}/auth/reset-password`, {

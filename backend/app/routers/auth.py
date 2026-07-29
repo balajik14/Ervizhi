@@ -32,11 +32,10 @@ class VerifyOTPOnlyRequest(BaseModel):
     email: str
     otp: str
 
-class VerifyOTPRegisterRequest(BaseModel):
+class RegisterRequest(BaseModel):
     email: str
     username: str
     password: str
-    otp: str
 
 class ResetPasswordRequest(BaseModel):
     email: str
@@ -70,8 +69,13 @@ def get_current_user(db: Session = Depends(get_db), user_id: str = Depends(get_c
     return user
 
 @router.post("/send-otp")
-def send_otp(data: SendOTPRequest):
+def send_otp(data: SendOTPRequest, db: Session = Depends(get_db)):
     email = data.email.strip().lower()
+    
+    # Check if user exists
+    user_by_email = db.query(User).filter(User.email == email).first()
+    if user_by_email:
+        raise HTTPException(status_code=400, detail="Account with this email already exists.")
     otp = str(random.randint(100000, 999999))
     expires_at = datetime.now() + timedelta(minutes=10)
     otp_store[email] = {"otp": otp, "expires_at": expires_at}
@@ -112,8 +116,8 @@ def send_otp(data: SendOTPRequest):
         "otp": otp
     }
 
-@router.post("/verify-otp-only")
-def verify_otp_only(data: VerifyOTPOnlyRequest, db: Session = Depends(get_db)):
+@router.post("/verify-otp")
+def verify_otp(data: VerifyOTPOnlyRequest, db: Session = Depends(get_db)):
     email = data.email.strip().lower()
     
     stored = otp_store.get(email)
@@ -127,144 +131,69 @@ def verify_otp_only(data: VerifyOTPOnlyRequest, db: Session = Depends(get_db)):
     if stored["otp"] != data.otp.strip():
         raise HTTPException(status_code=400, detail="Invalid OTP code.")
     
-    return {"message": "OTP verified successfully"}
+    # Mark email as verified (using same otp_store but with different state)
+    otp_store[email] = {"verified": True, "expires_at": datetime.now() + timedelta(minutes=30)}
+    return {"status": "success", "message": "Email verified"}
 
-import uuid
-
-token_store = {}
-
-class RegisterEmailRequest(BaseModel):
-    email: str
-    username: str
-    password: str
-
-@router.post("/send-verification-link")
-def send_verification_link(data: RegisterEmailRequest, db: Session = Depends(get_db)):
+@router.post("/register")
+def register(data: RegisterRequest, db: Session = Depends(get_db)):
     email = data.email.strip().lower()
     username = data.username.strip().lower()
     
-    # Check if exists
-    if db.query(User).filter(User.email == email).first():
-        raise HTTPException(status_code=400, detail="Account with this email already exists.")
-    if db.query(User).filter(User.username == username).first():
-        raise HTTPException(status_code=400, detail="Username already taken.")
-        
-    token = uuid.uuid4().hex
-    expires_at = datetime.now() + timedelta(hours=24)
-    token_store[token] = {
-        "type": "register",
-        "email": email,
-        "username": username,
-        "password": data.password,
-        "expires_at": expires_at
-    }
+    # Check if OTP was verified
+    stored = otp_store.get(email)
+    if not stored or not stored.get("verified"):
+        raise HTTPException(status_code=400, detail="Email not verified. Please verify your OTP first.")
     
-    # Create local user as unverified
+    if datetime.now() > stored["expires_at"]:
+        otp_store.pop(email, None)
+        raise HTTPException(status_code=400, detail="Verification expired. Please request a new OTP.")
+    
+    # Remove from store once registered
+    otp_store.pop(email, None)
+
+    # Check if username already exists
+    user_by_username = db.query(User).filter(User.username == username).first()
+    if user_by_username:
+        raise HTTPException(status_code=400, detail="Username already exists. Please choose a different username.")
+
+    # Create new user in local SQLite DB
     user = User(
         email=email,
         username=username,
         hashed_password=get_password_hash(data.password),
         language_pref="en",
-        is_verified=False
     )
     db.add(user)
     db.commit()
     db.refresh(user)
 
-    # Sync with Firebase as unverified
+    # Sync user with Firebase Auth & Firestore
     try:
         fb_user = firebase_config.create_user(email=email, password=data.password, display_name=username)
+        print(f"[FIREBASE AUTH] User created in Firebase: {fb_user.uid}")
+        
+        # Write to Firestore
         if firebase_config.db is not None:
             from firebase_admin import firestore
             user_ref = firebase_config.db.collection('users').document(email)
             user_ref.set({
                 'email': email,
                 'username': username,
-                'is_verified': False,
+                'is_verified': True,
                 'created_at': firestore.SERVER_TIMESTAMP
             })
     except Exception as e:
         print(f"[FIREBASE AUTH] Firebase sync note: {e}")
-    
-    email_sent = False
-    if settings.SMTP_EMAIL and settings.SMTP_PASSWORD:
-        try:
-            msg = MIMEMultipart()
-            msg['From'] = settings.SMTP_EMAIL
-            msg['To'] = email
-            msg['Subject'] = "Ervizhi - Verify your account / கணக்கை சரிபார்க்கவும்"
 
-            link = f"https://ervizhi.vercel.app/verify-email?token={token}&email={email}"
-            html = f"""
-            <html>
-              <body>
-                <h2>Welcome to Ervizhi Smart Farming Platform!</h2>
-                <p>Click the link below to verify your account:</p>
-                <p><a href="{link}" style="font-size:18px; color: blue;">Verify My Account</a></p>
-                <hr>
-                <h2>எர்விழிக்கு வரவேற்கிறோம்!</h2>
-                <p>உங்கள் கணக்கை சரிபார்க்க கீழே உள்ள இணைப்பை கிளிக் செய்யவும்:</p>
-                <p><a href="{link}" style="font-size:18px; color: blue;">எனது கணக்கை சரிபார்க்கவும்</a></p>
-              </body>
-            </html>
-            """
-            msg.attach(MIMEText(html, 'html'))
-            server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=5)
-            server.login(settings.SMTP_EMAIL, settings.SMTP_PASSWORD)
-            server.send_message(msg)
-            server.quit()
-            email_sent = True
-        except Exception as e:
-            print(f"[AUTH SERVICE] SMTP delivery failed ({e})")
-            
-    if not email_sent:
-        # Fallback for local testing if SMTP fails
-        return {"message": "Verification link generated", "token": token}
-    return {"message": "Verification email sent"}
+    # Create token
+    access_token_expires = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
+    token = create_access_token(data={"sub": str(user.id)}, expires_delta=access_token_expires)
 
-@router.get("/verify-link")
-def verify_link(token: str, email: str, db: Session = Depends(get_db)):
-    stored = token_store.get(token)
-    if not stored or stored["type"] != "register":
-        raise HTTPException(status_code=400, detail="Invalid or expired verification link.")
-        
-    if datetime.now() > stored["expires_at"]:
-        token_store.pop(token, None)
-        raise HTTPException(status_code=400, detail="Verification link has expired. Please register again.")
-        
-    email_stored = stored["email"]
-    if email_stored.lower() != email.strip().lower():
-        raise HTTPException(status_code=400, detail="Email mismatch.")
-    username = stored["username"]
-    password = stored["password"]
-    
-    # Remove from store
-    token_store.pop(token, None)
-    
-    # Check if exists
-    user = db.query(User).filter(User.email == email).first()
-    if not user:
-        raise HTTPException(status_code=404, detail="User account not found.")
-
-    if getattr(user, 'is_verified', False):
-        return {"message": "Account already verified."}
-
-    # Update local user
-    if hasattr(user, 'is_verified'):
-        user.is_verified = True
-        db.commit()
-
-    # Sync with Firebase
-    try:
-        if firebase_config.db is not None:
-            user_ref = firebase_config.db.collection('users').document(email)
-            user_ref.update({
-                'is_verified': True
-            })
-    except Exception as e:
-        print(f"[FIREBASE AUTH] Firebase sync note: {e}")
-
-    return {"status": "success", "message": "Email verified successfully!"}
+    return {
+        "token": token,
+        "profile": format_profile(user)
+    }
 
 @router.post("/login")
 def login_local(data: LoginLocalRequest, db: Session = Depends(get_db)):
