@@ -173,7 +173,14 @@ def verify_otp_register(data: VerifyOTPRegisterRequest, db: Session = Depends(ge
         
         # Write to Firestore
         if firebase_config.db is not None:
-            firebase_config.db.collection("users").document(str(user.id)).set(format_profile(user))
+            from firebase_admin import firestore
+            user_ref = firebase_config.db.collection('users').document(email)
+            user_ref.set({
+                'email': email,
+                'username': username,
+                'is_verified': True,
+                'created_at': firestore.SERVER_TIMESTAMP
+            })
     except Exception as e:
         print(f"[FIREBASE AUTH] Firebase sync note: {e}")
 
