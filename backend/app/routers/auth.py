@@ -1,9 +1,9 @@
 import random
-import smtplib
+import os
+import sib_api_v3_sdk
+from sib_api_v3_sdk.rest import ApiException
 import logging
 from datetime import datetime, timedelta
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
@@ -88,18 +88,19 @@ def send_otp(data: SendOTPRequest, db: Session = Depends(get_db)):
     logger.info(f"[DEBUG OTP] Generated OTP for {email}: {otp}")
 
     # 3. VERIFY ENVIRONMENT VARIABLES & FALLBACK
-    if not settings.SMTP_EMAIL or not settings.SMTP_PASSWORD:
-        logger.warning(f"[OTP SERVICE] SMTP credentials missing. Returning 200 to allow testing. OTP for {email}: {otp}")
-        return {"message": "OTP generated and logged (SMTP disabled)"}
+    api_key = os.getenv("BREVO_API_KEY")
+    if not api_key:
+        logger.warning(f"[OTP SERVICE] BREVO_API_KEY not set. Returning 200 to allow testing. OTP for {email}: {otp}")
+        return {"message": "OTP generated and logged (Brevo API key missing)"}
 
     # 1. CHECK BACKEND SMTP CONFIGURATION & ERROR HANDLING
     try:
-        msg = MIMEMultipart()
-        msg['From'] = settings.SMTP_EMAIL
-        msg['To'] = email
-        msg['Subject'] = "Ervizhi - Your Verification Code / சரிபார்ப்பு குறியீடு"
+        configuration = sib_api_v3_sdk.Configuration()
+        configuration.api_key['api-key'] = api_key
 
-        html = f"""
+        api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
+        
+        html_content = f"""
         <html>
           <body>
             <h2>Welcome to Ervizhi Smart Farming Platform!</h2>
@@ -111,15 +112,19 @@ def send_otp(data: SendOTPRequest, db: Session = Depends(get_db)):
           </body>
         </html>
         """
-        msg.attach(MIMEText(html, 'html'))
-        server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=5)
-        server.login(settings.SMTP_EMAIL, settings.SMTP_PASSWORD)
-        server.send_message(msg)
-        server.quit()
-        logger.info(f"[OTP SERVICE] Email sent successfully to {email}")
+        
+        send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
+            to=[{"email": email}],
+            sender={"name": "Ervizhi", "email": "balajikalyanasundharam14@gmail.com"},
+            subject="Ervizhi - Your Verification Code / சரிபார்ப்பு குறியீடு",
+            html_content=html_content
+        )
+
+        api_instance.send_transac_email(send_smtp_email)
+        logger.info(f"[OTP SERVICE] Email sent successfully to {email} via Brevo")
         return {"message": "OTP sent successfully"}
-    except Exception as e:
-        logger.error(f"[OTP SERVICE] SMTP delivery failed: {e}")
+    except ApiException as e:
+        logger.error(f"[OTP SERVICE] Brevo API error: {e}")
         raise HTTPException(status_code=500, detail="Failed to send OTP email. Please try again later.")
 
 @router.post("/verify-otp")
