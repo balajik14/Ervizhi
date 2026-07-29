@@ -216,8 +216,9 @@ def register(data: RegisterRequest, db: Session = Depends(get_db)):
                 'email': user.email,
                 'hashed_password': user.hashed_password,
                 'is_verified': True,
-                'created_at': firestore.SERVER_TIMESTAMP
-            })
+                'created_at': firestore.SERVER_TIMESTAMP,
+                'last_login': firestore.SERVER_TIMESTAMP
+            }, merge=True)
             logger.info(f"[FIRESTORE SUCCESS] Wrote user {user.username} to Firestore!")
         else:
             logger.warning(f"[FIRESTORE WARN] Firestore DB not initialized, skipping write for {email}")
