@@ -358,56 +358,6 @@ function AuthForm() {
               )}
 
             </View>
-                    </TouchableOpacity>
-                  )}
-
-                  {otpSent && (
-                    <>
-                      <Text style={styles.label}>{isTamil ? 'சரிபார்ப்பு குறியீடு (OTP)' : 'Verification Code (OTP)'}</Text>
-                      <TextInput
-                        style={inputStyle('forgotOtp')}
-                        placeholder="••••••"
-                        value={otp}
-                        onChangeText={setOtp}
-                        keyboardType="number-pad"
-                        placeholderTextColor={COLORS.textMuted}
-                        onFocus={() => setFocusedInput('forgotOtp')}
-                        onBlur={() => setFocusedInput(null)}
-                        editable={!isLoading}
-                      />
-
-                      <Text style={styles.label}>{isTamil ? 'புதிய கடவுச்சொல்' : 'New Password'}</Text>
-                      <TextInput
-                        style={inputStyle('newPass')}
-                        placeholder="••••••••"
-                        secureTextEntry
-                        value={newPassword}
-                        onChangeText={setNewPassword}
-                        placeholderTextColor={COLORS.textMuted}
-                        onFocus={() => setFocusedInput('newPass')}
-                        onBlur={() => setFocusedInput(null)}
-                        editable={!isLoading}
-                      />
-
-                      <TouchableOpacity style={styles.primaryBtn} onPress={handleResetPassword} disabled={isLoading}>
-                        <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <ActivityIndicator color={COLORS.darkBg} /> : (
-                            <Text style={styles.primaryBtnText}>{isTamil ? 'கடவுச்சொல்லை மீட்டமைக்கவும்' : 'Reset Password'}</Text>
-                          )}
-                        </View>
-                      </TouchableOpacity>
-                    </>
-                  )}
-
-                  <TouchableOpacity style={styles.secondaryBtn} onPress={() => { setMode('login'); setErrorMsg(null); setSuccessMsg(null); }} disabled={isLoading}>
-                    <Text style={styles.secondaryBtnText}>
-                      {isTamil ? 'உள்நுழைவுக்குத் திரும்பு' : 'Back to Login'}
-                    </Text>
-                  </TouchableOpacity>
-                </>
-              )}
-
-            </View>
           </Animated.View>
 
         </ScrollView>

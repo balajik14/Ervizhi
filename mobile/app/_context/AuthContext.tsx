@@ -194,9 +194,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [loginLocal]
   );
 
-  const registerWithEmail = useCallback(async () => {
-    throw new Error('Please use OTP verification to create a profile.');
-  }, []);
+
 
   const loginWithGoogle = useCallback(async () => {
     throw new Error('Google sign-in is disabled. Please create a local profile.');
