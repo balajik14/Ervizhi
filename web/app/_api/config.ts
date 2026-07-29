@@ -16,13 +16,7 @@ import { auth } from '../firebase';
 const PRODUCTION_API_URL = Constants.expoConfig?.extra?.apiBaseUrl as string | undefined;
 const debuggerHost = Constants.expoConfig?.hostUri;
 const localIp = debuggerHost?.split(':')[0] || '10.54.160.113';
-export const API_BASE_URL = PRODUCTION_API_URL
-  ? PRODUCTION_API_URL
-  : Platform.OS === 'web'
-    ? (typeof window !== 'undefined' && window.location?.hostname
-        ? `${window.location.protocol || 'http:'}//${window.location.hostname}:8000/api`
-        : 'http://127.0.0.1:8000/api')
-    : `http://${localIp}:8000/api`;
+export const API_BASE_URL = process.env.EXPO_PUBLIC_API_URL || process.env.VITE_API_BASE_URL || PRODUCTION_API_URL || 'https://ervizhi.onrender.com/api';
 
 // ─── Get current auth token (Firebase first, then local fallback) ────
 async function getAuthToken(): Promise<string | null> {
