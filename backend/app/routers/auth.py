@@ -1,5 +1,6 @@
 import random
 import smtplib
+import logging
 from datetime import datetime, timedelta
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -18,7 +19,10 @@ import firebase_config
 
 router = APIRouter()
 
-# In-memory store for OTPs (email -> {"otp": str, "expires_at": datetime})
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
+# In-memory store for OTPs (email -> {"otp": str, "expires_at": datetime, "verified": bool})
 otp_store = {}
 
 class LoginLocalRequest(BaseModel):
@@ -79,42 +83,44 @@ def send_otp(data: SendOTPRequest, db: Session = Depends(get_db)):
     otp = str(random.randint(100000, 999999))
     expires_at = datetime.now() + timedelta(minutes=10)
     otp_store[email] = {"otp": otp, "expires_at": expires_at}
-    print(f"[OTP SERVICE] Generated OTP {otp} for email {email} (Expires at {expires_at})")
+    
+    # 2. ADD CONSOLE/LOG PRINT OF GENERATED OTP
+    logger.info(f"[DEBUG OTP] Generated OTP for {email}: {otp}")
 
-    email_sent = False
-    if settings.SMTP_EMAIL and settings.SMTP_PASSWORD:
-        try:
-            msg = MIMEMultipart()
-            msg['From'] = settings.SMTP_EMAIL
-            msg['To'] = email
-            msg['Subject'] = "Ervizhi - Your Verification Code / சரிபார்ப்பு குறியீடு"
+    # 3. VERIFY ENVIRONMENT VARIABLES & FALLBACK
+    if not settings.SMTP_EMAIL or not settings.SMTP_PASSWORD:
+        logger.warning(f"[OTP SERVICE] SMTP credentials missing. Returning 200 to allow testing. OTP for {email}: {otp}")
+        return {"message": "OTP generated and logged (SMTP disabled)"}
 
-            html = f"""
-            <html>
-              <body>
-                <h2>Welcome to Ervizhi Smart Farming Platform!</h2>
-                <p>Your one-time password (OTP) is: <strong style="font-size:24px;">{otp}</strong></p>
-                <p>Please enter this code in the app to complete your registration or login.</p>
-                <hr>
-                <h2>எர்விழிக்கு வரவேற்கிறோம்!</h2>
-                <p>உங்கள் சரிபார்ப்பு குறியீடு (OTP): <strong style="font-size:24px;">{otp}</strong></p>
-              </body>
-            </html>
-            """
-            msg.attach(MIMEText(html, 'html'))
-            server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=5)
-            server.login(settings.SMTP_EMAIL, settings.SMTP_PASSWORD)
-            server.send_message(msg)
-            server.quit()
-            email_sent = True
-            print(f"[OTP SERVICE] Email sent successfully to {email}")
-        except Exception as e:
-            print(f"[OTP SERVICE] SMTP delivery failed or timed out ({e}). Providing OTP in fallback response payload.")
+    # 1. CHECK BACKEND SMTP CONFIGURATION & ERROR HANDLING
+    try:
+        msg = MIMEMultipart()
+        msg['From'] = settings.SMTP_EMAIL
+        msg['To'] = email
+        msg['Subject'] = "Ervizhi - Your Verification Code / சரிபார்ப்பு குறியீடு"
 
-    return {
-        "message": "OTP sent successfully" if email_sent else "OTP generated",
-        "otp": otp
-    }
+        html = f"""
+        <html>
+          <body>
+            <h2>Welcome to Ervizhi Smart Farming Platform!</h2>
+            <p>Your one-time password (OTP) is: <strong style="font-size:24px;">{otp}</strong></p>
+            <p>Please enter this code in the app to complete your registration or login.</p>
+            <hr>
+            <h2>எர்விழிக்கு வரவேற்கிறோம்!</h2>
+            <p>உங்கள் சரிபார்ப்பு குறியீடு (OTP): <strong style="font-size:24px;">{otp}</strong></p>
+          </body>
+        </html>
+        """
+        msg.attach(MIMEText(html, 'html'))
+        server = smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=5)
+        server.login(settings.SMTP_EMAIL, settings.SMTP_PASSWORD)
+        server.send_message(msg)
+        server.quit()
+        logger.info(f"[OTP SERVICE] Email sent successfully to {email}")
+        return {"message": "OTP sent successfully"}
+    except Exception as e:
+        logger.error(f"[OTP SERVICE] SMTP delivery failed: {e}")
+        raise HTTPException(status_code=500, detail="Failed to send OTP email. Please try again later.")
 
 @router.post("/verify-otp")
 def verify_otp(data: VerifyOTPOnlyRequest, db: Session = Depends(get_db)):
