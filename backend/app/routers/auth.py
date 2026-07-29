@@ -159,6 +159,33 @@ def send_verification_link(data: RegisterEmailRequest, db: Session = Depends(get
         "expires_at": expires_at
     }
     
+    # Create local user as unverified
+    user = User(
+        email=email,
+        username=username,
+        hashed_password=get_password_hash(data.password),
+        language_pref="en",
+        is_verified=False
+    )
+    db.add(user)
+    db.commit()
+    db.refresh(user)
+
+    # Sync with Firebase as unverified
+    try:
+        fb_user = firebase_config.create_user(email=email, password=data.password, display_name=username)
+        if firebase_config.db is not None:
+            from firebase_admin import firestore
+            user_ref = firebase_config.db.collection('users').document(email)
+            user_ref.set({
+                'email': email,
+                'username': username,
+                'is_verified': False,
+                'created_at': firestore.SERVER_TIMESTAMP
+            })
+    except Exception as e:
+        print(f"[FIREBASE AUTH] Firebase sync note: {e}")
+    
     email_sent = False
     if settings.SMTP_EMAIL and settings.SMTP_PASSWORD:
         try:
@@ -214,33 +241,25 @@ def verify_link(token: str, email: str, db: Session = Depends(get_db)):
     # Remove from store
     token_store.pop(token, None)
     
-    # Check again if exists
-    if db.query(User).filter(User.email == email).first():
+    # Check if exists
+    user = db.query(User).filter(User.email == email).first()
+    if not user:
+        raise HTTPException(status_code=404, detail="User account not found.")
+
+    if getattr(user, 'is_verified', False):
         return {"message": "Account already verified."}
 
-    # Create local user
-    user = User(
-        email=email,
-        username=username,
-        hashed_password=get_password_hash(password),
-        language_pref="en",
-        is_verified=True
-    )
-    db.add(user)
-    db.commit()
-    db.refresh(user)
+    # Update local user
+    if hasattr(user, 'is_verified'):
+        user.is_verified = True
+        db.commit()
 
     # Sync with Firebase
     try:
-        fb_user = firebase_config.create_user(email=email, password=password, display_name=username)
         if firebase_config.db is not None:
-            from firebase_admin import firestore
             user_ref = firebase_config.db.collection('users').document(email)
-            user_ref.set({
-                'email': email,
-                'username': username,
-                'is_verified': True,
-                'created_at': firestore.SERVER_TIMESTAMP
+            user_ref.update({
+                'is_verified': True
             })
     except Exception as e:
         print(f"[FIREBASE AUTH] Firebase sync note: {e}")
