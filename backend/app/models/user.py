@@ -1,5 +1,5 @@
 import uuid
-from sqlalchemy import Column, String, DateTime
+from sqlalchemy import Column, String, DateTime, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.sql import func
 from app.core.database import Base
@@ -18,6 +18,7 @@ class User(Base):
     village = Column(String, nullable=True)
     profile_image_url = Column(String, nullable=True)
     language_pref = Column(String, default="en")
+    is_verified = Column(Boolean, default=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
     machineries = relationship("Machinery", back_populates="owner")

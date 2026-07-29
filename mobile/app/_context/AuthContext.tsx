@@ -134,55 +134,59 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     await _setAuth(data.token, data.profile);
   }, [_setAuth]);
 
-  // ── Send Email OTP ─────────────────────────────────────────────
-  const sendOTP = useCallback(async (email: string, mode: string = 'register'): Promise<string> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/send-otp`, {
+  
+  // ── Register with Email Link ─────────────────────────────────────────────
+  const registerWithEmail = useCallback(async (email: string, password: string, username: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/register-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email.trim().toLowerCase(), mode }),
+      body: JSON.stringify({ email: email.trim().toLowerCase(), username: username.trim().toLowerCase(), password }),
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.detail || 'Failed to send OTP.');
+      throw new Error(data.detail || 'Registration failed.');
     }
-    return data.otp ?? '';
   }, []);
 
-  // ── Verify OTP Only ─────────────────────────────────────────────
-  const verifyOtpOnly = useCallback(async (email: string, otp: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp-only`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email.trim().toLowerCase(), otp: otp.trim() }),
+  // ── Verify Email Token ─────────────────────────────────────────────
+  const verifyEmailToken = useCallback(async (token: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-email?token=${token}`, {
+      method: 'GET',
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.detail || 'Invalid or expired OTP.');
+      throw new Error(data.detail || 'Invalid or expired verification token.');
     }
   }, []);
 
-  // ── Verify OTP and Register Account ─────────────────────────────
-  // NOTE: Does NOT touch isLoading — index.tsx manages its own button spinner.
-  const verifyOTPAndRegister = useCallback(
-    async (email: string, username: string, password: string, otp: string) => {
-      const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp-register`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: email.trim().toLowerCase(),
-          username: username.trim().toLowerCase(),
-          password,
-          otp: otp.trim(),
-        }),
-      });
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.detail || 'Registration failed.');
-      }
-      await _setAuth(data.token, data.profile);
-    },
-    [_setAuth]
-  );
+  // ── Forgot Password Email ─────────────────────────────
+  const forgotPasswordEmail = useCallback(async (email: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/forgot-password-email`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email.trim().toLowerCase() }),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || 'Failed to send reset email.');
+    }
+  }, []);
+
+  // ── Reset Password Link ───────────────────────────────────────────────
+  const resetPasswordLink = useCallback(async (token: string, newPassword: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/reset-password-link`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        token: token.trim(),
+        new_password: newPassword,
+      }),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || 'Password reset failed.');
+    }
+  }, []);
 
   // ── Compat Fallbacks ────────────────────────────────────────────
   const loginWithEmail = useCallback(

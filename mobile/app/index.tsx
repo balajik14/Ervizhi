@@ -40,9 +40,7 @@ function AuthForm() {
   const [loginUsername, setLoginUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [otp, setOtp] = useState('');
-  const [otpSent, setOtpSent] = useState(false);
-  const [otpVerified, setOtpVerified] = useState(false);
+  const [linkSent, setLinkSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [focusedInput, setFocusedInput] = useState<string | null>(null);
@@ -61,7 +59,7 @@ function AuthForm() {
   useFocusEffect(
     useCallback(() => {
       setUsername(''); setLoginUsername(''); setPassword('');
-      setEmail(''); setOtp(''); setOtpSent(false); setOtpVerified(false);
+      setEmail(''); setLinkSent(false);
       setMode('login'); setIsLoading(false); setErrorMsg(null);
     }, [])
   );
@@ -86,72 +84,40 @@ function AuthForm() {
     }
   };
 
-  const handleSendOTP = async () => {
+  
+  const handleRegister = async () => {
     setErrorMsg(null);
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.trim() || !emailRegex.test(email)) {
-      setErrorMsg(isTamil ? 'சரியான மின்னஞ்சலை உள்ளிடவும்.' : 'Please enter a valid email.');
+    setSuccessMsg(null);
+    if (!email.trim() || !username.trim() || !password.trim()) {
+      setErrorMsg(isTamil ? 'அனைத்து விவரங்களையும் உள்ளிடவும்.' : 'Please enter all details.');
       return;
     }
     setIsLoading(true);
     try {
-      const receivedOtp = await sendOTP(email.trim(), mode === 'register' ? 'register' : 'forgot');
-      setOtpSent(true);
-      if (receivedOtp) {
-        setOtp(receivedOtp);
-      }
-      Alert.alert(
-        isTamil ? 'OTP அனுப்பப்பட்டது' : 'OTP Sent',
-        receivedOtp
-          ? (isTamil ? `OTP உருவாக்கப்பட்டது (${receivedOtp}).` : `OTP generated for testing: ${receivedOtp}`)
-          : (isTamil
-              ? `உங்கள் மின்னஞ்சலுக்கு (${email}) சரிபார்ப்பு குறியீடு அனுப்பப்பட்டது. தயவுசெய்து உங்கள் inbox சரிபார்க்கவும்.`
-              : `A verification code has been sent to ${email}. Please check your inbox (and spam folder).`)
-      );
-    } catch (e: any) {
-      const msg = e.message || 'Failed to send OTP.';
-      if (msg.includes('already registered')) {
-        Alert.alert(
-          isTamil ? 'கணக்கு உள்ளது' : 'Account Exists',
-          isTamil ? 'இந்த மின்னஞ்சல் ஏற்கனவே பதிவு செய்யப்பட்டுள்ளது. தயவுசெய்து உள்நுழையவும்.' : 'This email is already registered. Please login instead.',
-          [{ text: isTamil ? 'உள்நுழைய' : 'Go to Login', onPress: () => setMode('login') }]
-        );
-      } else {
-        setErrorMsg(msg);
-      }
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleVerifyOtp = async () => {
-    setErrorMsg(null);
-    if (!otp.trim()) {
-      setErrorMsg(isTamil ? 'சரிபார்ப்பு குறியீட்டை உள்ளிடவும்.' : 'Please enter the verification OTP.');
-      return;
-    }
-    setIsLoading(true);
-    try {
-      await verifyOtpOnly(email.trim(), otp.trim());
-      setOtpVerified(true);
-    } catch (e: any) {
-      setErrorMsg(e.message || 'Invalid OTP.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleRegisterFinal = async () => {
-    setErrorMsg(null);
-    if (!username.trim() || !password.trim()) {
-      setErrorMsg(isTamil ? 'விவரங்களை உள்ளிடவும்.' : 'Please enter a username and password.');
-      return;
-    }
-    setIsLoading(true);
-    try {
-      await verifyOTPAndRegister(email.trim(), username.trim(), password, otp.trim());
+      await registerWithEmail(email.trim(), password, username.trim());
+      setLinkSent(true);
+      setSuccessMsg(isTamil ? 'உங்கள் மின்னஞ்சலை சரிபார்க்கவும்.' : 'Registration successful! Please check your email for the verification link.');
     } catch (e: any) {
       setErrorMsg(e.message || 'Registration failed.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    setErrorMsg(null);
+    setSuccessMsg(null);
+    if (!email.trim()) {
+      setErrorMsg(isTamil ? 'மின்னஞ்சலை உள்ளிடவும்.' : 'Please enter your email.');
+      return;
+    }
+    setIsLoading(true);
+    try {
+      await forgotPasswordEmail(email.trim());
+      setLinkSent(true);
+      setSuccessMsg(isTamil ? 'கடவுச்சொல் மீட்டமைப்பு இணைப்பு அனுப்பப்பட்டது.' : 'Password reset link sent to your email.');
+    } catch (e: any) {
+      setErrorMsg(e.message || 'Failed to send reset email.');
     } finally {
       setIsLoading(false);
     }
