@@ -143,7 +143,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // ── Local Username/Password Login ──────────────────────────────
   // NOTE: Does NOT touch isLoading — index.tsx manages its own button spinner.
   const loginLocal = useCallback(async (username: string, password: string) => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/login-local`, {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: username.trim().toLowerCase(), password }),
