@@ -25,7 +25,7 @@ type AuthContextType = {
   isAuthenticated: boolean;
   sendOTP: (email: string) => Promise<string>;
   verifyOtpOnly: (email: string, otp: string) => Promise<void>;
-  verifyOTPAndRegister: (email: string, username: string, password: string, otp: string) => Promise<void>;
+  register: (email: string, username: string, password: string) => Promise<void>;
   resetPasswordWithOTP: (email: string, otp: string, newPassword: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
@@ -41,7 +41,7 @@ const AuthContext = createContext<AuthContextType>({
   isAuthenticated: false,
   sendOTP: async () => "",
   verifyOtpOnly: async () => {},
-  verifyOTPAndRegister: async () => {},
+  register: async () => {},
   resetPasswordWithOTP: async () => {},
   loginWithGoogle: async () => {},
   logout: async () => {},
@@ -146,7 +146,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const verifyOtpOnly = useCallback(async (email: string, otp: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp-only`, {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email.trim().toLowerCase(), otp: otp.trim() }),
@@ -157,20 +157,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  const verifyOTPAndRegister = useCallback(async (email: string, username: string, password: string, otp: string): Promise<void> => {
-    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-otp-register`, {
+  const register = useCallback(async (email: string, username: string, password: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: email.trim().toLowerCase(),
         username: username.trim().toLowerCase(),
-        password,
-        otp: otp.trim()
+        password
       }),
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.detail || 'OTP Verification or Registration failed.');
+      throw new Error(data.detail || 'Registration failed.');
     }
     await _setAuth(data.token, data.profile);
   }, [_setAuth]);
@@ -236,7 +235,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         loginLocal,
         sendOTP,
         verifyOtpOnly,
-        verifyOTPAndRegister,
+        register,
         resetPasswordWithOTP,
         loginWithGoogle,
         logout,
