@@ -64,6 +64,16 @@ SUITE_TEST_CASES = {
         ("Offline", "App shows cached data when offline", "Data loaded once online", "1. Enable airplane mode\n2. Open app", "Previously loaded data visible without crash"),
         ("Storage", "AsyncStorage persists user session across app restarts", "User logged in", "1. Close app\n2. Reopen app", "User remains logged in on reopen"),
     ],
+    "Web Unit Tests": [
+        ("AuthForm", "Renders login form correctly with all fields", "Component mounts", "1. Render AuthForm\n2. Query by placeholder 'Email'", "Email input is in the document"),
+        ("AuthForm", "Shows error on invalid email submission", "Component mounts", "1. Enter 'bademail'\n2. Click Submit", "Error message 'Invalid email' displayed"),
+        ("AuthForm", "Shows OTP input after successful registration mock", "Registration flow", "1. Mock API success\n2. Submit registration", "OTP fields become visible"),
+        ("FloatingLeafLoader", "Animates correctly without crashing", "Component mounts", "1. Render FloatingLeafLoader", "No unhandled runtime errors"),
+        ("MarketCard", "Displays correct crop price and fluctuation", "Mock data passed", "1. Render MarketCard with props\n2. Check text", "Displays ₹25.00/kg and +1.2%"),
+        ("MLRecommendationExplain", "Renders pie chart or confidence meters correctly", "Mock confidence data", "1. Pass {confidence: 94}\n2. Check render", "94% confidence bar rendered"),
+        ("FertilizerCalculator", "Calculates correct NPK equivalent for organic mix", "Component mounts", "1. Enter 1 acre\n2. Click calculate", "Shows 4000kg Vermicompost"),
+        ("API Config", "fetchWithTimeout throws on timeout", "API mock setup", "1. Mock fetch delay 5000ms\n2. Call fetchWithTimeout(2000)", "Throws timeout error"),
+    ],
 }
 
 

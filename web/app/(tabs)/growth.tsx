@@ -21,7 +21,10 @@ type ScanResult = {
   image_url: string;
   created_at: string;
   confidence?: number;
-  severity?: 'Healthy' | 'Mild' | 'Moderate' | 'Severe';
+  severity?: 'Healthy' | 'Mild' | 'Moderate' | 'Severe' | 'None' | 'Unknown';
+  disease_name?: string;
+  organic_remedy?: string;
+  chemical_remedy?: string;
 };
 
 
@@ -35,7 +38,10 @@ export default function GrowthScreen() {
     status: string;
     description: string;
     confidence: number;
-    severity: 'Healthy' | 'Mild' | 'Moderate' | 'Severe';
+    severity: 'Healthy' | 'Mild' | 'Moderate' | 'Severe' | 'None' | 'Unknown';
+    disease_name?: string;
+    organic_remedy?: string;
+    chemical_remedy?: string;
   } | null>(null);
 
   // Leaf loader animation
@@ -162,27 +168,45 @@ export default function GrowthScreen() {
       // ── Derive confidence & severity from status ──────────────────────
       const statusLower = (status || '').toLowerCase();
       let confidence = 0;
-      let severity: 'Healthy' | 'Mild' | 'Moderate' | 'Severe' = 'Healthy';
+      let severity: 'Healthy' | 'Mild' | 'Moderate' | 'Severe' | 'None' | 'Unknown' = 'Healthy';
+      let disease_name = '';
+      let organic_remedy = '';
+      let chemical_remedy = '';
 
-      if (statusLower.includes('healthy')) {
-        confidence = Math.round(88 + Math.random() * 10);
-        severity = 'Healthy';
-      } else if (statusLower.includes('invalid')) {
-        confidence = 0;
-        severity = 'Mild';
+      let parsedDesc = null;
+      try {
+        parsedDesc = JSON.parse(description);
+      } catch (e) {
+        // Not JSON fallback
+      }
+
+      if (parsedDesc) {
+        disease_name = parsedDesc.disease_name;
+        confidence = typeof parsedDesc.confidence === 'number' ? parsedDesc.confidence * 100 : 0;
+        severity = parsedDesc.severity;
+        organic_remedy = parsedDesc.organic_remedy;
+        chemical_remedy = parsedDesc.chemical_remedy;
       } else {
-        confidence = Math.round(72 + Math.random() * 22);
-        const desc = (description || '').toLowerCase();
-        if (desc.includes('severe') || desc.includes('late blight') || desc.includes('mosaic virus')) {
-          severity = 'Severe';
-        } else if (desc.includes('early blight') || desc.includes('rust') || desc.includes('spot')) {
-          severity = 'Moderate';
-        } else {
+        if (statusLower.includes('healthy')) {
+          confidence = Math.round(88 + Math.random() * 10);
+          severity = 'Healthy';
+        } else if (statusLower.includes('invalid')) {
+          confidence = 0;
           severity = 'Mild';
+        } else {
+          confidence = Math.round(72 + Math.random() * 22);
+          const desc = (description || '').toLowerCase();
+          if (desc.includes('severe') || desc.includes('late blight') || desc.includes('mosaic virus')) {
+            severity = 'Severe';
+          } else if (desc.includes('early blight') || desc.includes('rust') || desc.includes('spot')) {
+            severity = 'Moderate';
+          } else {
+            severity = 'Mild';
+          }
         }
       }
 
-      setScanResult({ status, description, confidence, severity });
+      setScanResult({ status, description, confidence, severity, disease_name, organic_remedy, chemical_remedy });
     } catch (err: any) {
       console.error(err);
       Alert.alert(
@@ -215,8 +239,8 @@ export default function GrowthScreen() {
       if (organicMode) {
         setCalcResult(
           isTamil
-            ? `**இயற்கை உரப் பரிந்துரை (${selectedCrop}):**\n• ஜீவாமிர்தம்: ${(area * 200).toFixed(1)} லிட்டர்\n• பஞ்சகவ்யா: ${(area * 10).toFixed(1)} லிட்டர்\n• வேப்பம் புண்ணாக்கு: ${(area * 100).toFixed(1)} கிலோ\n• மண்புழு உரம்: ${(area * 150).toFixed(1)} கிலோ`
-            : `**Organic Fertilizer Recommendation (${selectedCrop}):**\n• Jeevamrutham: ${(area * 200).toFixed(1)} L\n• Panchagavya: ${(area * 10).toFixed(1)} L\n• Neem Cake: ${(area * 100).toFixed(1)} kg\n• Vermicompost: ${(area * 150).toFixed(1)} kg`
+            ? `**இயற்கை உரப் பரிந்துரை (${selectedCrop}):**\n• ஜீவாமிர்தம்: ${(area * 200).toFixed(1)} லிட்டர்\n• பஞ்சகவ்யா: ${(area * 10).toFixed(1)} லிட்டர்\n• வேப்பம் புண்ணாக்கு: ${(area * 300).toFixed(1)} கிலோ\n• மண்புழு உரம்: ${(area * 2300).toFixed(1)} கிலோ`
+            : `**Organic Fertilizer Recommendation (${selectedCrop}):**\n• Jeevamrutham: ${(area * 200).toFixed(1)} L\n• Panchagavya: ${(area * 10).toFixed(1)} L\n• Neem Cake: ${(area * 300).toFixed(1)} kg\n• Vermicompost: ${(area * 2300).toFixed(1)} kg`
         );
       } else {
         setCalcResult(
@@ -328,7 +352,7 @@ export default function GrowthScreen() {
                       <Text style={styles.resultStatusTitle}>
                         {isTamil ? 'நிலைமை / கண்டறிதல்:' : 'Disease Detection:'}
                       </Text>
-                      <Text style={styles.resultStatus}>{scanResult.status}</Text>
+                      <Text style={styles.resultStatus}>{scanResult.disease_name || scanResult.status}</Text>
                     </View>
                     <View style={[
                       styles.severityBadge,
@@ -364,13 +388,34 @@ export default function GrowthScreen() {
                   <View style={styles.resultDivider} />
 
                   {/* Recommendation / Remedy */}
-                  <View style={styles.remedyHeader}>
-                    <MaterialIcons name="healing" size={14} color={COLORS.textGold} />
-                    <Text style={styles.resultDescTitle}>
-                      {isTamil ? 'பரிந்துரை / தீர்வு:' : 'Recommendation / Remedy:'}
-                    </Text>
-                  </View>
-                  <Text style={styles.resultDesc}>{scanResult.description}</Text>
+                  {scanResult.organic_remedy && scanResult.chemical_remedy ? (
+                    <View>
+                      <View style={styles.remedyHeader}>
+                        <MaterialIcons name="eco" size={14} color={COLORS.textGold} />
+                        <Text style={styles.resultDescTitle}>
+                          {isTamil ? 'இயற்கை தீர்வு:' : 'Organic Remedy:'}
+                        </Text>
+                      </View>
+                      <Text style={styles.resultDesc}>{scanResult.organic_remedy}</Text>
+                      <View style={[styles.remedyHeader, { marginTop: 8 }]}>
+                        <MaterialIcons name="science" size={14} color={COLORS.textGold} />
+                        <Text style={styles.resultDescTitle}>
+                          {isTamil ? 'வேதியியல் தீர்வு:' : 'Chemical Remedy:'}
+                        </Text>
+                      </View>
+                      <Text style={styles.resultDesc}>{scanResult.chemical_remedy}</Text>
+                    </View>
+                  ) : (
+                    <View>
+                      <View style={styles.remedyHeader}>
+                        <MaterialIcons name="healing" size={14} color={COLORS.textGold} />
+                        <Text style={styles.resultDescTitle}>
+                          {isTamil ? 'பரிந்துரை / தீர்வு:' : 'Recommendation / Remedy:'}
+                        </Text>
+                      </View>
+                      <Text style={styles.resultDesc}>{scanResult.description}</Text>
+                    </View>
+                  )}
 
                   {/* Action chips */}
                   {scanResult.severity !== 'Healthy' && (

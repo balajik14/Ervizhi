@@ -9,7 +9,7 @@ interface LeafLoaderProps {
   style?: any;
 }
 
-export default function LeafLoader({ color = COLORS.textDark, size = 28, style }: LeafLoaderProps) {
+export default function LeafLoader({ color = COLORS.gold, size = 28, style }: LeafLoaderProps) {
   const floatAnim = useRef(new Animated.Value(0)).current;
   const swingAnim = useRef(new Animated.Value(0)).current;
   const spinAnim = useRef(new Animated.Value(0)).current;

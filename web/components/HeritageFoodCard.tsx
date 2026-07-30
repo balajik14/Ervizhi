@@ -25,6 +25,16 @@ interface HeritageFoodCardProps {
       healthImpactTamil?: string;
       healthImpactEnglish?: string;
     };
+    macros?: {
+      carbs: number;
+      protein: number;
+      fat: number;
+    };
+    sangamReference?: {
+      text: string;
+      source: string;
+      english: string;
+    };
   };
 }
 
@@ -133,6 +143,39 @@ export default function HeritageFoodCard({ food }: HeritageFoodCardProps) {
               </View>
               <Text style={styles.healthImpact}>{isTamil ? (food.comparison.healthImpactTamil || food.comparison.healthImpact) : (food.comparison.healthImpactEnglish || food.comparison.healthImpact)}</Text>
             </View>
+
+            {/* Macros (if available) */}
+            {food.macros && (
+              <View style={styles.macrosBox}>
+                <Text style={styles.macrosTitle}>{isTamil ? 'ஊட்டச்சத்துகள் (100g)' : 'Macros (100g)'}</Text>
+                <View style={styles.macrosRow}>
+                  <View style={styles.macroItem}>
+                    <Text style={styles.macroVal}>{food.macros.carbs}g</Text>
+                    <Text style={styles.macroLabel}>{isTamil ? 'கார்போ' : 'Carbs'}</Text>
+                  </View>
+                  <View style={styles.macroItem}>
+                    <Text style={styles.macroVal}>{food.macros.protein}g</Text>
+                    <Text style={styles.macroLabel}>{isTamil ? 'புரதம்' : 'Protein'}</Text>
+                  </View>
+                  <View style={styles.macroItem}>
+                    <Text style={styles.macroVal}>{food.macros.fat}g</Text>
+                    <Text style={styles.macroLabel}>{isTamil ? 'கொழுப்பு' : 'Fat'}</Text>
+                  </View>
+                </View>
+              </View>
+            )}
+
+            {/* Sangam Reference (if available) */}
+            {food.sangamReference && (
+              <View style={styles.sangamBox}>
+                <Ionicons name="book-outline" size={16} color={COLORS.gold} style={styles.sangamIcon} />
+                <View style={styles.sangamContent}>
+                  <Text style={styles.sangamTitle}>{isTamil ? 'சங்க இலக்கியம்' : 'Sangam Literature'}</Text>
+                  <Text style={styles.sangamText}>"{food.sangamReference.text}"</Text>
+                  <Text style={styles.sangamSource}>— {food.sangamReference.source}</Text>
+                </View>
+              </View>
+            )}
 
             {/* Seasons */}
             <View style={styles.seasonRow}>
@@ -330,5 +373,72 @@ const styles = StyleSheet.create({
     fontSize: 11,
     fontWeight: 'bold',
     letterSpacing: 0.5,
+  },
+  macrosBox: {
+    backgroundColor: 'rgba(255,255,255,0.05)',
+    padding: SPACING.md,
+    borderRadius: 16,
+    marginBottom: SPACING.md,
+    borderWidth: 1,
+    borderColor: 'rgba(212,175,55,0.2)',
+  },
+  macrosTitle: {
+    fontSize: 12,
+    color: COLORS.gold,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    textAlign: 'center',
+    textTransform: 'uppercase',
+  },
+  macrosRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  macroItem: {
+    alignItems: 'center',
+  },
+  macroVal: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  macroLabel: {
+    fontSize: 10,
+    color: '#9CA3AF',
+    marginTop: 2,
+  },
+  sangamBox: {
+    flexDirection: 'row',
+    backgroundColor: 'rgba(212,175,55,0.1)',
+    padding: SPACING.md,
+    borderRadius: 16,
+    marginBottom: SPACING.md,
+    borderLeftWidth: 3,
+    borderLeftColor: COLORS.gold,
+  },
+  sangamIcon: {
+    marginRight: 10,
+    marginTop: 2,
+  },
+  sangamContent: {
+    flex: 1,
+  },
+  sangamTitle: {
+    fontSize: 11,
+    color: COLORS.gold,
+    fontWeight: 'bold',
+    marginBottom: 4,
+    textTransform: 'uppercase',
+  },
+  sangamText: {
+    fontSize: 14,
+    color: '#fff',
+    fontStyle: 'italic',
+    marginBottom: 4,
+    fontWeight: '600',
+  },
+  sangamSource: {
+    fontSize: 11,
+    color: '#D1FAE5',
   },
 });

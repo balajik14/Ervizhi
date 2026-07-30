@@ -9,7 +9,6 @@ import { useState, useCallback, useRef, useEffect } from 'react';
 import { useApp } from './_layout';
 import { useAuth } from './_context/AuthContext';
 import { MaterialIcons } from '@expo/vector-icons';
-import LeafLoader from '../components/LeafLoader';
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, RADIUS, SHADOWS, SPACING, GRADIENTS } from '../constants/theme';
 
@@ -19,7 +18,7 @@ export default function AuthScreen() {
   if (authLoading) {
     return (
       <LinearGradient colors={GRADIENTS.darkBg} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <LeafLoader />
+        <FloatingLeafLoader size={48} />
       </LinearGradient>
     );
   }
@@ -284,7 +283,7 @@ function AuthForm() {
                   
                   <TouchableOpacity style={styles.primaryBtn} onPress={handleLogin} disabled={isLoading}>
                     <View style={styles.primaryBtnGrad}>
-                      {isLoading ? <LeafLoader size={24} /> : (
+                      {isLoading ? <FloatingLeafLoader color={COLORS.darkBg} size={24} /> : (
                         <Text style={styles.primaryBtnText}>{isTamil ? 'உள்நுழைய' : 'Secure Login'}</Text>
                       )}
                     </View>
@@ -319,7 +318,7 @@ function AuthForm() {
                       />
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleRegister} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <LeafLoader size={24} /> : (
+                          {isLoading ? <FloatingLeafLoader color={COLORS.darkBg} size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'OTP அனுப்பு' : 'Send Verification OTP'}</Text>
                           )}
                         </View>
@@ -342,7 +341,7 @@ function AuthForm() {
                       />
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleRegister} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <LeafLoader size={24} /> : (
+                          {isLoading ? <FloatingLeafLoader color={COLORS.darkBg} size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'சரிபார்க்கவும்' : 'Verify OTP'}</Text>
                           )}
                         </View>
@@ -377,7 +376,7 @@ function AuthForm() {
                       />
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleRegister} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <LeafLoader size={24} /> : (
+                          {isLoading ? <FloatingLeafLoader color={COLORS.darkBg} size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'கணக்கை உருவாக்கு' : 'Create Account'}</Text>
                           )}
                         </View>
@@ -414,7 +413,7 @@ function AuthForm() {
 
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleForgotPassword} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <LeafLoader size={24} /> : (
+                          {isLoading ? <FloatingLeafLoader color={COLORS.darkBg} size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'OTP அனுப்பு' : 'Send OTP'}</Text>
                           )}
                         </View>
@@ -449,7 +448,7 @@ function AuthForm() {
 
                       <TouchableOpacity style={styles.primaryBtn} onPress={handleForgotPassword} disabled={isLoading}>
                         <View style={styles.primaryBtnGrad}>
-                          {isLoading ? <LeafLoader size={24} /> : (
+                          {isLoading ? <FloatingLeafLoader color={COLORS.darkBg} size={24} /> : (
                             <Text style={styles.primaryBtnText}>{isTamil ? 'கடவுச்சொல்லை மாற்று' : 'Reset Password'}</Text>
                           )}
                         </View>

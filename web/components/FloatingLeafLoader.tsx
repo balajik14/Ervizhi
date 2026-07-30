@@ -9,7 +9,7 @@ interface FloatingLeafLoaderProps {
   style?: any;
 }
 
-export default function FloatingLeafLoader({ color = COLORS.textDark, size = 26, style }: FloatingLeafLoaderProps) {
+export default function FloatingLeafLoader({ color = COLORS.gold, size = 26, style }: FloatingLeafLoaderProps) {
   const floatAnim = useRef(new Animated.Value(0)).current;
   const rotateAnim = useRef(new Animated.Value(0)).current;
 
@@ -32,31 +32,24 @@ export default function FloatingLeafLoader({ color = COLORS.textDark, size = 26,
     ).start();
 
     Animated.loop(
-      Animated.sequence([
-        Animated.timing(rotateAnim, {
-          toValue: 1,
-          duration: 1500,
-          easing: Easing.inOut(Easing.ease),
-          useNativeDriver: Platform.OS !== 'web',
-        }),
-        Animated.timing(rotateAnim, {
-          toValue: -1,
-          duration: 1500,
-          easing: Easing.inOut(Easing.ease),
-          useNativeDriver: Platform.OS !== 'web',
-        })
-      ])
+      Animated.timing(rotateAnim, {
+        toValue: 1,
+        duration: 1500,
+        easing: Easing.linear,
+        useNativeDriver: Platform.OS !== 'web',
+      })
     ).start();
   }, [floatAnim, rotateAnim]);
 
   const spin = rotateAnim.interpolate({
-    inputRange: [-1, 1],
-    outputRange: ['-12deg', '12deg']
+    inputRange: [0, 1],
+    outputRange: ['0deg', '360deg']
   });
 
   return (
     <View style={[styles.container, style]}>
-      <Animated.View style={{ transform: [{ translateY: floatAnim }, { rotate: spin }] }}>
+      <Animated.View style={[styles.spinner, { borderColor: color + '40', borderTopColor: color, width: size * 1.8, height: size * 1.8, borderRadius: size * 0.9, transform: [{ rotate: spin }] }]} />
+      <Animated.View style={{ position: 'absolute', transform: [{ translateY: floatAnim }] }}>
         <Ionicons name="leaf" size={size} color={color} />
       </Animated.View>
     </View>
@@ -69,4 +62,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     display: 'flex',
   },
+  spinner: {
+    position: 'absolute',
+    borderWidth: 3,
+  }
 });

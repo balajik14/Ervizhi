@@ -308,7 +308,7 @@ export default function SoilMapScreen() {
             initialRegion={TN_REGION}
             mapType={isSatellite ? 'satellite' : 'standard'}
             minZoomLevel={6.5}
-            maxZoomLevel={16}
+            maxZoomLevel={18}
             showsUserLocation={false}
             showsCompass={true}
             showsScale={true}
