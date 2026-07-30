@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, View, StyleSheet, Easing } from 'react-native';
+import { Animated, View, StyleSheet, Platform, Easing } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../constants/theme';
 
@@ -9,7 +9,7 @@ interface FloatingLeafLoaderProps {
   style?: any;
 }
 
-export default function FloatingLeafLoader({ color = COLORS.gold, size = 32, style }: FloatingLeafLoaderProps) {
+export default function FloatingLeafLoader({ color = COLORS.textDark, size = 26, style }: FloatingLeafLoaderProps) {
   const floatAnim = useRef(new Animated.Value(0)).current;
   const rotateAnim = useRef(new Animated.Value(0)).current;
 
@@ -17,16 +17,16 @@ export default function FloatingLeafLoader({ color = COLORS.gold, size = 32, sty
     Animated.loop(
       Animated.sequence([
         Animated.timing(floatAnim, {
-          toValue: -8,
-          duration: 1000,
+          toValue: -6,
+          duration: 800,
           easing: Easing.inOut(Easing.ease),
-          useNativeDriver: true,
+          useNativeDriver: Platform.OS !== 'web',
         }),
         Animated.timing(floatAnim, {
           toValue: 0,
-          duration: 1000,
+          duration: 800,
           easing: Easing.inOut(Easing.ease),
-          useNativeDriver: true,
+          useNativeDriver: Platform.OS !== 'web',
         })
       ])
     ).start();
@@ -35,15 +35,15 @@ export default function FloatingLeafLoader({ color = COLORS.gold, size = 32, sty
       Animated.sequence([
         Animated.timing(rotateAnim, {
           toValue: 1,
-          duration: 2000,
+          duration: 1500,
           easing: Easing.inOut(Easing.ease),
-          useNativeDriver: true,
+          useNativeDriver: Platform.OS !== 'web',
         }),
         Animated.timing(rotateAnim, {
           toValue: -1,
-          duration: 2000,
+          duration: 1500,
           easing: Easing.inOut(Easing.ease),
-          useNativeDriver: true,
+          useNativeDriver: Platform.OS !== 'web',
         })
       ])
     ).start();
@@ -51,7 +51,7 @@ export default function FloatingLeafLoader({ color = COLORS.gold, size = 32, sty
 
   const spin = rotateAnim.interpolate({
     inputRange: [-1, 1],
-    outputRange: ['-10deg', '10deg']
+    outputRange: ['-12deg', '12deg']
   });
 
   return (
@@ -67,5 +67,6 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
+    display: 'flex',
   },
 });

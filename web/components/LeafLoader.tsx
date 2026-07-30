@@ -1,9 +1,15 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, View, StyleSheet, Platform } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Animated, View, StyleSheet, Platform, Easing } from 'react-native';
+import { MaterialIcons, Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../constants/theme';
 
-export default function LeafLoader() {
+interface LeafLoaderProps {
+  color?: string;
+  size?: number;
+  style?: any;
+}
+
+export default function LeafLoader({ color = COLORS.textDark, size = 28, style }: LeafLoaderProps) {
   const floatAnim = useRef(new Animated.Value(0)).current;
   const swingAnim = useRef(new Animated.Value(0)).current;
   const spinAnim = useRef(new Animated.Value(0)).current;
@@ -13,13 +19,15 @@ export default function LeafLoader() {
     Animated.loop(
       Animated.sequence([
         Animated.timing(floatAnim, {
-          toValue: -20,
-          duration: 1500,
+          toValue: -8,
+          duration: 1000,
+          easing: Easing.inOut(Easing.ease),
           useNativeDriver: Platform.OS !== 'web',
         }),
         Animated.timing(floatAnim, {
           toValue: 0,
-          duration: 1500,
+          duration: 1000,
+          easing: Easing.inOut(Easing.ease),
           useNativeDriver: Platform.OS !== 'web',
         }),
       ])
@@ -29,18 +37,21 @@ export default function LeafLoader() {
     Animated.loop(
       Animated.sequence([
         Animated.timing(swingAnim, {
-          toValue: 15,
-          duration: 1000,
+          toValue: 6,
+          duration: 800,
+          easing: Easing.inOut(Easing.ease),
           useNativeDriver: Platform.OS !== 'web',
         }),
         Animated.timing(swingAnim, {
-          toValue: -15,
-          duration: 2000,
+          toValue: -6,
+          duration: 1600,
+          easing: Easing.inOut(Easing.ease),
           useNativeDriver: Platform.OS !== 'web',
         }),
         Animated.timing(swingAnim, {
           toValue: 0,
-          duration: 1000,
+          duration: 800,
+          easing: Easing.inOut(Easing.ease),
           useNativeDriver: Platform.OS !== 'web',
         }),
       ])
@@ -51,17 +62,20 @@ export default function LeafLoader() {
       Animated.sequence([
         Animated.timing(spinAnim, {
           toValue: 1,
-          duration: 1500,
+          duration: 1200,
+          easing: Easing.inOut(Easing.ease),
           useNativeDriver: Platform.OS !== 'web',
         }),
         Animated.timing(spinAnim, {
           toValue: -1,
-          duration: 3000,
+          duration: 2400,
+          easing: Easing.inOut(Easing.ease),
           useNativeDriver: Platform.OS !== 'web',
         }),
         Animated.timing(spinAnim, {
           toValue: 0,
-          duration: 1500,
+          duration: 1200,
+          easing: Easing.inOut(Easing.ease),
           useNativeDriver: Platform.OS !== 'web',
         }),
       ])
@@ -74,7 +88,7 @@ export default function LeafLoader() {
   });
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Animated.View
         style={[
           styles.leafContainer,
@@ -87,7 +101,7 @@ export default function LeafLoader() {
           },
         ]}
       >
-        <MaterialIcons name="eco" size={48} color={COLORS.gold} />
+        <Ionicons name="leaf" size={size} color={color} />
       </Animated.View>
     </View>
   );
@@ -97,6 +111,7 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
+    display: 'flex',
   },
   leafContainer: {
     justifyContent: 'center',
