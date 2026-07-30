@@ -1,8 +1,9 @@
 import {
   View, Text, StyleSheet, TextInput, TouchableOpacity,
   KeyboardAvoidingView, Platform, Image, useWindowDimensions,
-  ScrollView, Alert, ActivityIndicator, Animated
+  ScrollView, Alert, Animated
 } from 'react-native';
+import FloatingLeafLoader from '../components/FloatingLeafLoader';
 import { useRouter, useFocusEffect, Redirect } from 'expo-router';
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useApp } from './_layout';
