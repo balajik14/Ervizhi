@@ -67,13 +67,13 @@ def fertilizer_guide(data: FertilizerInput):
             rec += f"• ஜீவாமிர்தம்: {org.get('Jeevamrutham_liters', 0)} லிட்டர்\n"
             rec += f"• பஞ்சகவ்யா: {org.get('Panchagavya_liters', 0)} லிட்டர்\n"
             rec += f"• வேப்பம் புண்ணாக்கு: {org.get('Neem_Cake_kg', 0)} கிலோ\n"
-            rec += f"• மண்புழு உரம்: {round(data.land_size_acres * 150, 1)} கிலோ"
+            rec += f"• மண்புழு உரம்: {org.get('Vermicompost_kg', 0)} கிலோ"
         else:
             rec = "**Organic Fertilizer Recommendation:**\n"
             rec += f"• Jeevamrutham: {org.get('Jeevamrutham_liters', 0)} L\n"
             rec += f"• Panchagavya: {org.get('Panchagavya_liters', 0)} L\n"
             rec += f"• Neem Cake: {org.get('Neem_Cake_kg', 0)} kg\n"
-            rec += f"• Vermicompost: {round(data.land_size_acres * 150, 1)} kg"
+            rec += f"• Vermicompost: {org.get('Vermicompost_kg', 0)} kg"
     else:
         if data.is_tamil:
             rec = "**இரசாயன உரப் பரிந்துரை:**\n"
