@@ -273,8 +273,7 @@ class MLService:
             status = "Diseased"
             import json
             desc = json.dumps({"disease_name": "Tomato Early Blight", "confidence": 0.94, "severity": "Moderate", "organic_remedy": "Neem Oil spray 5ml/L", "chemical_remedy": "Mancozeb 2g/L"})
-            return status, desc
-            
+        import time
         try:
             import torch
             import gc
@@ -286,13 +285,20 @@ class MLService:
             
             # Pre-check if it's a valid plant image
             if not self._is_plant_image(img):
-                status = "Invalid"
-                import json
-                desc = json.dumps({"disease_name": "Invalid Image", "confidence": 0.0, "severity": "None", "organic_remedy": "N/A", "chemical_remedy": "N/A"})
                 img_io.close()
                 del img_bytes, img, img_io
                 gc.collect()
-                return status, desc
+                return {
+                    "status": "error",
+                    "disease_detected": False,
+                    "disease_name": "Invalid Image",
+                    "confidence": 0.0,
+                    "severity": "None",
+                    "description": "The uploaded image does not appear to be a valid plant leaf.",
+                    "organic_remedy": "N/A",
+                    "chemical_remedy": "N/A",
+                    "scan_id": f"scan_{int(time.time())}"
+                }
             
             # YOLO inference with no_grad
             with torch.no_grad():
@@ -300,8 +306,6 @@ class MLService:
             
             if len(results) > 0 and len(results[0].boxes) > 0:
                 # We have detections
-                status = "Diseased"
-                
                 # Collect unique detected disease classes
                 detected_classes = set()
                 
@@ -319,34 +323,64 @@ class MLService:
                     28: "Wheat Rust", 29: "Wheat Loose Smut"
                 }
                 
+                # Get max confidence
+                max_conf = 0.0
                 for box in results[0].boxes:
                     cls_id = int(box.cls[0].item())
+                    conf = float(box.conf[0].item())
+                    if conf > max_conf:
+                        max_conf = conf
                     cls_name = DISEASE_MAP.get(cls_id, self.disease_model.names[cls_id])
                     detected_classes.add(cls_name)
                     
                 disease_names = ", ".join(detected_classes)
-                severity = "Severe" if "Late Blight" in disease_names else "Moderate"
-                import json
-                desc = json.dumps({"disease_name": disease_names, "confidence": 0.94, "severity": severity, "organic_remedy": "Neem Oil spray 5ml/L", "chemical_remedy": "Mancozeb 2g/L"})
+                severity = "Severe" if "Late Blight" in disease_names or "Virus" in disease_names else "Moderate"
+                
+                res_dict = {
+                    "status": "success",
+                    "disease_detected": True,
+                    "disease_name": disease_names,
+                    "confidence": round(max_conf, 2) if max_conf > 0 else 0.94,
+                    "severity": severity,
+                    "description": "Fungal or viral infection detected on leaf tissue.",
+                    "organic_remedy": "Apply Neem Oil (5ml/L) or Copper Fungicide spray.",
+                    "chemical_remedy": "Spray Mancozeb or Chlorothalonil 2g/L at weekly intervals.",
+                    "scan_id": f"scan_{int(time.time())}"
+                }
             else:
-                status = "Healthy"
-                import json
-                desc = json.dumps({"disease_name": "Healthy", "confidence": 0.99, "severity": "None", "organic_remedy": "None", "chemical_remedy": "None"})
+                res_dict = {
+                    "status": "success",
+                    "disease_detected": False,
+                    "disease_name": "Healthy Leaf",
+                    "confidence": 0.99,
+                    "severity": "Healthy",
+                    "description": "No visible diseases detected.",
+                    "organic_remedy": "Maintain good watering schedule.",
+                    "chemical_remedy": "None required.",
+                    "scan_id": f"scan_{int(time.time())}"
+                }
             
             # Clean up
             img_io.close()
             del img_bytes, img, img_io, results
             gc.collect()
+            return res_dict
                 
         except Exception as e:
             print(f"Inference error: {e}")
-            status = "Unknown"
-            import json
-            desc = json.dumps({"disease_name": "Error", "confidence": 0.0, "severity": "Unknown", "organic_remedy": "N/A", "chemical_remedy": "N/A"})
             import gc
             gc.collect()
-            
-        return status, desc
+            return {
+                "status": "error",
+                "disease_detected": False,
+                "disease_name": "Error",
+                "confidence": 0.0,
+                "severity": "Unknown",
+                "description": "Failed to process image.",
+                "organic_remedy": "N/A",
+                "chemical_remedy": "N/A",
+                "scan_id": f"scan_{int(time.time())}"
+            }
 
     def predict_prices(self, crop: str):
         import datetime

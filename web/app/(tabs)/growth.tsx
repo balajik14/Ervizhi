@@ -127,10 +127,8 @@ export default function GrowthScreen() {
     setImageUri(uri);
     setScanResult(null);
     setIsAnalyzing(true);
-
     try {
-      let status = '';
-      let description = '';
+      let responseData: any = {};
 
       if (isAuthenticated) {
         // Use the persistent endpoint that saves to DB
@@ -145,9 +143,7 @@ export default function GrowthScreen() {
           throw new Error(err.detail || 'Server error');
         }
 
-        const data = await res.json();
-        status = data.status;
-        description = data.description;
+        responseData = await res.json();
         // Refresh history
         loadHistory();
       } else {
@@ -160,53 +156,24 @@ export default function GrowthScreen() {
 
         if (!res.ok) throw new Error('Server error');
         const data = await res.json();
-        const reply = data.reply || data;
-        status = reply.status;
-        description = reply.description;
+        responseData = data.reply || data;
       }
+      
+      console.log("Scan Response:", responseData);
 
-      // ── Derive confidence & severity from status ──────────────────────
-      const statusLower = (status || '').toLowerCase();
-      let confidence = 0;
-      let severity: 'Healthy' | 'Mild' | 'Moderate' | 'Severe' | 'None' | 'Unknown' = 'Healthy';
-      let disease_name = '';
-      let organic_remedy = '';
-      let chemical_remedy = '';
+      const confidenceValue = typeof responseData.confidence === 'number' 
+          ? (responseData.confidence <= 1 ? Math.round(responseData.confidence * 100) : responseData.confidence)
+          : 0;
 
-      let parsedDesc = null;
-      try {
-        parsedDesc = JSON.parse(description);
-      } catch (e) {
-        // Not JSON fallback
-      }
-
-      if (parsedDesc) {
-        disease_name = parsedDesc.disease_name;
-        confidence = typeof parsedDesc.confidence === 'number' ? parsedDesc.confidence * 100 : 0;
-        severity = parsedDesc.severity;
-        organic_remedy = parsedDesc.organic_remedy;
-        chemical_remedy = parsedDesc.chemical_remedy;
-      } else {
-        if (statusLower.includes('healthy')) {
-          confidence = Math.round(88 + Math.random() * 10);
-          severity = 'Healthy';
-        } else if (statusLower.includes('invalid')) {
-          confidence = 0;
-          severity = 'Mild';
-        } else {
-          confidence = Math.round(72 + Math.random() * 22);
-          const desc = (description || '').toLowerCase();
-          if (desc.includes('severe') || desc.includes('late blight') || desc.includes('mosaic virus')) {
-            severity = 'Severe';
-          } else if (desc.includes('early blight') || desc.includes('rust') || desc.includes('spot')) {
-            severity = 'Moderate';
-          } else {
-            severity = 'Mild';
-          }
-        }
-      }
-
-      setScanResult({ status, description, confidence, severity, disease_name, organic_remedy, chemical_remedy });
+      setScanResult({ 
+        status: responseData.status, 
+        description: responseData.description, 
+        confidence: confidenceValue, 
+        severity: responseData.severity || 'Unknown', 
+        disease_name: responseData.disease_name || responseData.status, 
+        organic_remedy: responseData.organic_remedy, 
+        chemical_remedy: responseData.chemical_remedy 
+      });
     } catch (err: any) {
       console.error(err);
       Alert.alert(
@@ -486,7 +453,20 @@ export default function GrowthScreen() {
                         style={styles.historyAction}
                         onPress={() => {
                           setImageUri(item.image_url);
-                          setScanResult({ status: item.status, description: item.description, confidence: 0, severity: 'Healthy' });
+                          try {
+                            const parsed = JSON.parse(item.description);
+                            setScanResult({
+                              status: parsed.status || item.status,
+                              description: parsed.description || item.description,
+                              confidence: typeof parsed.confidence === 'number' ? (parsed.confidence <= 1 ? Math.round(parsed.confidence * 100) : parsed.confidence) : 0,
+                              severity: parsed.severity || 'Healthy',
+                              disease_name: parsed.disease_name || item.status,
+                              organic_remedy: parsed.organic_remedy,
+                              chemical_remedy: parsed.chemical_remedy,
+                            });
+                          } catch(e) {
+                            setScanResult({ status: item.status, description: item.description, confidence: 0, severity: 'Healthy' });
+                          }
                         }}
                         activeOpacity={0.8}
                       >

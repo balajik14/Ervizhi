@@ -95,8 +95,8 @@ class SnapSolveRequest(BaseModel):
 @router.post("/snap-solve")
 def snap_solve(request: SnapSolveRequest):
     # Route the image to the local plant_disease_inference function
-    status, desc = ml_service.plant_disease_inference(request.image_base64, request.is_tamil)
-    return {"reply": {"status": status, "description": desc}}
+    result = ml_service.plant_disease_inference(request.image_base64, request.is_tamil)
+    return result
 
 @router.get("/price-predict")
 def get_price_prediction(crop: str):
@@ -127,25 +127,24 @@ def create_crop_scan(
     db: Session = Depends(get_db),
 ):
     """Run plant disease inference and persist the result to the user's scan history."""
-    status, description = ml_service.plant_disease_inference(data.image_base64, data.is_tamil)
+    import json
+    result = ml_service.plant_disease_inference(data.image_base64, data.is_tamil)
 
     scan = CropScan(
         user_id=user_id,
-        status=status,
-        description=description,
+        status=result["status"],
+        description=json.dumps(result),
         image_url=f"data:image/jpeg;base64,{data.image_base64[:64]}...",  # Store truncated ref only
     )
     db.add(scan)
     db.commit()
     db.refresh(scan)
 
-    return {
-        "id": str(scan.id),
-        "status": scan.status,
-        "description": scan.description,
-        "image_url": "",
-        "created_at": scan.created_at.isoformat() if scan.created_at else None,
-    }
+    result["id"] = str(scan.id)
+    result["image_url"] = ""
+    result["created_at"] = scan.created_at.isoformat() if scan.created_at else None
+
+    return result
 
 
 @router.get("/crop-scans")
