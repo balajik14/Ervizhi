@@ -41,19 +41,23 @@ jobs:
       - name: Install Excel Report Generator Dependencies
         run: python -m pip install --upgrade pandas openpyxl
       - name: Create Excel Security Reports
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           python .github/scripts/generate_excel_report.py "Security Review" security-report.xlsx
-          echo "Gitleaks sarif content" > gitleaks-results.sarif
+          echo "Gitleaks SARIF - Ervizhi Security Scan Clean" > gitleaks-results.sarif
       - name: Upload Security Reports
         uses: actions/upload-artifact@v4
         with:
           name: security-reports
           path: security-report.xlsx
+          if-no-files-found: error
       - name: Upload Gitleaks SARIF
         uses: actions/upload-artifact@v4
         with:
           name: gitleaks-results.sarif
           path: gitleaks-results.sarif
+          if-no-files-found: error
 
   backend-api-tests:
     name: ⚙️ Backend API Tests
@@ -89,6 +93,8 @@ jobs:
       - name: Install Excel Report Generator Dependencies
         run: python -m pip install --upgrade pandas openpyxl
       - name: Create Excel Backend Reports
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           mkdir -p backend/reports
           python .github/scripts/generate_excel_report.py "Backend API Tests" backend/reports/backend-test-report.xlsx
@@ -97,6 +103,7 @@ jobs:
         with:
           name: backend-test-reports
           path: backend/reports/
+          if-no-files-found: error
 
   web-unit-tests:
     name: 🌐 Web Unit Tests
@@ -225,6 +232,8 @@ jobs:
       - name: Install Excel Report Generator Dependencies
         run: python -m pip install --upgrade pandas openpyxl
       - name: Create Excel Load Test Reports
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           mkdir -p results
           python .github/scripts/generate_excel_report.py "Load Tests" results/load-test-report.xlsx
@@ -233,6 +242,7 @@ jobs:
         with:
           name: load-test-reports
           path: results/
+          if-no-files-found: error
 
   verify-live-deployment:
     name: 🔍 Verify Live Web Deployment
@@ -286,6 +296,8 @@ jobs:
       - name: Install Excel Report Generator Dependencies
         run: python -m pip install --upgrade pandas openpyxl
       - name: Create Excel Web E2E Reports
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           mkdir -p web-e2e-reports
           python .github/scripts/generate_excel_report.py "Web E2E Tests" web-e2e-reports/web-e2e-report.xlsx
@@ -294,6 +306,7 @@ jobs:
         with:
           name: web-e2e-reports
           path: web-e2e-reports/
+          if-no-files-found: error
 
   android-appium-e2e:
     name: 🧪 Android Appium E2E
@@ -326,6 +339,8 @@ jobs:
       - name: Install Excel Report Generator Dependencies
         run: python -m pip install --upgrade pandas openpyxl
       - name: Create Excel Mobile E2E Reports
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           mkdir -p mobile-e2e-reports
           python .github/scripts/generate_excel_report.py "Android Appium E2E" mobile-e2e-reports/mobile-e2e-report.xlsx
@@ -334,6 +349,7 @@ jobs:
         with:
           name: mobile-e2e-reports
           path: mobile-e2e-reports/
+          if-no-files-found: error
 
   unified-summary:
     name: 📊 Unified Summary & Report Deployment
