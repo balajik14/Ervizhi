@@ -319,6 +319,9 @@ class MLService:
         return status, desc
 
     def predict_prices(self, crop: str):
+        import datetime
+        import math
+        
         CROP_BASE_PRICES = {
             'paddy': [2100, 2150, 2200, 2250, 2230, 2280, 2300],
             'turmeric': [8000, 8100, 8050, 8200, 8300, 8150, 8400],
@@ -330,14 +333,35 @@ class MLService:
         crop_key = crop.lower().strip()
         history = CROP_BASE_PRICES.get(crop_key, [2000, 2050, 2100, 2150, 2130, 2180, 2200])
         
+        # Seasonal & Inflation factors
+        current_month = datetime.datetime.now().month
+        # Peak harvest months suppress prices, off-season increases prices
+        harvest_cycle_modifier = 1.0
+        if crop_key == 'paddy':
+            if current_month in [11, 12, 1, 9, 10]:
+                harvest_cycle_modifier = 0.92 # Supply high, price drops
+            else:
+                harvest_cycle_modifier = 1.08 # Supply low, price rises
+        elif crop_key == 'tomato':
+            if current_month in [7, 8, 9]:
+                harvest_cycle_modifier = 1.25 # Monsoon shortages
+            else:
+                harvest_cycle_modifier = 0.85
+        else:
+            # Generic sine wave for other crops
+            harvest_cycle_modifier = 1.0 + 0.1 * math.sin((current_month / 12.0) * 2 * math.pi)
+            
+        inflation_factor = 1.04 # 4% base inflation baseline
+        base_multiplier = harvest_cycle_modifier * inflation_factor
+
         self._init_lstm()
+        days_of_week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        
         if self.lstm_model is None:
-            days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-            return [{"day": d, "price": p} for d, p in zip(days, history)]
+            return [{"day": d, "price": round(p * base_multiplier, 1)} for d, p in zip(days_of_week, history)]
             
         seq = list(history)
         predictions = []
-        days_of_week = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         
         import torch
         with torch.no_grad():
@@ -345,9 +369,17 @@ class MLService:
                 last_7 = np.array(seq[-7:], dtype=np.float32) / 10000.0
                 input_tensor = torch.tensor(last_7).view(1, 7, 1)
                 pred_val = self.lstm_model(input_tensor).item()
-                predicted_price = pred_val * 10000.0
-                predictions.append(predicted_price)
-                seq.append(predicted_price)
+                
+                # Apply real mandi trends (harvest cycle + inflation)
+                raw_predicted = pred_val * 10000.0
+                adjusted_predicted = raw_predicted * base_multiplier
+                
+                # Add slight daily random fluctuation (0.5%) to simulate real mandi volatility
+                volatility = np.random.uniform(0.995, 1.005)
+                final_price = adjusted_predicted * volatility
+                
+                predictions.append(final_price)
+                seq.append(final_price)
                 
         return [{"day": days_of_week[i], "price": round(predictions[i], 1)} for i in range(7)]
 

@@ -3,7 +3,6 @@ import * as ImagePicker from 'expo-image-picker';
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  ActivityIndicator,
   Alert,
   Animated,
   FlatList,
@@ -17,6 +16,8 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import FloatingLeafLoader from '../../components/FloatingLeafLoader';
+
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { COLORS, GRADIENTS, RADIUS, SHADOWS, SPACING } from '../../constants/theme';
 import AgriBackground from '../../components/AgriBackground';
@@ -35,12 +36,12 @@ type Rental = {
   createdAt: string;
 };
 
-// ── Machine Card ──────────────────────────────────────────────────────
-function MachineCard({ item, isOwner, onContact, onDelete }: {
+function MachineCard({ item, isOwner, onContact, onDelete, onEdit }: {
   item: Rental;
   isOwner: boolean;
   onContact: () => void;
   onDelete: () => void;
+  onEdit: () => void;
 }) {
   const scale = useRef(new Animated.Value(1)).current;
   const onPressIn = () => Animated.spring(scale, { toValue: 0.97, useNativeDriver: true }).start();
@@ -68,9 +69,14 @@ function MachineCard({ item, isOwner, onContact, onDelete }: {
                 </Text>
               </View>
               {isOwner && (
-                <TouchableOpacity onPress={onDelete} style={styles.deleteBtn}>
-                  <MaterialIcons name="delete-outline" size={20} color={COLORS.danger} />
-                </TouchableOpacity>
+                <View style={{ flexDirection: 'row', gap: 8 }}>
+                  <TouchableOpacity onPress={onEdit} style={styles.actionBtn}>
+                    <MaterialIcons name="edit" size={20} color={COLORS.gold} />
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={onDelete} style={styles.actionBtn}>
+                    <MaterialIcons name="delete-outline" size={20} color={COLORS.danger} />
+                  </TouchableOpacity>
+                </View>
               )}
             </View>
 
@@ -88,17 +94,19 @@ function MachineCard({ item, isOwner, onContact, onDelete }: {
             </View>
           </View>
 
-          <TouchableOpacity onPress={onContact} onPressIn={onPressIn} onPressOut={onPressOut} activeOpacity={0.85}>
-            <LinearGradient
-              colors={GRADIENTS.gold}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 0 }}
-              style={styles.contactBtn}
-            >
-              <MaterialIcons name="phone" size={16} color={COLORS.textDark} />
-              <Text style={styles.contactBtnText}>Call Owner</Text>
-            </LinearGradient>
-          </TouchableOpacity>
+          {!isOwner && (
+            <TouchableOpacity onPress={onContact} onPressIn={onPressIn} onPressOut={onPressOut} activeOpacity={0.85}>
+              <LinearGradient
+                colors={GRADIENTS.gold}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                style={styles.contactBtn}
+              >
+                <MaterialIcons name="phone" size={16} color={COLORS.textDark} />
+                <Text style={styles.contactBtnText}>Contact Owner</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+          )}
         </View>
       </GlassCard>
     </Animated.View>
@@ -223,7 +231,12 @@ export default function MachineryScreen() {
         }),
       });
       if (response.ok) {
-        Alert.alert('✅ Success', 'Machine listed successfully!');
+        const listedData = await response.json().catch(() => ({}));
+        if (Platform.OS === 'web') {
+          window.alert('✅ Machine listed successfully! Visible to all users in Search Machines.');
+        } else {
+          Alert.alert('✅ Listed!', 'Machine listed successfully! Visible to all users in Search Machines.');
+        }
         setRentForm({ title: '', description: '', location: '', phone: '' });
         setImageUri(null);
         switchTab('search');
@@ -348,7 +361,7 @@ export default function MachineryScreen() {
 
               {loading ? (
                 <View style={styles.loadingState}>
-                  <ActivityIndicator size="large" color={COLORS.gold} />
+                  <FloatingLeafLoader color={COLORS.gold} size={32} />
                   <Text style={styles.loadingText}>Loading listings...</Text>
                 </View>
               ) : (
@@ -363,6 +376,7 @@ export default function MachineryScreen() {
                       isOwner={isAuthenticated && !!profile && item.owner_id === profile.uid}
                       onContact={() => Linking.openURL(`tel:${item.phone}`)}
                       onDelete={() => handleDelete(item.id)}
+                      onEdit={() => Alert.alert('Edit Listing', 'Edit functionality coming soon!')}
                     />
                   )}
                   ListEmptyComponent={
@@ -549,9 +563,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   machineName: { fontSize: 16, fontWeight: '800', color: COLORS.textPrimary },
-  machineDate: { fontSize: 11, color: COLORS.textMuted, marginTop: 1 },
-  deleteBtn: { padding: 6 },
+  machineDate: { fontSize: 12, color: COLORS.textMuted },
   machineImage: { width: 40, height: 40, borderRadius: RADIUS.md },
+  actionBtn: {
+    padding: 6,
+    backgroundColor: 'rgba(2,26,14,0.3)',
+    borderRadius: RADIUS.sm,
+    borderColor: 'rgba(212,175,55,0.1)',
+    borderWidth: 1,
+  },
   detailRow: { flexDirection: 'row', alignItems: 'flex-start', gap: 5, marginBottom: 4 },
   detailText: { fontSize: 12, color: COLORS.textSecondary, flex: 1, lineHeight: 18 },
   phoneText: { fontSize: 13, color: COLORS.textGold, fontWeight: '700' },

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Alert } from 'react-native';
+import FloatingLeafLoader from '../../components/FloatingLeafLoader';
+
 import { MaterialIcons } from '@expo/vector-icons';
 import { useApp } from '../_layout';
 import * as ImagePicker from 'expo-image-picker';
@@ -109,7 +111,7 @@ export default function HarvestScreen() {
           >
             {isAnalyzing ? (
               <View style={styles.analyzingContainer}>
-                <ActivityIndicator size="large" color={COLORS.gold} />
+                <FloatingLeafLoader color={COLORS.gold} size={40} />
                 <Text style={styles.analyzingText}>
                   {isTamil ? 'பகுப்பாய்வு செய்கிறது...' : 'Analyzing...'}
                 </Text>
@@ -167,7 +169,7 @@ export default function HarvestScreen() {
               : 'Post-harvest Paddy price trends for optimal sales timing.'}
           </Text>
           {loadingForecast ? (
-            <ActivityIndicator color={COLORS.gold} size="small" style={{ marginVertical: 20 }} />
+            <FloatingLeafLoader color={COLORS.gold} size={22} style={{ marginVertical: 20 }} />
           ) : forecast ? (
             <View style={styles.forecastRowContainer}>
               {forecast.slice(0, 5).map((item, idx) => (

@@ -1,5 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, TextInput, ScrollView, ActivityIndicator, TouchableOpacity, Animated, Easing, Platform } from 'react-native';
+import { View, Text, StyleSheet, TextInput, ScrollView, TouchableOpacity, Animated, Easing, Platform } from 'react-native';
+import FloatingLeafLoader from '../../components/FloatingLeafLoader';
+
 import { useApp } from '../_layout';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { API_BASE_URL, fetchWithTimeout } from '../_api/config';
@@ -227,7 +229,7 @@ export default function PlanScreen({ initialQuery: propQuery }: { initialQuery?:
             <View>
               {isLoading ? (
                 <View style={styles.loadingContainer}>
-                  <ActivityIndicator color={COLORS.gold} size="large" />
+                  <FloatingLeafLoader color={COLORS.gold} size={32} />
                   <Text style={styles.loadingText}>{isTamil ? 'தரவுகளை பகுப்பாய்வு செய்கிறது...' : 'Analyzing soil & market data...'}</Text>
                 </View>
               ) : (

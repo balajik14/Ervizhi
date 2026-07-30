@@ -1,5 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, ActivityIndicator, Animated } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Animated } from 'react-native';
+import FloatingLeafLoader from '../../components/FloatingLeafLoader';
+
 import { MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
 import { useApp } from '../_layout';
 import { API_BASE_URL, fetchWithTimeout } from '../_api/config';
@@ -407,7 +409,7 @@ export default function MarketScreen() {
           {/* Loading Indicator */}
           {isLoading && (
             <View style={styles.loadingBox}>
-              <ActivityIndicator size="large" color={COLORS.gold} />
+              <FloatingLeafLoader color={COLORS.gold} size={32} />
               <Text style={styles.loadingText}>{isTamil ? 'உள்ளூர் மாதிரியிலிருந்து முன்னறிவிப்பை ஏற்றுகிறது...' : 'Running local LSTM intelligence forecast...'}</Text>
             </View>
           )}

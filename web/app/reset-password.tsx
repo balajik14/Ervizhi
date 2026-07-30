@@ -51,7 +51,7 @@ export default function ResetPasswordScreen() {
   return (
     <LinearGradient colors={GRADIENTS.heroBg} style={styles.container}>
       <View style={styles.card}>
-        {(status === 'idle' || status === 'loading' || status === 'error') && status !== 'success' && (
+        {status !== 'success' && (
           <>
             <MaterialIcons name="lock-reset" size={64} color={COLORS.gold} />
             <Text style={styles.title}>Reset Password</Text>

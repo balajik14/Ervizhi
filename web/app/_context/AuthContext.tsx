@@ -54,6 +54,9 @@ type AuthContextType = {
   register: (email: string, username: string, password: string) => Promise<void>;
   resetPasswordWithOTP: (email: string, otp: string, newPassword: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
+  loginLocal: (email: string, password: string) => Promise<void>;
+  resetPasswordLink: (token: string, newPassword: string) => Promise<void>;
+  verifyEmailToken: (token: string, email: string) => Promise<void>;
   logout: () => Promise<void>;
   refreshProfile: () => Promise<void>;
   getToken: () => Promise<string | null>;
@@ -70,6 +73,9 @@ const AuthContext = createContext<AuthContextType>({
   register: async () => {},
   resetPasswordWithOTP: async () => {},
   loginWithGoogle: async () => {},
+  loginLocal: async () => {},
+  resetPasswordLink: async () => {},
+  verifyEmailToken: async () => {},
   logout: async () => {},
   refreshProfile: async () => {},
   getToken: async () => null,
@@ -230,6 +236,30 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const resetPasswordLink = useCallback(async (token: string, newPassword: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/reset-password-link`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, new_password: newPassword }),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || 'Password reset failed.');
+    }
+  }, []);
+
+  const verifyEmailToken = useCallback(async (token: string, email: string): Promise<void> => {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/auth/verify-email`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token, email }),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(data.detail || 'Email verification failed.');
+    }
+  }, []);
+
   // ── Compat Fallbacks ────────────────────────────────────────────
 
 
@@ -282,6 +312,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         register,
         resetPasswordWithOTP,
         loginWithGoogle,
+        resetPasswordLink,
+        verifyEmailToken,
         logout,
         refreshProfile,
         getToken,

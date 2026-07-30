@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { View, Text, StyleSheet, Switch, ScrollView, TouchableOpacity, ImageBackground, Alert, Image, ActivityIndicator, TextInput, FlatList, Modal, Animated, Easing } from 'react-native';
+import { View, Text, StyleSheet, Switch, ScrollView, TouchableOpacity, ImageBackground, Alert, Image, TextInput, FlatList, Modal, Animated, Easing } from 'react-native';
+import FloatingLeafLoader from '../../components/FloatingLeafLoader';
+
 import { useApp } from '../_layout';
 import { useAuth } from '../_context/AuthContext';
 import * as ImagePicker from 'expo-image-picker';
@@ -422,7 +424,7 @@ export default function GrowthScreen() {
               <View style={styles.card}>
                 <Text style={styles.sectionTitle}>{isTamil ? 'கடந்த கால பரிசோதனைகள்' : 'Scan History'}</Text>
                 {loadingHistory ? (
-                  <ActivityIndicator color={COLORS.gold} style={{ marginVertical: 10 }} />
+                  <FloatingLeafLoader color={COLORS.gold} size={22} style={{ marginVertical: 10 }} />
                 ) : scanHistory.length === 0 ? (
                   <Text style={styles.emptyText}>{isTamil ? 'பதிவுகள் எதுவும் இல்லை' : 'No scans found yet.'}</Text>
                 ) : (
@@ -467,7 +469,18 @@ export default function GrowthScreen() {
                 />
               </View>
 
+              {isOrganic && (
+                <View style={styles.infoBadge}>
+                  <Text style={styles.infoBadgeText}>
+                    💡 {isTamil
+                      ? 'இயற்கை உர அளவு, இரசாயன உரத்தின் NPK மண் ஊட்டச்சத்து மதிப்புக்கு சமமாக கணக்கிடப்பட்டுள்ளது.'
+                      : 'Organic dosage calculated to match effective NPK soil nutrient yield of chemical recommendations.'}
+                  </Text>
+                </View>
+              )}
+
               <Text style={styles.label}>{isTamil ? 'பயிர் வகை' : 'Crop Type'}</Text>
+
               <TouchableOpacity 
                 style={styles.pickerTrigger} 
                 onPress={() => setCropModalVisible(true)}
@@ -493,7 +506,7 @@ export default function GrowthScreen() {
               />
 
               {isCalculating ? (
-                <ActivityIndicator color={COLORS.gold} size="large" style={{ marginVertical: 10 }} />
+                <FloatingLeafLoader color={COLORS.gold} size={28} style={{ marginVertical: 10 }} />
               ) : (
                 <TouchableOpacity onPress={() => calculateFertilizer()} activeOpacity={0.85}>
                   <LinearGradient
@@ -708,7 +721,23 @@ const styles = StyleSheet.create({
     color: COLORS.textGold,
     fontWeight: '600',
   },
-  
+  infoBadge: {
+    backgroundColor: 'rgba(212,175,55,0.08)',
+    borderColor: 'rgba(212,175,55,0.25)',
+    borderWidth: 1,
+    borderRadius: RADIUS.md,
+    padding: SPACING.sm,
+    marginBottom: SPACING.md,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
+  infoBadgeText: {
+    fontSize: 12,
+    color: COLORS.textGold,
+    lineHeight: 18,
+    flex: 1,
+  },
+
   resultContainer: {
     backgroundColor: 'rgba(3,53,33,0.5)',
     borderColor: 'rgba(212,175,55,0.15)',

@@ -8,10 +8,14 @@ import {
   Modal,
   TextInput,
   Alert,
-  ActivityIndicator,
+  Switch,
+  Platform,
+  Linking,
+  Share,
   ScrollView,
   Dimensions,
 } from 'react-native';
+import FloatingLeafLoader from '../../components/FloatingLeafLoader';
 import { router } from 'expo-router';
 import { useApp } from '../_layout';
 import { useAuth } from '../_context/AuthContext';
@@ -373,7 +377,7 @@ export default function SettingsScreen() {
                 end={{ x: 1, y: 1 }}
               >
                 {isSaving ? (
-                  <ActivityIndicator color={COLORS.textDark} />
+                  <FloatingLeafLoader color={COLORS.textDark} size={22} />
                 ) : (
                   <Text style={styles.saveBtnText}>
                     {isTamil ? 'சேமி' : 'Save Changes'}
