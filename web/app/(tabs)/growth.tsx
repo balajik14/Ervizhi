@@ -233,7 +233,7 @@ export default function GrowthScreen() {
     }
   }, [isOrganic]);
 
-  const openCamera = async () => {
+  const takePhoto = async () => {
     const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
 
     if (permissionResult.granted === false) {
@@ -242,14 +242,16 @@ export default function GrowthScreen() {
     }
 
     let result = await ImagePicker.launchCameraAsync({
-      mediaTypes: ['images'],
-      allowsEditing: false,
-      quality: 0.5,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      quality: 0.8,
       base64: true,
     });
 
-    if (!result.canceled && result.assets[0].base64) {
-      processImage(result.assets[0].base64, result.assets[0].uri);
+    if (!result.canceled && result.assets && result.assets[0] && result.assets[0].base64) {
+      const selectedUri = result.assets[0].uri;
+      setImageUri(selectedUri);
+      processImage(result.assets[0].base64, selectedUri);
     }
   };
 
@@ -261,14 +263,16 @@ export default function GrowthScreen() {
     }
 
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ['images'],
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: false,
       quality: 0.5,
       base64: true,
     });
 
-    if (!result.canceled && result.assets[0].base64) {
-      processImage(result.assets[0].base64, result.assets[0].uri);
+    if (!result.canceled && result.assets && result.assets[0] && result.assets[0].base64) {
+      const selectedUri = result.assets[0].uri;
+      setImageUri(selectedUri);
+      processImage(result.assets[0].base64, selectedUri);
     }
   };
 
@@ -407,7 +411,7 @@ export default function GrowthScreen() {
               )}
 
               <View style={styles.buttonRow}>
-                <TouchableOpacity style={styles.outlineBtn} onPress={openCamera} activeOpacity={0.8}>
+                <TouchableOpacity style={styles.outlineBtn} onPress={takePhoto} activeOpacity={0.8}>
                   <MaterialIcons name="photo-camera" size={20} color={COLORS.gold} />
                   <Text style={styles.outlineBtnText}>{isTamil ? 'கேமரா' : 'Camera'}</Text>
                 </TouchableOpacity>
