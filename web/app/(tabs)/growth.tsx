@@ -124,7 +124,11 @@ export default function GrowthScreen() {
 
   // ── Process image ──
   const processImage = async (base64Img: string, uri: string) => {
-    setImageUri(uri);
+    const cleanImageUri = uri.startsWith('data:image') 
+      ? uri 
+      : `data:image/jpeg;base64,${base64Img}`;
+
+    setImageUri(cleanImageUri);
     setScanResult(null);
     setIsAnalyzing(true);
     try {
@@ -172,7 +176,7 @@ export default function GrowthScreen() {
         severity: responseData.severity || "Moderate",
         organic_remedy: responseData.organic_remedy || "Apply Neem Oil (5ml/L) or Copper Fungicide spray.",
         chemical_remedy: responseData.chemical_remedy || "Spray Mancozeb or Chlorothalonil 2g/L at weekly intervals.",
-        image_url: imageUri,
+        image_url: cleanImageUri,
         status: responseData.status || "Diseased",
         description: responseData.description || "Fungal infection detected.",
         created_at: responseData.created_at || new Date().toISOString()

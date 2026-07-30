@@ -50,7 +50,7 @@ async function getAuthToken(): Promise<string | null> {
 export async function fetchWithTimeout(
   url: string,
   options: RequestInit = {},
-  timeoutMs = 30000,
+  timeoutMs = 90000,
 ) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
@@ -96,7 +96,7 @@ export async function fetchWithTimeout(
 export async function authFetch(
   url: string,
   options: RequestInit = {},
-  timeoutMs = 30000,
+  timeoutMs = 90000,
 ) {
   const token = await getAuthToken();
   const headers: Record<string, string> = {
