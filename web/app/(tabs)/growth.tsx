@@ -232,8 +232,8 @@ export default function GrowthScreen() {
       if (organicMode) {
         setCalcResult(
           isTamil
-            ? `**இயற்கை உரப் பரிந்துரை (${selectedCrop}):**\n• ஜீவாமிர்தம்: ${(area * 200).toFixed(1)} லிட்டர்\n• பஞ்சகவ்யா: ${(area * 10).toFixed(1)} லிட்டர்\n• வேப்பம் புண்ணாக்கு: ${(area * 300).toFixed(1)} கிலோ\n• மண்புழு உரம்: ${(area * 2300).toFixed(1)} கிலோ`
-            : `**Organic Fertilizer Recommendation (${selectedCrop}):**\n• Jeevamrutham: ${(area * 200).toFixed(1)} L\n• Panchagavya: ${(area * 10).toFixed(1)} L\n• Neem Cake: ${(area * 300).toFixed(1)} kg\n• Vermicompost: ${(area * 2300).toFixed(1)} kg`
+            ? `**இயற்கை உரப் பரிந்துரை (${selectedCrop}):**\n• ஜீவாமிர்தம்: ${(area * 200).toFixed(1)} லிட்டர்\n• பஞ்சகவ்யா: ${(area * 10).toFixed(1)} லிட்டர்\n• வேப்பம் புண்ணாக்கு: ${(area * 100).toFixed(1)} கிலோ\n• மண்புழு உரம்: ${(area * 150).toFixed(1)} கிலோ`
+            : `**Organic Fertilizer Recommendation (${selectedCrop}):**\n• Jeevamrutham: ${(area * 200).toFixed(1)} L\n• Panchagavya: ${(area * 10).toFixed(1)} L\n• Neem Cake: ${(area * 100).toFixed(1)} kg\n• Vermicompost: ${(area * 150).toFixed(1)} kg`
         );
       } else {
         setCalcResult(
