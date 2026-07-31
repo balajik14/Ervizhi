@@ -86,6 +86,13 @@ else:
 # ---------------------------------------------------------------------------
 # ML logic now correctly handled in app.services.ml_service
 
+@app.on_event("startup")
+async def startup_event():
+    import threading
+    from app.services.ml_service import ml_service
+    threading.Thread(target=ml_service._init_disease, daemon=True).start()
+    logger.info("Triggered eager loading of YOLOv8 disease model in background.")
+
 
 def get_auth_db():
     conn = sqlite3.connect("ervizhi_auth.db", timeout=10.0)
