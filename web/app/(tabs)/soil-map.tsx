@@ -489,23 +489,33 @@ export default function SoilMapScreen() {
 
             <View style={[styles.divider, { backgroundColor: dividerColor }]} />
 
-            {/* Crops */}
-            <Text style={[styles.sectionLabel, { color: cardText }]}>
-              🌾 {isTamil ? 'பரிந்துரைக்கப்பட்ட பயிர்கள்' : 'Recommended Crops'}
-            </Text>
-            {selectedDistrict.topCrops.length > 0 ? (
-              <View style={styles.cropsRow}>
-                {selectedDistrict.topCrops.map((crop, i) => (
-                  <View key={crop} style={[styles.cropChip, { backgroundColor: cardBg2, borderColor: dividerColor }]}>
-                    <Text style={styles.cropRank}>#{i + 1}</Text>
-                    <Text style={[styles.cropName, { color: cardText }]}>{crop}</Text>
+            {/* Land Uniqueness & Agricultural Heritage */}
+            {selectedDistrict && (selectedDistrict.uniqueness || selectedDistrict.heritage) && (
+              <>
+                <Text style={[styles.sectionLabel, { color: COLORS.gold, marginBottom: 8 }]}>
+                  ✨ {isTamil ? 'நிலத்தின் தனித்துவம் மற்றும் மரபு' : 'Land Uniqueness & Heritage'}
+                </Text>
+                {selectedDistrict.uniqueness && (
+                  <View style={{ marginBottom: 12 }}>
+                    <Text style={{ color: COLORS.textSecondary, fontSize: 13, fontWeight: 'bold', marginBottom: 4 }}>
+                      {isTamil ? 'தனித்துவம்' : 'Uniqueness'}
+                    </Text>
+                    <Text style={{ color: COLORS.textPrimary, fontSize: 14, lineHeight: 22 }}>
+                      {isTamil && selectedDistrict.tamilUniqueness ? selectedDistrict.tamilUniqueness : selectedDistrict.uniqueness}
+                    </Text>
                   </View>
-                ))}
-              </View>
-            ) : (
-              <Text style={[styles.noCropText, { color: secondaryText }]}>
-                {isTamil ? 'நகரப் பகுதி — தரவு இல்லை.' : 'Urban area — no crop data.'}
-              </Text>
+                )}
+                {selectedDistrict.heritage && (
+                  <View style={{ marginBottom: 12 }}>
+                    <Text style={{ color: COLORS.textSecondary, fontSize: 13, fontWeight: 'bold', marginBottom: 4 }}>
+                      {isTamil ? 'வேளாண் மரபு' : 'Agricultural Heritage'}
+                    </Text>
+                    <Text style={{ color: COLORS.textPrimary, fontSize: 14, lineHeight: 22 }}>
+                      {isTamil && selectedDistrict.tamilHeritage ? selectedDistrict.tamilHeritage : selectedDistrict.heritage}
+                    </Text>
+                  </View>
+                )}
+              </>
             )}
 
             <View style={{ marginTop: 24 }}>

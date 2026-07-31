@@ -262,9 +262,9 @@ export default function GrowthScreen() {
     }
 
     let result = await ImagePicker.launchCameraAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      mediaTypes: ['images'],
       allowsEditing: true,
-      quality: 0.8,
+      quality: 0.4,
       base64: true,
     });
 
@@ -283,9 +283,9 @@ export default function GrowthScreen() {
     }
 
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: false,
-      quality: 0.5,
+      mediaTypes: ['images'],
+      allowsEditing: true,
+      quality: 0.4,
       base64: true,
     });
 
