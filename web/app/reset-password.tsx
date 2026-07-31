@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import FloatingLeafLoader from '../components/FloatingLeafLoader';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -75,7 +76,7 @@ export default function ResetPasswordScreen() {
             
             <TouchableOpacity style={styles.button} onPress={handleReset} disabled={status === 'loading'}>
               {status === 'loading' ? (
-                <ActivityIndicator color={COLORS.darkBg} />
+                <FloatingLeafLoader color={COLORS.darkBg} size={24} />
               ) : (
                 <Text style={styles.buttonText}>Reset Password</Text>
               )}

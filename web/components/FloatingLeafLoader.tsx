@@ -11,7 +11,6 @@ interface FloatingLeafLoaderProps {
 
 export default function FloatingLeafLoader({ color = COLORS.gold, size = 26, style }: FloatingLeafLoaderProps) {
   const floatAnim = useRef(new Animated.Value(0)).current;
-  const rotateAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.loop(
@@ -30,26 +29,11 @@ export default function FloatingLeafLoader({ color = COLORS.gold, size = 26, sty
         })
       ])
     ).start();
-
-    Animated.loop(
-      Animated.timing(rotateAnim, {
-        toValue: 1,
-        duration: 1500,
-        easing: Easing.linear,
-        useNativeDriver: Platform.OS !== 'web',
-      })
-    ).start();
-  }, [floatAnim, rotateAnim]);
-
-  const spin = rotateAnim.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg']
-  });
+  }, [floatAnim]);
 
   return (
     <View style={[styles.container, style]}>
-      <Animated.View style={[styles.spinner, { borderColor: color + '40', borderTopColor: color, width: size * 1.8, height: size * 1.8, borderRadius: size * 0.9, transform: [{ rotate: spin }] }]} />
-      <Animated.View style={{ position: 'absolute', transform: [{ translateY: floatAnim }] }}>
+      <Animated.View style={{ transform: [{ translateY: floatAnim }] }}>
         <Ionicons name="leaf" size={size} color={color} />
       </Animated.View>
     </View>
@@ -61,9 +45,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
-  },
-  spinner: {
-    position: 'absolute',
-    borderWidth: 3,
   }
 });

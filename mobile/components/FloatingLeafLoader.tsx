@@ -11,7 +11,6 @@ interface FloatingLeafLoaderProps {
 
 export default function FloatingLeafLoader({ color = COLORS.textDark, size = 26, style }: FloatingLeafLoaderProps) {
   const floatAnim = useRef(new Animated.Value(0)).current;
-  const rotateAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.loop(
@@ -30,33 +29,11 @@ export default function FloatingLeafLoader({ color = COLORS.textDark, size = 26,
         })
       ])
     ).start();
-
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(rotateAnim, {
-          toValue: 1,
-          duration: 1500,
-          easing: Easing.inOut(Easing.ease),
-          useNativeDriver: Platform.OS !== 'web',
-        }),
-        Animated.timing(rotateAnim, {
-          toValue: -1,
-          duration: 1500,
-          easing: Easing.inOut(Easing.ease),
-          useNativeDriver: Platform.OS !== 'web',
-        })
-      ])
-    ).start();
-  }, [floatAnim, rotateAnim]);
-
-  const spin = rotateAnim.interpolate({
-    inputRange: [-1, 1],
-    outputRange: ['-12deg', '12deg']
-  });
+  }, [floatAnim]);
 
   return (
     <View style={[styles.container, style]}>
-      <Animated.View style={{ transform: [{ translateY: floatAnim }, { rotate: spin }] }}>
+      <Animated.View style={{ transform: [{ translateY: floatAnim }] }}>
         <Ionicons name="leaf" size={size} color={color} />
       </Animated.View>
     </View>

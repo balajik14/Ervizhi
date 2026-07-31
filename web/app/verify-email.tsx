@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import FloatingLeafLoader from '../components/FloatingLeafLoader';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -46,7 +47,7 @@ export default function VerifyEmailScreen() {
       <View style={styles.card}>
         {status === 'loading' && (
           <>
-            <ActivityIndicator size="large" color={COLORS.gold} />
+            <FloatingLeafLoader size={36} color={COLORS.gold} />
             <Text style={styles.message}>{message}</Text>
           </>
         )}

@@ -16,6 +16,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import FloatingLeafLoader from '../../components/FloatingLeafLoader';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -168,9 +169,27 @@ export default function MachineryScreen() {
     try {
       const response = await fetchWithTimeout(`${API_BASE_URL}/machinery`);
       const data = await response.json();
-      if (response.ok) setMachines(Array.isArray(data) ? data : []);
+      if (response.ok) {
+        setMachines(Array.isArray(data) ? data : []);
+        await AsyncStorage.setItem('cached_machinery', JSON.stringify(Array.isArray(data) ? data : []));
+      } else {
+        throw new Error(data.detail || 'Failed to fetch rentals');
+      }
     } catch (e: any) {
-      Alert.alert('Error', e.message || 'Failed to fetch rentals.');
+      console.log('Network error, loading from cache...');
+      try {
+        const cached = await AsyncStorage.getItem('cached_machinery');
+        if (cached) {
+          setMachines(JSON.parse(cached));
+          if (Platform.OS === 'web') {
+             window.alert('Offline Mode: Showing cached machines');
+          }
+        } else {
+          Alert.alert('Error', 'Network error and no cached data available.');
+        }
+      } catch (cacheError) {
+        Alert.alert('Error', e.message || 'Failed to fetch rentals.');
+      }
     } finally {
       setLoading(false);
     }

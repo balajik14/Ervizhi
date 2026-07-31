@@ -283,11 +283,8 @@ class MLService:
             img = Image.open(img_io).convert("RGB")
             img.thumbnail((640, 640))  # Resize to max 640x640 to save RAM
             
-            # Pre-check if it's a valid plant image
             if not self._is_plant_image(img):
                 img_io.close()
-                del img_bytes, img, img_io
-                gc.collect()
                 return {
                     "status": "error",
                     "disease_detected": False,
@@ -302,7 +299,7 @@ class MLService:
             
             # YOLO inference with no_grad
             with torch.no_grad():
-                results = self.disease_model.predict(source=img, conf=0.25)
+                results = self.disease_model.predict(source=img, conf=0.25, imgsz=320, verbose=False)
             
             if len(results) > 0 and len(results[0].boxes) > 0:
                 # We have detections
@@ -362,14 +359,10 @@ class MLService:
             
             # Clean up
             img_io.close()
-            del img_bytes, img, img_io, results
-            gc.collect()
             return res_dict
                 
         except Exception as e:
             print(f"Inference error: {e}")
-            import gc
-            gc.collect()
             return {
                 "status": "error",
                 "disease_detected": False,
